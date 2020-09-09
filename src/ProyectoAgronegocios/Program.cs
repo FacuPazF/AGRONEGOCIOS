@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using ProyectoAgronegocios.GUILayer;
 
 namespace ProyectoAgronegocios
 {
@@ -13,7 +14,7 @@ namespace ProyectoAgronegocios
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formPrincipal());
+            Application.Run(new frmCliente());
         }
     }
 }

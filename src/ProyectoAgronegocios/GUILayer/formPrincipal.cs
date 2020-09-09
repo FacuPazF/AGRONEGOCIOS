@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoAgronegocios.GUILayer;
+using System;
 using System.Windows.Forms;
 
 namespace ProyectoAgronegocios
@@ -27,6 +28,12 @@ namespace ProyectoAgronegocios
             }
 
             lblBienvenida.Text = "¡Bienvenido, " + formLogin.User.Usuario + "!";
+        }
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCliente formCliente = new frmCliente();
+            formCliente.ShowDialog();
         }
     }
 }

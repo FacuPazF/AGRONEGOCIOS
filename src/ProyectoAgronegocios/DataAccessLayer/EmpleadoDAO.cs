@@ -9,6 +9,7 @@ namespace ProyectoAgronegocios.DataAccessLayer
         public static Empleado GetEmpleado(string nombreEmpleado)
         {
             string cSQL = "SELECT cod_Empleado, nombre, apellido, email, telefono, fecha_Alta, cod_barrio, calle, numero_casa, fecha_nacimiento, tipo_Empleado, contraseña, usuario, borrado FROM Empleados WHERE borrado = 0 AND usuario = '" + nombreEmpleado + "'";
+            
 
             DataTable dt = DBHelper.consultar(cSQL);
             if (dt.Rows.Count > 0)
