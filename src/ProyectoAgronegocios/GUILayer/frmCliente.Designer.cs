@@ -35,7 +35,8 @@
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlCliente = new System.Windows.Forms.Panel();
+            this.btnFinalizar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.cboBarrio = new System.Windows.Forms.ComboBox();
@@ -60,14 +61,14 @@
             this.btnConsultar = new System.Windows.Forms.Button();
             this.lblIngreseCuil = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCliente)).BeginInit();
-            this.panel1.SuspendLayout();
+            this.pnlCliente.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblCliente
             // 
             this.lblCliente.AutoSize = true;
             this.lblCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCliente.Location = new System.Drawing.Point(30, 38);
+            this.lblCliente.Location = new System.Drawing.Point(51, 55);
             this.lblCliente.Name = "lblCliente";
             this.lblCliente.Size = new System.Drawing.Size(107, 36);
             this.lblCliente.TabIndex = 0;
@@ -76,7 +77,7 @@
             // txtCliente
             // 
             this.txtCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCliente.Location = new System.Drawing.Point(167, 35);
+            this.txtCliente.Location = new System.Drawing.Point(188, 52);
             this.txtCliente.Name = "txtCliente";
             this.txtCliente.Size = new System.Drawing.Size(312, 41);
             this.txtCliente.TabIndex = 1;
@@ -86,28 +87,30 @@
             this.dtgCliente.AllowUserToAddRows = false;
             this.dtgCliente.AllowUserToDeleteRows = false;
             this.dtgCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgCliente.Location = new System.Drawing.Point(36, 166);
+            this.dtgCliente.Location = new System.Drawing.Point(36, 142);
             this.dtgCliente.Name = "dtgCliente";
             this.dtgCliente.ReadOnly = true;
             this.dtgCliente.RowHeadersWidth = 82;
             this.dtgCliente.RowTemplate.Height = 33;
-            this.dtgCliente.Size = new System.Drawing.Size(634, 678);
+            this.dtgCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dtgCliente.Size = new System.Drawing.Size(1320, 813);
             this.dtgCliente.TabIndex = 2;
             // 
             // btnNuevo
             // 
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevo.Location = new System.Drawing.Point(60, 879);
+            this.btnNuevo.Location = new System.Drawing.Point(36, 1041);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(171, 95);
             this.btnNuevo.TabIndex = 3;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnModificar
             // 
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificar.Location = new System.Drawing.Point(270, 879);
+            this.btnModificar.Location = new System.Drawing.Point(283, 1041);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(171, 95);
             this.btnModificar.TabIndex = 4;
@@ -117,7 +120,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminar.Location = new System.Drawing.Point(487, 879);
+            this.btnEliminar.Location = new System.Drawing.Point(536, 1041);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(171, 95);
             this.btnEliminar.TabIndex = 5;
@@ -127,7 +130,7 @@
             // btnCerrar
             // 
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrar.Location = new System.Drawing.Point(996, 879);
+            this.btnCerrar.Location = new System.Drawing.Point(1679, 1041);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(171, 95);
             this.btnCerrar.TabIndex = 6;
@@ -135,47 +138,59 @@
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // panel1
+            // pnlCliente
             // 
-            this.panel1.Controls.Add(this.btnLimpiar);
-            this.panel1.Controls.Add(this.btnAceptar);
-            this.panel1.Controls.Add(this.cboBarrio);
-            this.panel1.Controls.Add(this.cboCiudad);
-            this.panel1.Controls.Add(this.cboProvincia);
-            this.panel1.Controls.Add(this.lblBarrio);
-            this.panel1.Controls.Add(this.lblCiudad);
-            this.panel1.Controls.Add(this.lblProvincia);
-            this.panel1.Controls.Add(this.lblTelefono);
-            this.panel1.Controls.Add(this.lblEmail);
-            this.panel1.Controls.Add(this.lblRazonSocial);
-            this.panel1.Controls.Add(this.lblCuil);
-            this.panel1.Controls.Add(this.lblApellido);
-            this.panel1.Controls.Add(this.txtTelefono);
-            this.panel1.Controls.Add(this.txtEmail);
-            this.panel1.Controls.Add(this.txtRazonSocial);
-            this.panel1.Controls.Add(this.txtCuil);
-            this.panel1.Controls.Add(this.txtApellido);
-            this.panel1.Controls.Add(this.txtNombre);
-            this.panel1.Controls.Add(this.lblNombre);
-            this.panel1.Controls.Add(this.lblNuevoCliente);
-            this.panel1.Enabled = false;
-            this.panel1.Location = new System.Drawing.Point(704, 35);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(822, 809);
-            this.panel1.TabIndex = 7;
+            this.pnlCliente.Controls.Add(this.btnFinalizar);
+            this.pnlCliente.Controls.Add(this.btnLimpiar);
+            this.pnlCliente.Controls.Add(this.btnAceptar);
+            this.pnlCliente.Controls.Add(this.cboBarrio);
+            this.pnlCliente.Controls.Add(this.cboCiudad);
+            this.pnlCliente.Controls.Add(this.cboProvincia);
+            this.pnlCliente.Controls.Add(this.lblBarrio);
+            this.pnlCliente.Controls.Add(this.lblCiudad);
+            this.pnlCliente.Controls.Add(this.lblProvincia);
+            this.pnlCliente.Controls.Add(this.lblTelefono);
+            this.pnlCliente.Controls.Add(this.lblEmail);
+            this.pnlCliente.Controls.Add(this.lblRazonSocial);
+            this.pnlCliente.Controls.Add(this.lblCuil);
+            this.pnlCliente.Controls.Add(this.lblApellido);
+            this.pnlCliente.Controls.Add(this.txtTelefono);
+            this.pnlCliente.Controls.Add(this.txtEmail);
+            this.pnlCliente.Controls.Add(this.txtRazonSocial);
+            this.pnlCliente.Controls.Add(this.txtCuil);
+            this.pnlCliente.Controls.Add(this.txtApellido);
+            this.pnlCliente.Controls.Add(this.txtNombre);
+            this.pnlCliente.Controls.Add(this.lblNombre);
+            this.pnlCliente.Controls.Add(this.lblNuevoCliente);
+            this.pnlCliente.Enabled = false;
+            this.pnlCliente.Location = new System.Drawing.Point(1372, 142);
+            this.pnlCliente.Name = "pnlCliente";
+            this.pnlCliente.Size = new System.Drawing.Size(862, 813);
+            this.pnlCliente.TabIndex = 7;
+            // 
+            // btnFinalizar
+            // 
+            this.btnFinalizar.Location = new System.Drawing.Point(537, 673);
+            this.btnFinalizar.Name = "btnFinalizar";
+            this.btnFinalizar.Size = new System.Drawing.Size(223, 87);
+            this.btnFinalizar.TabIndex = 7;
+            this.btnFinalizar.Text = "Finalizar";
+            this.btnFinalizar.UseVisualStyleBackColor = true;
+            this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(372, 673);
+            this.btnLimpiar.Location = new System.Drawing.Point(307, 673);
             this.btnLimpiar.Name = "btnLimpiar";
             this.btnLimpiar.Size = new System.Drawing.Size(192, 94);
             this.btnLimpiar.TabIndex = 6;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Location = new System.Drawing.Point(132, 673);
+            this.btnAceptar.Location = new System.Drawing.Point(75, 673);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(184, 94);
             this.btnAceptar.TabIndex = 5;
@@ -352,22 +367,21 @@
             this.lblNombre.Size = new System.Drawing.Size(132, 37);
             this.lblNombre.TabIndex = 1;
             this.lblNombre.Text = "Nombre";
-            this.lblNombre.Click += new System.EventHandler(this.lblNombre_Click);
             // 
             // lblNuevoCliente
             // 
             this.lblNuevoCliente.AutoSize = true;
             this.lblNuevoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNuevoCliente.Location = new System.Drawing.Point(284, 19);
+            this.lblNuevoCliente.Location = new System.Drawing.Point(360, 9);
             this.lblNuevoCliente.Name = "lblNuevoCliente";
-            this.lblNuevoCliente.Size = new System.Drawing.Size(258, 44);
+            this.lblNuevoCliente.Size = new System.Drawing.Size(139, 44);
             this.lblNuevoCliente.TabIndex = 0;
-            this.lblNuevoCliente.Text = "Nuevo Cliente";
+            this.lblNuevoCliente.Text = "Cliente";
             // 
             // btnConsultar
             // 
             this.btnConsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultar.Location = new System.Drawing.Point(515, 30);
+            this.btnConsultar.Location = new System.Drawing.Point(536, 47);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(155, 45);
             this.btnConsultar.TabIndex = 8;
@@ -377,7 +391,7 @@
             // lblIngreseCuil
             // 
             this.lblIngreseCuil.AutoSize = true;
-            this.lblIngreseCuil.Location = new System.Drawing.Point(209, 89);
+            this.lblIngreseCuil.Location = new System.Drawing.Point(230, 106);
             this.lblIngreseCuil.Name = "lblIngreseCuil";
             this.lblIngreseCuil.Size = new System.Drawing.Size(208, 25);
             this.lblIngreseCuil.TabIndex = 9;
@@ -387,10 +401,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1576, 1015);
+            this.ClientSize = new System.Drawing.Size(2264, 1215);
             this.Controls.Add(this.lblIngreseCuil);
             this.Controls.Add(this.btnConsultar);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pnlCliente);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
@@ -400,9 +414,11 @@
             this.Controls.Add(this.lblCliente);
             this.Name = "frmCliente";
             this.Text = "Cliente";
+            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
+            this.Load += new System.EventHandler(this.frmCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgCliente)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pnlCliente.ResumeLayout(false);
+            this.pnlCliente.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -417,7 +433,7 @@
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pnlCliente;
         private System.Windows.Forms.Label lblBarrio;
         private System.Windows.Forms.Label lblCiudad;
         private System.Windows.Forms.Label lblProvincia;
@@ -441,5 +457,6 @@
         private System.Windows.Forms.Button btnConsultar;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Label lblIngreseCuil;
+        private System.Windows.Forms.Button btnFinalizar;
     }
 }

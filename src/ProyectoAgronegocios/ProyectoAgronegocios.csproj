@@ -46,7 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusinessLayer\ClienteService.cs" />
     <Compile Include="BusinessLayer\EmpleadoService.cs" />
+    <Compile Include="DataAccessLayer\ClienteDAO.cs" />
     <Compile Include="DataAccessLayer\DBHelper.cs" />
     <Compile Include="DataAccessLayer\EmpleadoDAO.cs" />
     <Compile Include="Entities\Cliente.cs" />
