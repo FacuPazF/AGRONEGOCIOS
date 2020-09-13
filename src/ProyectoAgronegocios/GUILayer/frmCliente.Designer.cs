@@ -60,6 +60,15 @@
             this.lblNuevoCliente = new System.Windows.Forms.Label();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.lblIngreseCuil = new System.Windows.Forms.Label();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.razon_social = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.barrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCliente)).BeginInit();
             this.pnlCliente.SuspendLayout();
             this.SuspendLayout();
@@ -87,6 +96,16 @@
             this.dtgCliente.AllowUserToAddRows = false;
             this.dtgCliente.AllowUserToDeleteRows = false;
             this.dtgCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgCliente.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.id,
+            this.cuit,
+            this.nombre,
+            this.apellido,
+            this.razon_social,
+            this.tipoCliente,
+            this.email,
+            this.telefono,
+            this.barrio});
             this.dtgCliente.Location = new System.Drawing.Point(36, 142);
             this.dtgCliente.Name = "dtgCliente";
             this.dtgCliente.ReadOnly = true;
@@ -311,7 +330,6 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(239, 41);
             this.txtTelefono.TabIndex = 2;
-            this.txtTelefono.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // txtEmail
             // 
@@ -320,7 +338,6 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(239, 41);
             this.txtEmail.TabIndex = 2;
-            this.txtEmail.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // txtRazonSocial
             // 
@@ -329,7 +346,6 @@
             this.txtRazonSocial.Name = "txtRazonSocial";
             this.txtRazonSocial.Size = new System.Drawing.Size(239, 41);
             this.txtRazonSocial.TabIndex = 2;
-            this.txtRazonSocial.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // txtCuil
             // 
@@ -338,7 +354,6 @@
             this.txtCuil.Name = "txtCuil";
             this.txtCuil.Size = new System.Drawing.Size(239, 41);
             this.txtCuil.TabIndex = 2;
-            this.txtCuil.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // txtApellido
             // 
@@ -347,7 +362,6 @@
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(239, 41);
             this.txtApellido.TabIndex = 2;
-            this.txtApellido.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // txtNombre
             // 
@@ -356,7 +370,6 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(239, 41);
             this.txtNombre.TabIndex = 2;
-            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // lblNombre
             // 
@@ -396,6 +409,78 @@
             this.lblIngreseCuil.Size = new System.Drawing.Size(208, 25);
             this.lblIngreseCuil.TabIndex = 9;
             this.lblIngreseCuil.Text = "Ingrese CUIL o CUIT";
+            // 
+            // id
+            // 
+            this.id.HeaderText = "ID Cliente";
+            this.id.MinimumWidth = 10;
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 200;
+            // 
+            // cuit
+            // 
+            this.cuit.HeaderText = "Cuit o Cuil";
+            this.cuit.MinimumWidth = 10;
+            this.cuit.Name = "cuit";
+            this.cuit.ReadOnly = true;
+            this.cuit.Width = 200;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.MinimumWidth = 10;
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 200;
+            // 
+            // apellido
+            // 
+            this.apellido.HeaderText = "Apellido";
+            this.apellido.MinimumWidth = 10;
+            this.apellido.Name = "apellido";
+            this.apellido.ReadOnly = true;
+            this.apellido.Width = 200;
+            // 
+            // razon_social
+            // 
+            this.razon_social.HeaderText = "Razon Social";
+            this.razon_social.MinimumWidth = 10;
+            this.razon_social.Name = "razon_social";
+            this.razon_social.ReadOnly = true;
+            this.razon_social.Width = 200;
+            // 
+            // tipoCliente
+            // 
+            this.tipoCliente.HeaderText = "Tipo de Cliente";
+            this.tipoCliente.MinimumWidth = 10;
+            this.tipoCliente.Name = "tipoCliente";
+            this.tipoCliente.ReadOnly = true;
+            this.tipoCliente.Width = 200;
+            // 
+            // email
+            // 
+            this.email.HeaderText = "Email";
+            this.email.MinimumWidth = 10;
+            this.email.Name = "email";
+            this.email.ReadOnly = true;
+            this.email.Width = 200;
+            // 
+            // telefono
+            // 
+            this.telefono.HeaderText = "Telefono";
+            this.telefono.MinimumWidth = 10;
+            this.telefono.Name = "telefono";
+            this.telefono.ReadOnly = true;
+            this.telefono.Width = 200;
+            // 
+            // barrio
+            // 
+            this.barrio.HeaderText = "Barrio";
+            this.barrio.MinimumWidth = 10;
+            this.barrio.Name = "barrio";
+            this.barrio.ReadOnly = true;
+            this.barrio.Width = 200;
             // 
             // frmCliente
             // 
@@ -458,5 +543,14 @@
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Label lblIngreseCuil;
         private System.Windows.Forms.Button btnFinalizar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cuit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn razon_social;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn barrio;
     }
 }

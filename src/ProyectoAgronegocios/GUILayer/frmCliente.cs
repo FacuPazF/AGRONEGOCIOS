@@ -22,16 +22,14 @@ namespace ProyectoAgronegocios.GUILayer
 
         private ClienteService sCliente = new ClienteService();
 
-        private void txtNombre_TextChanged(object sender, EventArgs e)
-        {
+        
 
-        }
-
-        // ---------------------------------------  Carga del Formulario
+        // ---------------------------------------  Carga del Formulario ----------------------------------
         private void frmCliente_Load(object sender, EventArgs e)
         {
-             
-            dtgCliente.DataSource = sCliente.consultarClientesSinParametros();
+            
+            this.cargarGrilla(dtgCliente, sCliente.consultarClientesSinParametros());
+
         }
 
 
@@ -64,6 +62,7 @@ namespace ProyectoAgronegocios.GUILayer
             limpiarPanel();
             pnlCliente.Enabled = false;
             dtgCliente.Enabled = true;
+            this.habilitarBotones(true);
         }
         //-------------------------------------- Métodos de Soporte -------------------------------------
         private void limpiarPanel()
@@ -85,9 +84,27 @@ namespace ProyectoAgronegocios.GUILayer
             btnModificar.Enabled = habilitado;
             btnEliminar.Enabled = habilitado;
             btnCerrar.Enabled = habilitado;
+            btnConsultar.Enabled = habilitado;
 
         }
 
-        
+        private void cargarGrilla(DataGridView grilla, DataTable tabla)
+        {
+            dtgCliente.Rows.Clear();
+            for (int i = 0; i < tabla.Rows.Count; i++)
+            {
+                grilla.Rows.Add(tabla.Rows[i]["ID"],
+                                tabla.Rows[i]["Cuil o Cuit"],
+                                tabla.Rows[i]["Nombre"],
+                                tabla.Rows[i]["Apellido"],
+                                tabla.Rows[i]["Razon Social"],
+                                tabla.Rows[i]["Tipo de Cliente"],
+                                tabla.Rows[i]["Email"],
+                                tabla.Rows[i]["Telefono"],
+                                tabla.Rows[i]["Barrio"]);
+
+
+            }
+        }
     }
 }
