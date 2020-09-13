@@ -8,6 +8,6 @@ namespace ProyectoAgronegocios.Entities
 {
     class Cliente
     {
-
+        
     }
 }

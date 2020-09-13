@@ -15,5 +15,10 @@ namespace ProyectoAgronegocios.BusinessLayer
         {
             return daoCliente.consultarClientesSinParametros();
         }
+
+        public DataTable recuperarDatosCliente(int id)
+        {
+            return daoCliente.recuperarDatosCliente(id);
+        }
     }
 }

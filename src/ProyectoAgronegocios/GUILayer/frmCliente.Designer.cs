@@ -107,12 +107,12 @@
             this.telefono,
             this.barrio});
             this.dtgCliente.Location = new System.Drawing.Point(36, 142);
+            this.dtgCliente.MultiSelect = false;
             this.dtgCliente.Name = "dtgCliente";
             this.dtgCliente.ReadOnly = true;
-            this.dtgCliente.RowHeadersWidth = 82;
             this.dtgCliente.RowTemplate.Height = 33;
             this.dtgCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgCliente.Size = new System.Drawing.Size(1320, 813);
+            this.dtgCliente.Size = new System.Drawing.Size(1309, 813);
             this.dtgCliente.TabIndex = 2;
             // 
             // btnNuevo
@@ -135,6 +135,7 @@
             this.btnModificar.TabIndex = 4;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
@@ -396,10 +397,11 @@
             this.btnConsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultar.Location = new System.Drawing.Point(536, 47);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(155, 45);
+            this.btnConsultar.Size = new System.Drawing.Size(171, 46);
             this.btnConsultar.TabIndex = 8;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // lblIngreseCuil
             // 

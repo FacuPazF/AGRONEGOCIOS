@@ -21,20 +21,27 @@ namespace ProyectoAgronegocios.GUILayer
         //-------------------------------------------- Atributos ---------------------------------
 
         private ClienteService sCliente = new ClienteService();
-
-        
+        private BarrioService sBarrio = new BarrioService();
+        private bool nuevo;
 
         // ---------------------------------------  Carga del Formulario ----------------------------------
         private void frmCliente_Load(object sender, EventArgs e)
         {
             
             this.cargarGrilla(dtgCliente, sCliente.consultarClientesSinParametros());
+            //this.cargarCombo(cboBarrio, sBarrio.recuperarBarrios());
+            
 
         }
 
 
 
         //--------------------------------------- Botones ----------------------
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -42,7 +49,7 @@ namespace ProyectoAgronegocios.GUILayer
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            
+            this.nuevo = true;
             pnlCliente.Enabled = true;
             dtgCliente.Enabled = false;
             limpiarPanel();
@@ -51,6 +58,17 @@ namespace ProyectoAgronegocios.GUILayer
             
         }
 
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            this.nuevo = false;
+            pnlCliente.Enabled = true;
+            dtgCliente.Enabled = false;
+            txtNombre.Focus();
+            habilitarBotones(false);
+            
+            this.actualizarCampos((int)dtgCliente.CurrentRow.Cells[0].Value);
+            
+        }
 
         // -- Dentro de pnlCliente
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -76,6 +94,15 @@ namespace ProyectoAgronegocios.GUILayer
             cboProvincia.SelectedIndex = -1;
             cboCiudad.SelectedIndex = -1;
             cboBarrio.SelectedIndex = -1;
+        }
+
+        private void cargarCombo(ComboBox combo, DataTable tabla)
+        {
+            combo.DataSource = tabla;
+            combo.DisplayMember = tabla.Columns[1].ColumnName;
+            combo.ValueMember = tabla.Columns[0].ColumnName;
+            combo.DropDownStyle = ComboBoxStyle.DropDownList;
+            combo.SelectedIndex = -1;
         }
 
         private void habilitarBotones(bool habilitado)
@@ -106,5 +133,23 @@ namespace ProyectoAgronegocios.GUILayer
 
             }
         }
+
+        private void actualizarCampos(int id)
+        {
+            DataTable tabla = sCliente.recuperarDatosCliente(id);
+            txtNombre.Text = tabla.Rows[0]["Nombre"].ToString();
+            txtApellido.Text = tabla.Rows[0]["Apellido"].ToString();
+            txtCuil.Text = tabla.Rows[0]["Cuil o Cuit"].ToString();
+
+            txtRazonSocial.Text = tabla.Rows[0]["Razon Social"].ToString();
+            txtEmail.Text = tabla.Rows[0]["Email"].ToString();
+            txtTelefono.Text = tabla.Rows[0]["Telefono"].ToString();
+            cboBarrio.SelectedValue = tabla.Rows[0]["Barrio"];
+            cboProvincia.SelectedValue = tabla.Rows[0]["Provincia"];
+            cboCiudad.SelectedValue = tabla.Rows[0]["Ciudad"];
+        }
+
+        
+        
     }
 }

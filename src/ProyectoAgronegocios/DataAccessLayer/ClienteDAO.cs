@@ -28,5 +28,27 @@ namespace ProyectoAgronegocios.DataAccessLayer
                 " WHERE c.borrado = 0" ;
             return DBHelper.consultar(consulta);
         }
+
+        public DataTable recuperarDatosCliente(int id)
+        {
+            consulta = "SELECT" +
+                    
+                    " c.CUIL_CUIT as 'Cuil o Cuit'," +
+                    " c.nombre as 'Nombre'," +
+                    " c.apellido as 'Apellido'," +
+                    " c.razon_Social as 'Razon Social'," +
+                    
+                    " c.email as 'Email'," +
+                    " c.telefono as 'Telefono'," +
+                    " b.nombre as 'Barrio'," +
+                    " loc.nombre as 'Ciudad'," +
+                    " p.nombre as 'Provincia'"+
+                " FROM Cliente_Proveedor c" +
+                " JOIN Barrios b ON c.cod_Barrio = b.id_Barrio" +
+                " JOIN Localidad loc ON b.id_Localidad = loc.id_Localidad" +
+                " JOIN Provincia p ON loc.id_Provincia = p.id_Provincia" +
+                " WHERE c.borrado = 0 AND c.id_Cliente_Proveedor = " + id.ToString();
+            return DBHelper.consultar(consulta);
+        }
     }
 }
