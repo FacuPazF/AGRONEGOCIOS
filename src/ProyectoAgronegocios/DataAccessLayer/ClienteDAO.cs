@@ -40,9 +40,9 @@ namespace ProyectoAgronegocios.DataAccessLayer
                     
                     " c.email as 'Email'," +
                     " c.telefono as 'Telefono'," +
-                    " b.nombre as 'Barrio'," +
-                    " loc.nombre as 'Ciudad'," +
-                    " p.nombre as 'Provincia'"+
+                    " b.id_Barrio as 'Barrio'," +
+                    " loc.id_Localidad as 'Ciudad'," +
+                    " p.id_Provincia as 'Provincia'"+
                 " FROM Cliente_Proveedor c" +
                 " JOIN Barrios b ON c.cod_Barrio = b.id_Barrio" +
                 " JOIN Localidad loc ON b.id_Localidad = loc.id_Localidad" +

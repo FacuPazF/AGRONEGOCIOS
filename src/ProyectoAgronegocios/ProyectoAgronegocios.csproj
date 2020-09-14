@@ -49,10 +49,14 @@
     <Compile Include="BusinessLayer\BarrioService.cs" />
     <Compile Include="BusinessLayer\ClienteService.cs" />
     <Compile Include="BusinessLayer\EmpleadoService.cs" />
+    <Compile Include="BusinessLayer\LocalidadService.cs" />
+    <Compile Include="BusinessLayer\ProvinciaService.cs" />
     <Compile Include="DataAccessLayer\BarrioDAO.cs" />
     <Compile Include="DataAccessLayer\ClienteDAO.cs" />
     <Compile Include="DataAccessLayer\DBHelper.cs" />
     <Compile Include="DataAccessLayer\EmpleadoDAO.cs" />
+    <Compile Include="DataAccessLayer\LocalidadDAO.cs" />
+    <Compile Include="DataAccessLayer\ProvinciaDAO.cs" />
     <Compile Include="Entities\Cliente.cs" />
     <Compile Include="Entities\Empleado.cs" />
     <Compile Include="GUILayer\formPrincipal.cs">

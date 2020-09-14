@@ -7,13 +7,13 @@ using System.Data;
 
 namespace ProyectoAgronegocios.DataAccessLayer
 {
-    class BarrioDAO
+    class LocalidadDAO
     {
         private string consulta;
-        public DataTable recuperarBarrios()
+        public DataTable recuperarLocalidades()
         {
-            consulta = "SELECT * FROM Barrios";
-                               
+            consulta = "SELECT * FROM Localidad";
+
             return DBHelper.consultar(consulta);
         }
     }

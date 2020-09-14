@@ -1,4 +1,5 @@
 ﻿using ProyectoAgronegocios.BusinessLayer;
+using ProyectoAgronegocios.DataAccessLayer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,7 +20,8 @@ namespace ProyectoAgronegocios.GUILayer
         }
 
         //-------------------------------------------- Atributos ---------------------------------
-
+        private ProvinciaService sProvincia = new ProvinciaService();
+        private LocalidadService sLocalidad = new LocalidadService();
         private ClienteService sCliente = new ClienteService();
         private BarrioService sBarrio = new BarrioService();
         private bool nuevo;
@@ -29,9 +31,10 @@ namespace ProyectoAgronegocios.GUILayer
         {
             
             this.cargarGrilla(dtgCliente, sCliente.consultarClientesSinParametros());
-            //this.cargarCombo(cboBarrio, sBarrio.recuperarBarrios());
-            
-
+            this.cargarCombo(cboBarrio, sBarrio.recuperarBarrios());
+            this.cargarCombo(cboCiudad, sLocalidad.recuperarLocalidades());
+            this.cargarCombo(cboProvincia, sProvincia.recuperarProvincias());
+            this.limpiarPanel();
         }
 
 
@@ -66,7 +69,7 @@ namespace ProyectoAgronegocios.GUILayer
             txtNombre.Focus();
             habilitarBotones(false);
             
-            this.actualizarCampos((int)dtgCliente.CurrentRow.Cells[0].Value);
+            this.actualizarCampos(Convert.ToInt32(dtgCliente.CurrentRow.Cells[0].Value));
             
         }
 
@@ -101,8 +104,7 @@ namespace ProyectoAgronegocios.GUILayer
             combo.DataSource = tabla;
             combo.DisplayMember = tabla.Columns[1].ColumnName;
             combo.ValueMember = tabla.Columns[0].ColumnName;
-            combo.DropDownStyle = ComboBoxStyle.DropDownList;
-            combo.SelectedIndex = -1;
+            
         }
 
         private void habilitarBotones(bool habilitado)
@@ -136,7 +138,8 @@ namespace ProyectoAgronegocios.GUILayer
 
         private void actualizarCampos(int id)
         {
-            DataTable tabla = sCliente.recuperarDatosCliente(id);
+            DataTable tabla = new DataTable();
+            tabla = sCliente.recuperarDatosCliente(id);
             txtNombre.Text = tabla.Rows[0]["Nombre"].ToString();
             txtApellido.Text = tabla.Rows[0]["Apellido"].ToString();
             txtCuil.Text = tabla.Rows[0]["Cuil o Cuit"].ToString();
