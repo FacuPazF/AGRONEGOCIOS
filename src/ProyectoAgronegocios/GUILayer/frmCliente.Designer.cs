@@ -69,6 +69,7 @@
             this.lblNuevoCliente = new System.Windows.Forms.Label();
             this.btnConsultar = new System.Windows.Forms.Button();
             this.lblIngreseCuil = new System.Windows.Forms.Label();
+            this.btnActualizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCliente)).BeginInit();
             this.pnlCliente.SuspendLayout();
             this.SuspendLayout();
@@ -289,6 +290,7 @@
             this.btnAceptar.TabIndex = 5;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // cboBarrio
             // 
@@ -488,11 +490,23 @@
             this.lblIngreseCuil.TabIndex = 9;
             this.lblIngreseCuil.Text = "Ingrese CUIL o CUIT";
             // 
+            // btnActualizar
+            // 
+            this.btnActualizar.Location = new System.Drawing.Point(1164, 52);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(181, 39);
+            this.btnActualizar.TabIndex = 10;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
+            // 
             // frmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(2264, 1215);
+            this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.lblIngreseCuil);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.pnlCliente);
@@ -505,7 +519,6 @@
             this.Controls.Add(this.lblCliente);
             this.Name = "frmCliente";
             this.Text = "Cliente";
-            this.WindowState = System.Windows.Forms.FormWindowState.Minimized;
             this.Load += new System.EventHandler(this.frmCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgCliente)).EndInit();
             this.pnlCliente.ResumeLayout(false);
@@ -558,5 +571,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn barrio;
+        private System.Windows.Forms.Button btnActualizar;
     }
 }

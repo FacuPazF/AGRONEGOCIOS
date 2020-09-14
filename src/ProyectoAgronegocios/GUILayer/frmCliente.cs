@@ -1,5 +1,6 @@
 ﻿using ProyectoAgronegocios.BusinessLayer;
 using ProyectoAgronegocios.DataAccessLayer;
+using ProyectoAgronegocios.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -24,6 +25,7 @@ namespace ProyectoAgronegocios.GUILayer
         private LocalidadService sLocalidad = new LocalidadService();
         private ClienteService sCliente = new ClienteService();
         private BarrioService sBarrio = new BarrioService();
+        private Cliente oCliente = new Cliente();
         private bool nuevo;
 
         // ---------------------------------------  Carga del Formulario ----------------------------------
@@ -42,9 +44,20 @@ namespace ProyectoAgronegocios.GUILayer
         //--------------------------------------- Botones ----------------------
         private void btnConsultar_Click(object sender, EventArgs e)
         {
+            if (txtCliente.Text != String.Empty)
+                this.cargarGrilla(dtgCliente, sCliente.consultarClientesConCuil(txtCliente.Text));
+            else
+            {
+                MessageBox.Show("Ingrese CUIL o CUIT", "Campo vacío", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtCliente.Focus();
+            }
+                
 
         }
-
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            this.cargarGrilla(dtgCliente, sCliente.consultarClientesSinParametros());
+        }
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -84,6 +97,25 @@ namespace ProyectoAgronegocios.GUILayer
             pnlCliente.Enabled = false;
             dtgCliente.Enabled = true;
             this.habilitarBotones(true);
+        }
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            oCliente.Nombre = txtNombre.Text;
+            oCliente.Apellido = txtApellido.Text;
+            oCliente.Cuil_cuit = txtCuil.Text;
+            oCliente.Razon_Social = txtRazonSocial.Text;
+            oCliente.Email = txtEmail.Text;
+            oCliente.Telefono = txtTelefono.Text;
+            oCliente.Cod_Barrio = (int)cboBarrio.SelectedValue;
+            oCliente.Id_Tipo = 1;
+            oCliente.Borrado = 0;
+
+            if (this.nuevo)
+            {
+                sCliente.registrarCliente(oCliente);
+                MessageBox.Show("Usuario Creado con Éxito", "Usuario Creado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
         }
         //-------------------------------------- Métodos de Soporte -------------------------------------
         private void limpiarPanel()
@@ -152,7 +184,6 @@ namespace ProyectoAgronegocios.GUILayer
             cboCiudad.SelectedValue = tabla.Rows[0]["Ciudad"];
         }
 
-        
         
     }
 }

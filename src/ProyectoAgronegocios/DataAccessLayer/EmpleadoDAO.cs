@@ -27,7 +27,7 @@ namespace ProyectoAgronegocios.DataAccessLayer
                 int tipo_Empleado = Convert.ToInt32(dt.Rows[0]["tipo_empleado"].ToString());
                 string contraseña = dt.Rows[0]["contraseña"].ToString();
                 string usuario = dt.Rows[0]["usuario"].ToString();
-                int borrado = Convert.ToInt32(dt.Rows[0]["borrado"].ToString());
+                int borrado = Convert.ToInt32(dt.Rows[0]["borrado"]);
                 
                 return new Empleado(cod_Empleado, nombre, apellido, email, telefono, fecha_Alta, cod_barrio, calle, numero_casa, fecha_nacimiento, tipo_Empleado, contraseña, usuario, borrado);
             }

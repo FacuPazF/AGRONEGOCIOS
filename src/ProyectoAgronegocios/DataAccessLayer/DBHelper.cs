@@ -7,6 +7,7 @@ namespace ProyectoAgronegocios.DataAccessLayer
     {
         private static SqlConnection conexion = new SqlConnection();
         private static SqlCommand comando = new SqlCommand();
+        
         //Facu acosta: private static string cadenaConexion = @"Data Source=DESKTOP-JAHJSOF\SQLEXPRESS;Initial Catalog=Agronegocios;Integrated Security=True";
         private static string cadenaConexion = @"Data Source=DESKTOP-6US2DFF\SQLEXPRESS;Initial Catalog=Agronegocios;Integrated Security=True"; // Facu Paz
 
@@ -33,6 +34,14 @@ namespace ProyectoAgronegocios.DataAccessLayer
             desconectar();
 
             return tabla;
+        }
+        public static void actualizar(string cSQL)
+        {
+            conectar();
+            comando.CommandText = cSQL;
+            comando.ExecuteNonQuery();
+            desconectar();
+
         }
     }
 }
