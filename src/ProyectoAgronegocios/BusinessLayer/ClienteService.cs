@@ -17,6 +17,11 @@ namespace ProyectoAgronegocios.BusinessLayer
         {
            daoCliente.registrarCliente(cliente);
         }
+
+        public void modificarCliente(Cliente cliente)
+        {
+            daoCliente.modificarCliente(cliente);
+        }
         public DataTable consultarClientesSinParametros()
         {
             return daoCliente.consultarClientesSinParametros();

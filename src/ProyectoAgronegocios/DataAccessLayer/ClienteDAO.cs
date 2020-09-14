@@ -27,7 +27,7 @@ namespace ProyectoAgronegocios.DataAccessLayer
                 " FROM Cliente_Proveedor c" +
                 " JOIN Barrios b ON c.cod_Barrio = b.id_Barrio" +
                 " JOIN Tipo_Cliente_Proveedor tc ON c.id_Tipo = tc.id_Tipo" +
-                " WHERE c.borrado = 0" ;
+                " WHERE c.borrado = 0 AND c.id_Tipo = 1" ;
             return DBHelper.consultar(consulta);
         }
         public DataTable consultarClientesConCuil(string cuil)
@@ -45,7 +45,7 @@ namespace ProyectoAgronegocios.DataAccessLayer
                 " FROM Cliente_Proveedor c" +
                 " JOIN Barrios b ON c.cod_Barrio = b.id_Barrio" +
                 " JOIN Tipo_Cliente_Proveedor tc ON c.id_Tipo = tc.id_Tipo" +
-                " WHERE c.borrado = 0 AND c.CUIL_CUIT LIKE '" + cuil + "'";
+                " WHERE c.borrado = 0 AND c.id_Tipo = 1 AND c.CUIL_CUIT LIKE '" + cuil + "'";
             DataTable tabla = DBHelper.consultar(consulta);
             if (tabla.Rows.Count != 0)
                 return tabla;
@@ -70,7 +70,7 @@ namespace ProyectoAgronegocios.DataAccessLayer
                 " JOIN Barrios b ON c.cod_Barrio = b.id_Barrio" +
                 " JOIN Localidad loc ON b.id_Localidad = loc.id_Localidad" +
                 " JOIN Provincia p ON loc.id_Provincia = p.id_Provincia" +
-                " WHERE c.borrado = 0 AND c.id_Cliente_Proveedor = " + id.ToString();
+                " WHERE c.borrado = 0 AND c.id_Tipo = 1 AND c.id_Cliente_Proveedor = " + id.ToString();
             return DBHelper.consultar(consulta);
         }
 
@@ -90,6 +90,24 @@ namespace ProyectoAgronegocios.DataAccessLayer
             
             DBHelper.actualizar(consulta);
 
+        }
+
+        public void modificarCliente(Cliente cliente)
+        {
+            consulta = "UPDATE Cliente_Proveedor " +
+                "SET " +
+                "nombre = '" + cliente.Nombre + "', " +
+                "apellido = '" + cliente.Apellido + "', " +
+                "razon_Social = '" + cliente.Razon_Social + "', " +
+                "email = '" + cliente.Email + "', " +
+                "telefono = '" + cliente.Telefono + "', " +
+                "cod_Barrio = " + cliente.Cod_Barrio + ", " +
+                "id_Tipo = " + cliente.Id_Tipo + ", " +
+                "CUIL_CUIT = '" + cliente.Cuil_cuit + "' " +
+                "WHERE id_Cliente_Proveedor = " + cliente.Id_Cliente_Proveedor;
+
+
+            DBHelper.actualizar(consulta);
         }
     }
 }

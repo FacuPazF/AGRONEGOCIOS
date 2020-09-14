@@ -97,9 +97,11 @@ namespace ProyectoAgronegocios.GUILayer
             pnlCliente.Enabled = false;
             dtgCliente.Enabled = true;
             this.habilitarBotones(true);
+            this.cargarGrilla(dtgCliente, sCliente.consultarClientesSinParametros());
         }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+
             oCliente.Nombre = txtNombre.Text;
             oCliente.Apellido = txtApellido.Text;
             oCliente.Cuil_cuit = txtCuil.Text;
@@ -110,12 +112,26 @@ namespace ProyectoAgronegocios.GUILayer
             oCliente.Id_Tipo = 1;
             oCliente.Borrado = 0;
 
-            if (this.nuevo)
+            if (this.nuevo )
             {
-                sCliente.registrarCliente(oCliente);
-                MessageBox.Show("Usuario Creado con Éxito", "Usuario Creado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if(txtCuil.Text != "")
+                {
+                    sCliente.registrarCliente(oCliente);
+                    MessageBox.Show("Usuario Creado con Éxito", "Usuario Creado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Error - Debe ingresar CUIL", "El campo CUIL o CUIT está vacío", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtCuil.Focus();
+                }
             }
-
+            else
+            {
+                oCliente.Id_Cliente_Proveedor = Convert.ToInt32(dtgCliente.CurrentRow.Cells[0].Value);
+                sCliente.modificarCliente(oCliente);
+                MessageBox.Show("Usuario Modificado con Éxito", "Usuario Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            
         }
         //-------------------------------------- Métodos de Soporte -------------------------------------
         private void limpiarPanel()
