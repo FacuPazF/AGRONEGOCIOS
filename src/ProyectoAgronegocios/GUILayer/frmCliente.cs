@@ -57,6 +57,8 @@ namespace ProyectoAgronegocios.GUILayer
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             this.cargarGrilla(dtgCliente, sCliente.consultarClientesSinParametros());
+            this.txtCliente.Clear();
+            this.txtCliente.Focus();
         }
         private void btnCerrar_Click(object sender, EventArgs e)
         {
@@ -84,6 +86,17 @@ namespace ProyectoAgronegocios.GUILayer
             
             this.actualizarCampos(Convert.ToInt32(dtgCliente.CurrentRow.Cells[0].Value));
             
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Desea Eliminar el Cliente " + dtgCliente.CurrentRow.Cells["Nombre"].Value + " " + dtgCliente.CurrentRow.Cells["Apellido"].Value, "Confirmación de Eliminación",
+                            MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                sCliente.borrarCliente(Convert.ToInt32(dtgCliente.CurrentRow.Cells[0].Value));
+                MessageBox.Show("Cliente Borrado con Éxito", "Cliente Borrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.cargarGrilla(dtgCliente, sCliente.consultarClientesSinParametros());
+            }
         }
 
         // -- Dentro de pnlCliente
@@ -117,7 +130,7 @@ namespace ProyectoAgronegocios.GUILayer
                 if(txtCuil.Text != "")
                 {
                     sCliente.registrarCliente(oCliente);
-                    MessageBox.Show("Usuario Creado con Éxito", "Usuario Creado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Cliente Creado con Éxito", "Cliente Creado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -129,7 +142,7 @@ namespace ProyectoAgronegocios.GUILayer
             {
                 oCliente.Id_Cliente_Proveedor = Convert.ToInt32(dtgCliente.CurrentRow.Cells[0].Value);
                 sCliente.modificarCliente(oCliente);
-                MessageBox.Show("Usuario Modificado con Éxito", "Usuario Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Cliente Modificado con Éxito", "Cliente Modificado", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             
         }

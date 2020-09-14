@@ -109,5 +109,14 @@ namespace ProyectoAgronegocios.DataAccessLayer
 
             DBHelper.actualizar(consulta);
         }
+        public void borrarCliente(int id)
+        {
+            consulta = "UPDATE Cliente_Proveedor " +
+                "SET borrado = 1 " +
+                "WHERE id_Cliente_Proveedor = " + id;
+
+
+            DBHelper.actualizar(consulta);
+        }
     }
 }

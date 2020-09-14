@@ -22,6 +22,11 @@ namespace ProyectoAgronegocios.BusinessLayer
         {
             daoCliente.modificarCliente(cliente);
         }
+
+        public void borrarCliente(int id)
+        {
+            daoCliente.borrarCliente(id);
+        }
         public DataTable consultarClientesSinParametros()
         {
             return daoCliente.consultarClientesSinParametros();
