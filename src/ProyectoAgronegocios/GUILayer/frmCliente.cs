@@ -213,6 +213,5 @@ namespace ProyectoAgronegocios.GUILayer
             cboCiudad.SelectedValue = tabla.Rows[0]["Ciudad"];
         }
 
-        
     }
 }
