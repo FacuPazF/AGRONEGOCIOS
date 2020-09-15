@@ -105,7 +105,7 @@
             this.lblBienvenida.ForeColor = System.Drawing.Color.White;
             this.lblBienvenida.Location = new System.Drawing.Point(0, 24);
             this.lblBienvenida.Name = "lblBienvenida";
-            this.lblBienvenida.Size = new System.Drawing.Size(913, 38);
+            this.lblBienvenida.Size = new System.Drawing.Size(842, 38);
             this.lblBienvenida.TabIndex = 3;
             this.lblBienvenida.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 

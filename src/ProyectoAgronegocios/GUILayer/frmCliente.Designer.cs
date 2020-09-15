@@ -293,8 +293,10 @@
             // 
             // pnlCliente
             // 
+            this.pnlCliente.BackColor = System.Drawing.Color.Transparent;
             this.pnlCliente.BackgroundImage = global::ProyectoAgronegocios.Properties.Resources.Clientes;
             this.pnlCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlCliente.Controls.Add(this.lblNuevoCliente);
             this.pnlCliente.Controls.Add(this.btnFinalizar);
             this.pnlCliente.Controls.Add(this.btnLimpiar);
             this.pnlCliente.Controls.Add(this.btnAceptar);
@@ -316,7 +318,6 @@
             this.pnlCliente.Controls.Add(this.txtApellido);
             this.pnlCliente.Controls.Add(this.txtNombre);
             this.pnlCliente.Controls.Add(this.lblNombre);
-            this.pnlCliente.Controls.Add(this.lblNuevoCliente);
             this.pnlCliente.Enabled = false;
             this.pnlCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.pnlCliente.Location = new System.Drawing.Point(686, 74);
