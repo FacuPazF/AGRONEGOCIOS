@@ -16,8 +16,6 @@ namespace ProyectoAgronegocios
 
             Application.Run(new formPrincipal());
 
-            Application.Run(new formPrincipal());
-
         }
     }
 }
