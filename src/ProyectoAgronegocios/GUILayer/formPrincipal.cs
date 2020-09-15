@@ -18,7 +18,7 @@ namespace ProyectoAgronegocios
 
         private void formPrincipal_Load(object sender, EventArgs e)
         {
-            formLogin formLogin = new formLogin();
+            frmLogin formLogin = new frmLogin();
             formLogin.ShowDialog();
             
             if (formLogin.IsClosed)

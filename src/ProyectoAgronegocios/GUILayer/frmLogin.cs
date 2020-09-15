@@ -3,15 +3,15 @@ using ProyectoAgronegocios.Entities;
 using System;
 using System.Windows.Forms;
 
-namespace ProyectoAgronegocios
+namespace ProyectoAgronegocios.GUILayer
 {
-    public partial class formLogin : Form
+    public partial class frmLogin : Form
     {
         private bool isClosed = false;
         private Empleado user;
         private int temporizador = 3;
 
-        public formLogin()
+        public frmLogin()
         {
             InitializeComponent();
         }
