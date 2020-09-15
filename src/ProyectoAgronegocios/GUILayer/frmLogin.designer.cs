@@ -1,7 +1,7 @@
 ﻿
-namespace ProyectoAgronegocios
+namespace ProyectoAgronegocios.GUILayer
 {
-    partial class formLogin
+    partial class frmLogin
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -30,7 +30,7 @@ namespace ProyectoAgronegocios
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formLogin));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblClave = new System.Windows.Forms.Label();
@@ -145,7 +145,7 @@ namespace ProyectoAgronegocios
             this.tempoAcceso.Interval = 1000;
             this.tempoAcceso.Tick += new System.EventHandler(this.tempoAcceso_Tick);
             // 
-            // formLogin
+            // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -162,7 +162,7 @@ namespace ProyectoAgronegocios
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "formLogin";
+            this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AGRONEGOCIOS";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
