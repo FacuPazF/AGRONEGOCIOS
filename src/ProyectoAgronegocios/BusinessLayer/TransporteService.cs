@@ -15,30 +15,30 @@ namespace ProyectoAgronegocios.BusinessLayer
 
         public void registrarTransporte(Transporte transporte)
         {
-            daoTransporte.registrarTransporte(transporte);
+            daoTransporte.RegistrarTransporte(transporte);
         }
 
         public void modificarTransporte(Transporte transporte)
         {
-            daoTransporte.modificarTransporte(transporte);
+            daoTransporte.ModificarTransporte(transporte);
         }
 
         public void borrarTransporte(int id)
         {
-            daoTransporte.borrarTransporte(id);
+            daoTransporte.BorrarTransporte(id);
         }
         public DataTable consultarTransporteSinParametros()
         {
-            return daoTransporte.consultarTransporteSinParametros();
+            return daoTransporte.ConsultarTransporteSinParametros();
         }
         public DataTable consultarTransporteConRazonSocial(string rs)
         {
-            return daoTransporte.consultarTransporteConRazonSocial(rs);
+            return daoTransporte.ConsultarTransporteConRazonSocial(rs);
         }
 
         public DataTable recuperarDatosTransporte(int id)
         {
-            return daoTransporte.recuperarDatosTransporte(id);
+            return daoTransporte.RecuperarDatosTransporte(id);
         }
     }
 }

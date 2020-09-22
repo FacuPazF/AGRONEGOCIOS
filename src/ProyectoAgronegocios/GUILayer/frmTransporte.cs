@@ -34,6 +34,7 @@ namespace ProyectoAgronegocios.GUILayer
             this.cargarGrilla(dtgTransporte, sTransporte.consultarTransporteSinParametros());
             this.cargarCombo(cmbBarrio, sBarrio.recuperarBarrios());
             this.limpiarPanel();
+            this.panelTransporte.Enabled = false;
         }
 
         //--------------------------------------- Botones ------------------------------------------------
@@ -91,7 +92,7 @@ namespace ProyectoAgronegocios.GUILayer
 
         private void btnEliminarTransp_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Desea Eliminar el Transporte " + dtgTransporte.CurrentRow.Cells["Razon Social"].Value + " " + dtgTransporte.CurrentRow.Cells["Descripcion"].Value, "Confirmación de Eliminación",
+            if (MessageBox.Show("Desea Eliminar el Transporte " + dtgTransporte.CurrentRow.Cells["RazonSocial"].Value + " " + dtgTransporte.CurrentRow.Cells["Descripcion"].Value, "Confirmación de Eliminación",
                             MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
                 sTransporte.borrarTransporte(Convert.ToInt32(dtgTransporte.CurrentRow.Cells[0].Value));
@@ -182,11 +183,11 @@ namespace ProyectoAgronegocios.GUILayer
             dtgTransporte.Rows.Clear();
             for (int i = 0; i < tabla.Rows.Count; i++)
             {
-                grilla.Rows.Add(tabla.Rows[i]["Descripcion"],
+                grilla.Rows.Add(tabla.Rows[i]["ID Empresa"],
+                                tabla.Rows[i]["Descripcion"],
                                 tabla.Rows[i]["Razon Social"],
                                 tabla.Rows[i]["Telefono"],
                                 tabla.Rows[i]["Direccion"],
-                                tabla.Rows[i]["Razon Social"],
                                 tabla.Rows[i]["Barrio"]);
 
 

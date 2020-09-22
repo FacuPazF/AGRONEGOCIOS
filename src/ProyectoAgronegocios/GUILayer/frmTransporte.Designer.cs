@@ -54,6 +54,12 @@
             this.btnActualizarGrilla = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.IdEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Barrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgTransporte)).BeginInit();
             this.panelTransporte.SuspendLayout();
             this.SuspendLayout();
@@ -103,9 +109,19 @@
             // 
             // dtgTransporte
             // 
+            this.dtgTransporte.AllowUserToAddRows = false;
+            this.dtgTransporte.AllowUserToDeleteRows = false;
             this.dtgTransporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgTransporte.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.IdEmpresa,
+            this.Descripcion,
+            this.RazonSocial,
+            this.Telefono,
+            this.Direccion,
+            this.Barrio});
             this.dtgTransporte.Location = new System.Drawing.Point(13, 127);
             this.dtgTransporte.Name = "dtgTransporte";
+            this.dtgTransporte.ReadOnly = true;
             this.dtgTransporte.Size = new System.Drawing.Size(596, 326);
             this.dtgTransporte.TabIndex = 4;
             // 
@@ -350,6 +366,42 @@
             this.label9.Text = "Ingrese Razon Social ";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
+            // IdEmpresa
+            // 
+            this.IdEmpresa.HeaderText = "Id ";
+            this.IdEmpresa.Name = "IdEmpresa";
+            this.IdEmpresa.ReadOnly = true;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            // 
+            // RazonSocial
+            // 
+            this.RazonSocial.HeaderText = "Razon Social";
+            this.RazonSocial.Name = "RazonSocial";
+            this.RazonSocial.ReadOnly = true;
+            // 
+            // Telefono
+            // 
+            this.Telefono.HeaderText = "Telefono";
+            this.Telefono.Name = "Telefono";
+            this.Telefono.ReadOnly = true;
+            // 
+            // Direccion
+            // 
+            this.Direccion.HeaderText = "Direccion";
+            this.Direccion.Name = "Direccion";
+            this.Direccion.ReadOnly = true;
+            // 
+            // Barrio
+            // 
+            this.Barrio.HeaderText = "Barrio";
+            this.Barrio.Name = "Barrio";
+            this.Barrio.ReadOnly = true;
+            // 
             // frmTransporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -408,5 +460,11 @@
         private System.Windows.Forms.TextBox txtRazonSocial;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn IdEmpresa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RazonSocial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Direccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Barrio;
     }
 }

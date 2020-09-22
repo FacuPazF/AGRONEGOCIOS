@@ -20,21 +20,21 @@ namespace ProyectoAgronegocios.DataAccessLayer
                     " t.descripcion as 'Descripcion'," +
                     " t.razon_social as 'Razon Social'," +
                     " t.telefono as 'Telefono'," +
-                    " t.direccion as 'Dirreccion'," +
+                    " t.direccion as 'Direccion'," +
                     " b.nombre as 'Barrio'" +
                 " FROM Empresa_Transporte t" +
                 " JOIN Barrios b ON t.id_barrio = b.id_Barrio" +
                 " WHERE t.borrado = 0 ";
             return DBHelper.consultar(consulta);
         }
-        public DataTable ConsultarClientesConRazonSocial(string rs)
+        public DataTable ConsultarTransporteConRazonSocial(string rs)
         {
             consulta = "SELECT" +
                  " t.id_Empresa as 'ID Empresa'," +
                     " t.descripcion as 'Descripcion'," +
                     " t.razon_social as 'Razon Social'," +
                     " t.telefono as 'Telefono'," +
-                    " t.direccion as 'Dirreccion'," +
+                    " t.direccion as 'Direccion'," +
                     " b.nombre as 'Barrio'" +
                 " FROM Empresa_Transporte t" +
                 " JOIN Barrios b ON t.id_barrio = b.id_Barrio" +
@@ -45,14 +45,14 @@ namespace ProyectoAgronegocios.DataAccessLayer
             return new DataTable();
         }
 
-        public DataTable RecuperarDatosCliente(int id)
+        public DataTable RecuperarDatosTransporte(int id)
         {
             consulta = "SELECT" +
                     " t.descripcion as 'Descripcion'," +
                     " t.razon_social as 'Razon Social'," +
                     " t.telefono as 'Telefono'," +
-                    " t.direccion as 'Dirreccion'," +
-                    " b.nombre as 'Barrio'" +
+                    " t.direccion as 'Direccion'," +
+                    " b.id_Barrio as 'Barrio'" +
                 " FROM Empresa_Transporte t" +
                 " JOIN Barrios b ON t.id_barrio = b.id_Barrio" +
                 " WHERE t.borrado = 0 and t.id_Empresa = " + id.ToString();
@@ -61,13 +61,13 @@ namespace ProyectoAgronegocios.DataAccessLayer
 
         public void RegistrarTransporte(Transporte transporte)
         {
-            consulta = "INSERT INTO Empresa_Transporte (descripcion, razon_social, telefono, direccion, cod_Barrio, borrado) " +
+            consulta = "INSERT INTO Empresa_Transporte (descripcion, razon_social, telefono, direccion, id_barrio, borrado) " +
                 "VALUES ( '" +
-                transporte.descripcion + "', '" +
-                transporte.razon_social + "', '" +
-                transporte.telefono + "', '" +
-                transporte.direccion + "', '" +
-                transporte.cod_Barrio + "', " +
+                transporte.Descripcion + "', '" +
+                transporte.Razon_social + "', '" +
+                transporte.Telefono + "', '" +
+                transporte.Direccion + "', '" +
+                transporte.Id_barrio + "', " +
                 transporte.Borrado + ")";
 
             DBHelper.actualizar(consulta);
@@ -78,12 +78,12 @@ namespace ProyectoAgronegocios.DataAccessLayer
         {
             consulta = "UPDATE Empresa_Transporte " +
                 "SET " +
-                "descripcion = '" + transporte.descripcion + "', " +
-                "razon_social = '" + transporte.Razon_Social + "', " +
-                "telefono = '" + transporte.telefono + "', " +
-                "direccion = '" + transporte.direccion + "', " +
-                "id_barrio = " + transporte.id_Barrio + ", " +
-                "WHERE id_Empresa = " + transporte.id_Empresa;
+                "descripcion = '" + transporte.Descripcion + "', " +
+                "razon_social = '" + transporte.Razon_social + "', " +
+                "telefono = '" + transporte.Telefono + "', " +
+                "direccion = '" + transporte.Direccion + "', " +
+                "id_barrio = " + transporte.Id_barrio + 
+                " WHERE id_Empresa = " + transporte.Id_Empresa;
 
 
             DBHelper.actualizar(consulta);
