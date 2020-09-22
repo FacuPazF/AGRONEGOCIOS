@@ -293,8 +293,10 @@
             // 
             // pnlCliente
             // 
+            this.pnlCliente.BackColor = System.Drawing.Color.Transparent;
             this.pnlCliente.BackgroundImage = global::ProyectoAgronegocios.Properties.Resources.Clientes;
             this.pnlCliente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pnlCliente.Controls.Add(this.lblNuevoCliente);
             this.pnlCliente.Controls.Add(this.btnFinalizar);
             this.pnlCliente.Controls.Add(this.btnLimpiar);
             this.pnlCliente.Controls.Add(this.btnAceptar);
@@ -316,8 +318,8 @@
             this.pnlCliente.Controls.Add(this.txtApellido);
             this.pnlCliente.Controls.Add(this.txtNombre);
             this.pnlCliente.Controls.Add(this.lblNombre);
-            this.pnlCliente.Controls.Add(this.lblNuevoCliente);
             this.pnlCliente.Enabled = false;
+            this.pnlCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.pnlCliente.Location = new System.Drawing.Point(686, 74);
             this.pnlCliente.Margin = new System.Windows.Forms.Padding(2);
             this.pnlCliente.Name = "pnlCliente";
@@ -402,9 +404,10 @@
             // lblBarrio
             // 
             this.lblBarrio.AutoSize = true;
-            this.lblBarrio.BackColor = System.Drawing.Color.Transparent;
+            this.lblBarrio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblBarrio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBarrio.Location = new System.Drawing.Point(134, 305);
+            this.lblBarrio.ForeColor = System.Drawing.Color.White;
+            this.lblBarrio.Location = new System.Drawing.Point(132, 307);
             this.lblBarrio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBarrio.Name = "lblBarrio";
             this.lblBarrio.Size = new System.Drawing.Size(51, 20);
@@ -414,9 +417,10 @@
             // lblCiudad
             // 
             this.lblCiudad.AutoSize = true;
-            this.lblCiudad.BackColor = System.Drawing.Color.Transparent;
+            this.lblCiudad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblCiudad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCiudad.Location = new System.Drawing.Point(126, 276);
+            this.lblCiudad.ForeColor = System.Drawing.Color.White;
+            this.lblCiudad.Location = new System.Drawing.Point(124, 278);
             this.lblCiudad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCiudad.Name = "lblCiudad";
             this.lblCiudad.Size = new System.Drawing.Size(59, 20);
@@ -426,9 +430,10 @@
             // lblProvincia
             // 
             this.lblProvincia.AutoSize = true;
-            this.lblProvincia.BackColor = System.Drawing.Color.Transparent;
+            this.lblProvincia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblProvincia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProvincia.Location = new System.Drawing.Point(112, 246);
+            this.lblProvincia.ForeColor = System.Drawing.Color.White;
+            this.lblProvincia.Location = new System.Drawing.Point(111, 248);
             this.lblProvincia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProvincia.Name = "lblProvincia";
             this.lblProvincia.Size = new System.Drawing.Size(72, 20);
@@ -438,9 +443,10 @@
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
-            this.lblTelefono.BackColor = System.Drawing.Color.Transparent;
+            this.lblTelefono.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefono.Location = new System.Drawing.Point(116, 216);
+            this.lblTelefono.ForeColor = System.Drawing.Color.White;
+            this.lblTelefono.Location = new System.Drawing.Point(112, 218);
             this.lblTelefono.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(71, 20);
@@ -450,9 +456,10 @@
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.BackColor = System.Drawing.Color.Transparent;
+            this.lblEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(134, 188);
+            this.lblEmail.ForeColor = System.Drawing.Color.White;
+            this.lblEmail.Location = new System.Drawing.Point(135, 190);
             this.lblEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(48, 20);
@@ -462,9 +469,10 @@
             // lblRazonSocial
             // 
             this.lblRazonSocial.AutoSize = true;
-            this.lblRazonSocial.BackColor = System.Drawing.Color.Transparent;
+            this.lblRazonSocial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblRazonSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRazonSocial.Location = new System.Drawing.Point(88, 157);
+            this.lblRazonSocial.ForeColor = System.Drawing.Color.White;
+            this.lblRazonSocial.Location = new System.Drawing.Point(84, 159);
             this.lblRazonSocial.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblRazonSocial.Name = "lblRazonSocial";
             this.lblRazonSocial.Size = new System.Drawing.Size(99, 20);
@@ -474,9 +482,10 @@
             // lblCuil
             // 
             this.lblCuil.AutoSize = true;
-            this.lblCuil.BackColor = System.Drawing.Color.Transparent;
+            this.lblCuil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblCuil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCuil.Location = new System.Drawing.Point(150, 127);
+            this.lblCuil.ForeColor = System.Drawing.Color.White;
+            this.lblCuil.Location = new System.Drawing.Point(148, 129);
             this.lblCuil.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCuil.Name = "lblCuil";
             this.lblCuil.Size = new System.Drawing.Size(35, 20);
@@ -486,9 +495,10 @@
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
-            this.lblApellido.BackColor = System.Drawing.Color.Transparent;
+            this.lblApellido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblApellido.Location = new System.Drawing.Point(120, 98);
+            this.lblApellido.ForeColor = System.Drawing.Color.White;
+            this.lblApellido.Location = new System.Drawing.Point(118, 100);
             this.lblApellido.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(65, 20);
@@ -552,9 +562,10 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.BackColor = System.Drawing.Color.Transparent;
+            this.lblNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(120, 68);
+            this.lblNombre.ForeColor = System.Drawing.Color.White;
+            this.lblNombre.Location = new System.Drawing.Point(118, 70);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(65, 20);
