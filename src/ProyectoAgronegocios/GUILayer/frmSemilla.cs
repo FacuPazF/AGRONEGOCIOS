@@ -28,7 +28,7 @@ namespace ProyectoAgronegocios.GUILayer
             this.pnlSemilla.Enabled = false;
             this.habilitarBotones(true);
             this.cargarGrilla(dtgSemillas, sSemilla.consultarSemillasSinParametros());
-            this.cargarCombo(cboFilterTipoSemilla,sTipSem.consultarTipoSemilla());
+            this.cargarCombo(cboFilterTipoSemilla, sTipSem.consultarTipoSemilla());
             this.cargarCombo(cboTipoSemilla, sTipSem.consultarTipoSemilla());
             this.cargarCombo(cboCalidad, sCalidad.consultarCalidad());
             this.cboFilterTipoSemilla.SelectedIndex = -1;
@@ -90,14 +90,14 @@ namespace ProyectoAgronegocios.GUILayer
 
                 if (txtFilterNombre.Text != string.Empty)
                 {
-                    
+
                     //filters.Add("nombre", txtFilterNombre.Text);
                     condiciones += " AND s.nombre = '" + txtFilterNombre.Text + "' ";
 
                 }
                 if (cboFilterTipoSemilla.Text != string.Empty)
                 {
-                    
+
                     //filters.Add("tipoSemilla", cboFilterTipoSemilla.SelectedValue);
                     condiciones += " AND ts.id_Tipo_Semilla = " + cboFilterTipoSemilla.SelectedValue.ToString();
 
@@ -169,7 +169,7 @@ namespace ProyectoAgronegocios.GUILayer
             txtPrecio_X_Tonelada.Text = tabla.Rows[0]["Precio Por Tonelada"].ToString();
             txtHabilitado.Text = tabla.Rows[0]["Habilitado"].ToString();
             txtDescripcion.Text = tabla.Rows[0]["Descripcion"].ToString();
-            txtPrecioSugerido.Text= tabla.Rows[0]["Precio Sugerido"].ToString();
+            txtPrecioSugerido.Text = tabla.Rows[0]["Precio Sugerido"].ToString();
             cboTipoSemilla.SelectedValue = tabla.Rows[0]["Tipo de Semilla"];
             cboCalidad.SelectedValue = tabla.Rows[0]["Calidad"];
 

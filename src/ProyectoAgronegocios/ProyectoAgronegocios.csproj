@@ -47,17 +47,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessLayer\BarrioService.cs" />
+    <Compile Include="BusinessLayer\CalidadService.cs" />
     <Compile Include="BusinessLayer\ClienteService.cs" />
     <Compile Include="BusinessLayer\EmpleadoService.cs" />
     <Compile Include="BusinessLayer\LocalidadService.cs" />
     <Compile Include="BusinessLayer\ProvinciaService.cs" />
+    <Compile Include="BusinessLayer\SemillaService.cs" />
+    <Compile Include="BusinessLayer\TipoSemillaService.cs" />
     <Compile Include="BusinessLayer\TransporteService.cs" />
     <Compile Include="DataAccessLayer\BarrioDAO.cs" />
+    <Compile Include="DataAccessLayer\CalidadDAO.cs" />
     <Compile Include="DataAccessLayer\ClienteDAO.cs" />
+    <Compile Include="DataAccessLayer\DataManager.cs" />
     <Compile Include="DataAccessLayer\DBHelper.cs" />
     <Compile Include="DataAccessLayer\EmpleadoDAO.cs" />
     <Compile Include="DataAccessLayer\LocalidadDAO.cs" />
     <Compile Include="DataAccessLayer\ProvinciaDAO.cs" />
+    <Compile Include="DataAccessLayer\SemillaDAO.cs" />
+    <Compile Include="DataAccessLayer\TipoSemillaDAO.cs" />
     <Compile Include="DataAccessLayer\TransporteDAO.cs" />
     <Compile Include="Entities\Cliente.cs" />
     <Compile Include="Entities\Empleado.cs" />
@@ -79,6 +86,12 @@
     </Compile>
     <Compile Include="GUILayer\frmLogin.designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUILayer\frmSemilla.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmSemilla.Designer.cs">
+      <DependentUpon>frmSemilla.cs</DependentUpon>
     </Compile>
     <Compile Include="GUILayer\frmTransporte.cs">
       <SubType>Form</SubType>
