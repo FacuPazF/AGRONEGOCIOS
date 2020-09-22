@@ -35,5 +35,11 @@ namespace ProyectoAgronegocios
             frmCliente formCliente = new frmCliente();
             formCliente.ShowDialog();
         }
+
+        private void transportesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTransporte formTransporte = new frmTransporte();
+            formTransporte.ShowDialog();
+        }
     }
 }

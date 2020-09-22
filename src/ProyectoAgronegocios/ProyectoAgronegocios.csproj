@@ -51,14 +51,17 @@
     <Compile Include="BusinessLayer\EmpleadoService.cs" />
     <Compile Include="BusinessLayer\LocalidadService.cs" />
     <Compile Include="BusinessLayer\ProvinciaService.cs" />
+    <Compile Include="BusinessLayer\TransporteService.cs" />
     <Compile Include="DataAccessLayer\BarrioDAO.cs" />
     <Compile Include="DataAccessLayer\ClienteDAO.cs" />
     <Compile Include="DataAccessLayer\DBHelper.cs" />
     <Compile Include="DataAccessLayer\EmpleadoDAO.cs" />
     <Compile Include="DataAccessLayer\LocalidadDAO.cs" />
     <Compile Include="DataAccessLayer\ProvinciaDAO.cs" />
+    <Compile Include="DataAccessLayer\TransporteDAO.cs" />
     <Compile Include="Entities\Cliente.cs" />
     <Compile Include="Entities\Empleado.cs" />
+    <Compile Include="Entities\Transporte.cs" />
     <Compile Include="GUILayer\formPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -77,6 +80,12 @@
     <Compile Include="GUILayer\frmLogin.designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUILayer\frmTransporte.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmTransporte.Designer.cs">
+      <DependentUpon>frmTransporte.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="GUILayer\formPrincipal.resx">
@@ -87,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmTransporte.resx">
+      <DependentUpon>frmTransporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -128,6 +140,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\semilla1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ago18s0104_camion_semillas_campo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Camion Nuevo Transporte 3.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
