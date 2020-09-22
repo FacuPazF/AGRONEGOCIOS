@@ -63,6 +63,26 @@ namespace ProyectoAgronegocios.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ago18s0104_camion_semillas_campo {
+            get {
+                object obj = ResourceManager.GetObject("ago18s0104_camion_semillas_campo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Camion_Nuevo_Transporte_3 {
+            get {
+                object obj = ResourceManager.GetObject("Camion Nuevo Transporte 3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap campo {
             get {
                 object obj = ResourceManager.GetObject("campo", resourceCulture);
