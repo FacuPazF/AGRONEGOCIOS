@@ -47,5 +47,11 @@ namespace ProyectoAgronegocios
             frmSemilla formSemilla = new frmSemilla();
             formSemilla.ShowDialog();
         }
+
+        private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEmpleado formEmpleado = new frmEmpleado();
+            formEmpleado.ShowDialog();
+        }
     }
 }

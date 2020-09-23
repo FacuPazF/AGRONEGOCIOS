@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="BusinessLayer\BarrioService.cs" />
     <Compile Include="BusinessLayer\CalidadService.cs" />
+    <Compile Include="BusinessLayer\TipoEmpleadoService.cs" />
     <Compile Include="BusinessLayer\ClienteService.cs" />
     <Compile Include="BusinessLayer\EmpleadoService.cs" />
     <Compile Include="BusinessLayer\LocalidadService.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="BusinessLayer\TransporteService.cs" />
     <Compile Include="DataAccessLayer\BarrioDAO.cs" />
     <Compile Include="DataAccessLayer\CalidadDAO.cs" />
+    <Compile Include="DataAccessLayer\TipoEmpleadoDAO.cs" />
     <Compile Include="DataAccessLayer\ClienteDAO.cs" />
     <Compile Include="DataAccessLayer\DataManager.cs" />
     <Compile Include="DataAccessLayer\DBHelper.cs" />
@@ -71,6 +73,12 @@
     <Compile Include="Entities\Semilla.cs" />
     <Compile Include="Entities\TiposXsemillas.cs" />
     <Compile Include="Entities\Transporte.cs" />
+    <Compile Include="GUILayer\frmEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUILayer\frmEmpleado.Designer.cs">
+      <DependentUpon>frmEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUILayer\formPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +111,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUILayer\frmEmpleado.resx">
+      <DependentUpon>frmEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\formPrincipal.resx">
       <DependentUpon>formPrincipal.cs</DependentUpon>
     </EmbeddedResource>
