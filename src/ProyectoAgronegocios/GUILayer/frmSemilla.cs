@@ -1,9 +1,11 @@
 ﻿using ProyectoAgronegocios.BusinessLayer;
+using ProyectoAgronegocios.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -36,14 +38,37 @@ namespace ProyectoAgronegocios.GUILayer
         // ------------------------  Botones dentro del panel --------------------------
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            // Creo una clase Semilla
+            
+            Semilla semilla = new Semilla();
+            semilla.Nombre = txtNombre.Text;
+            semilla.Stock_minimo = Convert.ToDouble(txtStockMin.Text);
+            semilla.Stock = Convert.ToDouble(txtStock.Text);
+            semilla.Precio_x_tonelada = Convert.ToDouble(txtPrecio_X_Tonelada.Text);
+            semilla.Habilitado = txtHabilitado.Text;
+            semilla.Descripcion = txtDescripcion.Text;
+            semilla.Borrado = 0;
+
+            //Creo una clase TiposXsemillas
+            TiposXsemillas tipos_x_semillas = new TiposXsemillas();
+            tipos_x_semillas.Id_calidad = (int)cboCalidad.SelectedValue;
+            tipos_x_semillas.Id_tipo_semilla = (int)cboTipoSemilla.SelectedValue;
+            tipos_x_semillas.Precio_sugerido = Convert.ToDouble(txtPrecioSugerido.Text);
+            
             if (nuevo)
             {
-
+                sSemilla.crearNuevaSemilla(semilla, tipos_x_semillas);
+                MessageBox.Show("Semilla creada con Éxito", "Semilla Creada", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-
+                
+                semilla.Id_semilla = (int)dtgSemillas.CurrentRow.Cells[0].Value;
+                tipos_x_semillas.Id_semilla = (int)dtgSemillas.CurrentRow.Cells[0].Value;
+                sSemilla.modificarSemilla(semilla, tipos_x_semillas);
+                MessageBox.Show("Semilla modificada con Éxito", "Semilla Modificada", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            cargarGrilla(dtgSemillas, sSemilla.consultarSemillasSinParametros());
         }
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
@@ -54,6 +79,8 @@ namespace ProyectoAgronegocios.GUILayer
             limpiarCampos();
             habilitarBotones(true);
             pnlSemilla.Enabled = false;
+            dtgSemillas.Enabled = true;
+            cargarGrilla(dtgSemillas, sSemilla.consultarSemillasSinParametros());
         }
 
         // ------------------------  Fuera del Panel ---------------------------
@@ -65,6 +92,7 @@ namespace ProyectoAgronegocios.GUILayer
         {
             nuevo = true;
             pnlSemilla.Enabled = true;
+            dtgSemillas.Enabled = false;
             habilitarBotones(false);
             limpiarCampos();
             txtNombre.Focus();
@@ -77,7 +105,11 @@ namespace ProyectoAgronegocios.GUILayer
         }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-
+            if (MessageBox.Show("Desea Eliminar esta Semilla " , "Confirmación de Eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                sSemilla.borrarSemilla(Convert.ToInt32(dtgSemillas.CurrentRow.Cells[0].Value));
+                MessageBox.Show("Semilla Borrada con Éxito", "Semilla Borrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
         private void btnConsultar_Click(object sender, EventArgs e)
         {
@@ -86,24 +118,26 @@ namespace ProyectoAgronegocios.GUILayer
             else
             {
                 String condiciones = "";
-                //var filters = new Dictionary<string, object>();
+                
 
                 if (txtFilterNombre.Text != string.Empty)
                 {
-
-                    //filters.Add("nombre", txtFilterNombre.Text);
                     condiciones += " AND s.nombre = '" + txtFilterNombre.Text + "' ";
 
                 }
                 if (cboFilterTipoSemilla.Text != string.Empty)
                 {
-
-                    //filters.Add("tipoSemilla", cboFilterTipoSemilla.SelectedValue);
                     condiciones += " AND ts.id_Tipo_Semilla = " + cboFilterTipoSemilla.SelectedValue.ToString();
 
                 }
                 cargarGrilla(dtgSemillas, sSemilla.consultarSemillasConFiltros(condiciones));
             }
+        }
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            cargarGrilla(dtgSemillas, sSemilla.consultarSemillasSinParametros());
+            txtFilterNombre.Text = "";
+            cboFilterTipoSemilla.SelectedIndex = -1;
         }
         private void dtgSemillas_SelectionChanged(object sender, EventArgs e)
         {
@@ -133,6 +167,7 @@ namespace ProyectoAgronegocios.GUILayer
             btnNuevo.Enabled = habilitado;
             btnModificar.Enabled = habilitado;
             btnEliminar.Enabled = habilitado;
+            btnActualizar.Enabled = habilitado;
         }
 
         private void cargarCombo(ComboBox combo, DataTable tabla)
@@ -175,5 +210,6 @@ namespace ProyectoAgronegocios.GUILayer
 
         }
 
+        
     }
 }

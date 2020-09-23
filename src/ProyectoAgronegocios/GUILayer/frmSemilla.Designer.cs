@@ -35,6 +35,12 @@
             this.lblFilterTipoSemilla = new System.Windows.Forms.Label();
             this.cboFilterTipoSemilla = new System.Windows.Forms.ComboBox();
             this.dtgSemillas = new System.Windows.Forms.DataGridView();
+            this.id_Semilla = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio_X_Tonelada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoSemilla = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.calidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnNuevo = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -63,12 +69,7 @@
             this.lblStockMin = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblPanelSemilla = new System.Windows.Forms.Label();
-            this.id_Semilla = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio_X_Tonelada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoSemilla = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.calidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnActualizar = new System.Windows.Forms.Button();
             this.grpFiltros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgSemillas)).BeginInit();
             this.pnlSemilla.SuspendLayout();
@@ -158,6 +159,54 @@
             this.dtgSemillas.TabIndex = 2;
             this.dtgSemillas.SelectionChanged += new System.EventHandler(this.dtgSemillas_SelectionChanged);
             // 
+            // id_Semilla
+            // 
+            this.id_Semilla.HeaderText = "ID de Semilla";
+            this.id_Semilla.MinimumWidth = 10;
+            this.id_Semilla.Name = "id_Semilla";
+            this.id_Semilla.ReadOnly = true;
+            this.id_Semilla.Width = 200;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.MinimumWidth = 10;
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 200;
+            // 
+            // stock
+            // 
+            this.stock.HeaderText = "Stock";
+            this.stock.MinimumWidth = 10;
+            this.stock.Name = "stock";
+            this.stock.ReadOnly = true;
+            this.stock.Width = 200;
+            // 
+            // precio_X_Tonelada
+            // 
+            this.precio_X_Tonelada.HeaderText = "Precio Por Tonelada";
+            this.precio_X_Tonelada.MinimumWidth = 10;
+            this.precio_X_Tonelada.Name = "precio_X_Tonelada";
+            this.precio_X_Tonelada.ReadOnly = true;
+            this.precio_X_Tonelada.Width = 200;
+            // 
+            // tipoSemilla
+            // 
+            this.tipoSemilla.HeaderText = "Tipo de Semilla";
+            this.tipoSemilla.MinimumWidth = 10;
+            this.tipoSemilla.Name = "tipoSemilla";
+            this.tipoSemilla.ReadOnly = true;
+            this.tipoSemilla.Width = 200;
+            // 
+            // calidad
+            // 
+            this.calidad.HeaderText = "Calidad";
+            this.calidad.MinimumWidth = 10;
+            this.calidad.Name = "calidad";
+            this.calidad.ReadOnly = true;
+            this.calidad.Width = 200;
+            // 
             // btnNuevo
             // 
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -205,9 +254,9 @@
             // btnConsultar
             // 
             this.btnConsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnConsultar.Location = new System.Drawing.Point(795, 194);
+            this.btnConsultar.Location = new System.Drawing.Point(787, 198);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(263, 69);
+            this.btnConsultar.Size = new System.Drawing.Size(268, 78);
             this.btnConsultar.TabIndex = 1;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
@@ -306,6 +355,7 @@
             // 
             this.txtHabilitado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtHabilitado.Location = new System.Drawing.Point(457, 412);
+            this.txtHabilitado.MaxLength = 2;
             this.txtHabilitado.Name = "txtHabilitado";
             this.txtHabilitado.Size = new System.Drawing.Size(93, 44);
             this.txtHabilitado.TabIndex = 4;
@@ -450,53 +500,16 @@
             this.lblPanelSemilla.TabIndex = 12;
             this.lblPanelSemilla.Text = "Datos de la Semilla";
             // 
-            // id_Semilla
+            // btnActualizar
             // 
-            this.id_Semilla.HeaderText = "ID de Semilla";
-            this.id_Semilla.MinimumWidth = 10;
-            this.id_Semilla.Name = "id_Semilla";
-            this.id_Semilla.ReadOnly = true;
-            this.id_Semilla.Width = 200;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.MinimumWidth = 10;
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 200;
-            // 
-            // stock
-            // 
-            this.stock.HeaderText = "Stock";
-            this.stock.MinimumWidth = 10;
-            this.stock.Name = "stock";
-            this.stock.ReadOnly = true;
-            this.stock.Width = 200;
-            // 
-            // precio_X_Tonelada
-            // 
-            this.precio_X_Tonelada.HeaderText = "Precio Por Tonelada";
-            this.precio_X_Tonelada.MinimumWidth = 10;
-            this.precio_X_Tonelada.Name = "precio_X_Tonelada";
-            this.precio_X_Tonelada.ReadOnly = true;
-            this.precio_X_Tonelada.Width = 200;
-            // 
-            // tipoSemilla
-            // 
-            this.tipoSemilla.HeaderText = "Tipo de Semilla";
-            this.tipoSemilla.MinimumWidth = 10;
-            this.tipoSemilla.Name = "tipoSemilla";
-            this.tipoSemilla.ReadOnly = true;
-            this.tipoSemilla.Width = 200;
-            // 
-            // calidad
-            // 
-            this.calidad.HeaderText = "Calidad";
-            this.calidad.MinimumWidth = 10;
-            this.calidad.Name = "calidad";
-            this.calidad.ReadOnly = true;
-            this.calidad.Width = 200;
+            this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnActualizar.Location = new System.Drawing.Point(1071, 198);
+            this.btnActualizar.Name = "btnActualizar";
+            this.btnActualizar.Size = new System.Drawing.Size(268, 78);
+            this.btnActualizar.TabIndex = 8;
+            this.btnActualizar.Text = "Actualizar";
+            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // frmSemilla
             // 
@@ -504,7 +517,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(2269, 1257);
+            this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.pnlSemilla);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.btnCerrar);
@@ -570,5 +585,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn precio_X_Tonelada;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipoSemilla;
         private System.Windows.Forms.DataGridViewTextBoxColumn calidad;
+        private System.Windows.Forms.Button btnActualizar;
     }
 }

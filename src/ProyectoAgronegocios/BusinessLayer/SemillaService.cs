@@ -6,6 +6,7 @@ using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ProyectoAgronegocios.Entities;
 
 namespace ProyectoAgronegocios.BusinessLayer
 {
@@ -27,6 +28,25 @@ namespace ProyectoAgronegocios.BusinessLayer
         public DataTable recuperarSemillasPorID(int id)
         {
             return daoSemilla.recuperarSemillasPorID(id);
+        }
+
+
+        // --------------------- Alta
+        public void crearNuevaSemilla(Semilla semilla,TiposXsemillas tipos_x_semillas)
+        {
+           this.daoSemilla.crearNuevaSemilla(semilla, tipos_x_semillas);
+        }
+
+        // ------------------- Modificacion
+        public void modificarSemilla(Semilla semilla, TiposXsemillas tipos_x_semillas)
+        {
+            daoSemilla.modificarSemilla(semilla, tipos_x_semillas);
+        }
+
+        // ------------------  Baja
+        public void borrarSemilla(int id)
+        {
+            daoSemilla.borrarSemilla(id);
         }
     }
 }
