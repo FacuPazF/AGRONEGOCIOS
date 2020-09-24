@@ -69,10 +69,11 @@
             this.lblStockMin = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblPanelSemilla = new System.Windows.Forms.Label();
-<<<<<<< HEAD
-=======
+
             this.btnActualizar = new System.Windows.Forms.Button();
->>>>>>> 7a2e9f974ab6ccc564390826ad5fdb7ff2d468a5
+
+            this.btnActualizar = new System.Windows.Forms.Button();
+
             this.grpFiltros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgSemillas)).BeginInit();
             this.pnlSemilla.SuspendLayout();
@@ -269,16 +270,20 @@
             // btnConsultar
             // 
             this.btnConsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
+
             this.btnConsultar.Location = new System.Drawing.Point(398, 101);
             this.btnConsultar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(132, 36);
-=======
+
             this.btnConsultar.Location = new System.Drawing.Point(787, 198);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(268, 78);
->>>>>>> 7a2e9f974ab6ccc564390826ad5fdb7ff2d468a5
+
+            this.btnConsultar.Location = new System.Drawing.Point(787, 198);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(268, 78);
+
             this.btnConsultar.TabIndex = 1;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = true;
@@ -383,13 +388,13 @@
             // txtHabilitado
             // 
             this.txtHabilitado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-<<<<<<< HEAD
+
             this.txtHabilitado.Location = new System.Drawing.Point(228, 214);
             this.txtHabilitado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-=======
+
             this.txtHabilitado.Location = new System.Drawing.Point(457, 412);
             this.txtHabilitado.MaxLength = 2;
->>>>>>> 7a2e9f974ab6ccc564390826ad5fdb7ff2d468a5
+
             this.txtHabilitado.Name = "txtHabilitado";
             this.txtHabilitado.Size = new System.Drawing.Size(48, 26);
             this.txtHabilitado.TabIndex = 4;
@@ -549,8 +554,7 @@
             this.lblPanelSemilla.TabIndex = 12;
             this.lblPanelSemilla.Text = "Datos de la Semilla";
             // 
-<<<<<<< HEAD
-=======
+
             // btnActualizar
             // 
             this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -562,20 +566,24 @@
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
->>>>>>> 7a2e9f974ab6ccc564390826ad5fdb7ff2d468a5
+
             // frmSemilla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-<<<<<<< HEAD
+
             this.ClientSize = new System.Drawing.Size(1174, 658);
-=======
+
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.ClientSize = new System.Drawing.Size(2269, 1257);
             this.Controls.Add(this.btnActualizar);
->>>>>>> 7a2e9f974ab6ccc564390826ad5fdb7ff2d468a5
+
+
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.ClientSize = new System.Drawing.Size(2269, 1257);
+            this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.pnlSemilla);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.btnCerrar);
