@@ -69,11 +69,7 @@
             this.lblStockMin = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblPanelSemilla = new System.Windows.Forms.Label();
-
             this.btnActualizar = new System.Windows.Forms.Button();
-
-            this.btnActualizar = new System.Windows.Forms.Button();
-
             this.grpFiltros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgSemillas)).BeginInit();
             this.pnlSemilla.SuspendLayout();
@@ -82,25 +78,27 @@
             // lblSemillasTitulo
             // 
             this.lblSemillasTitulo.AutoSize = true;
-            this.lblSemillasTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSemillasTitulo.Location = new System.Drawing.Point(54, 22);
+            this.lblSemillasTitulo.BackColor = System.Drawing.Color.Transparent;
+            this.lblSemillasTitulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F);
+            this.lblSemillasTitulo.Location = new System.Drawing.Point(218, 20);
             this.lblSemillasTitulo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSemillasTitulo.Name = "lblSemillasTitulo";
-            this.lblSemillasTitulo.Size = new System.Drawing.Size(96, 26);
+            this.lblSemillasTitulo.Size = new System.Drawing.Size(137, 37);
             this.lblSemillasTitulo.TabIndex = 0;
             this.lblSemillasTitulo.Text = "Semillas";
             // 
             // grpFiltros
             // 
+            this.grpFiltros.BackColor = System.Drawing.Color.Transparent;
             this.grpFiltros.Controls.Add(this.txtFilterNombre);
             this.grpFiltros.Controls.Add(this.lblFilterNombre);
             this.grpFiltros.Controls.Add(this.lblFilterTipoSemilla);
             this.grpFiltros.Controls.Add(this.cboFilterTipoSemilla);
             this.grpFiltros.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpFiltros.Location = new System.Drawing.Point(39, 56);
-            this.grpFiltros.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpFiltros.Margin = new System.Windows.Forms.Padding(2);
             this.grpFiltros.Name = "grpFiltros";
-            this.grpFiltros.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.grpFiltros.Padding = new System.Windows.Forms.Padding(2);
             this.grpFiltros.Size = new System.Drawing.Size(337, 88);
             this.grpFiltros.TabIndex = 0;
             this.grpFiltros.TabStop = false;
@@ -110,30 +108,30 @@
             // 
             this.txtFilterNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtFilterNombre.Location = new System.Drawing.Point(174, 16);
-            this.txtFilterNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFilterNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtFilterNombre.Name = "txtFilterNombre";
-            this.txtFilterNombre.Size = new System.Drawing.Size(138, 26);
+            this.txtFilterNombre.Size = new System.Drawing.Size(144, 26);
             this.txtFilterNombre.TabIndex = 0;
             // 
             // lblFilterNombre
             // 
             this.lblFilterNombre.AutoSize = true;
-            this.lblFilterNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFilterNombre.Location = new System.Drawing.Point(60, 19);
+            this.lblFilterNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblFilterNombre.Location = new System.Drawing.Point(88, 19);
             this.lblFilterNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFilterNombre.Name = "lblFilterNombre";
-            this.lblFilterNombre.Size = new System.Drawing.Size(69, 20);
+            this.lblFilterNombre.Size = new System.Drawing.Size(66, 18);
             this.lblFilterNombre.TabIndex = 2;
             this.lblFilterNombre.Text = "Nombre:";
             // 
             // lblFilterTipoSemilla
             // 
             this.lblFilterTipoSemilla.AutoSize = true;
-            this.lblFilterTipoSemilla.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFilterTipoSemilla.Location = new System.Drawing.Point(8, 52);
+            this.lblFilterTipoSemilla.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblFilterTipoSemilla.Location = new System.Drawing.Point(37, 51);
             this.lblFilterTipoSemilla.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblFilterTipoSemilla.Name = "lblFilterTipoSemilla";
-            this.lblFilterTipoSemilla.Size = new System.Drawing.Size(120, 20);
+            this.lblFilterTipoSemilla.Size = new System.Drawing.Size(113, 18);
             this.lblFilterTipoSemilla.TabIndex = 3;
             this.lblFilterTipoSemilla.Text = "Tipo de Semilla:";
             // 
@@ -143,15 +141,16 @@
             this.cboFilterTipoSemilla.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboFilterTipoSemilla.FormattingEnabled = true;
             this.cboFilterTipoSemilla.Location = new System.Drawing.Point(174, 52);
-            this.cboFilterTipoSemilla.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboFilterTipoSemilla.Margin = new System.Windows.Forms.Padding(2);
             this.cboFilterTipoSemilla.Name = "cboFilterTipoSemilla";
-            this.cboFilterTipoSemilla.Size = new System.Drawing.Size(138, 28);
+            this.cboFilterTipoSemilla.Size = new System.Drawing.Size(144, 28);
             this.cboFilterTipoSemilla.TabIndex = 1;
             // 
             // dtgSemillas
             // 
             this.dtgSemillas.AllowUserToAddRows = false;
             this.dtgSemillas.AllowUserToDeleteRows = false;
+            this.dtgSemillas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.dtgSemillas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgSemillas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_Semilla,
@@ -161,7 +160,7 @@
             this.tipoSemilla,
             this.calidad});
             this.dtgSemillas.Location = new System.Drawing.Point(26, 154);
-            this.dtgSemillas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtgSemillas.Margin = new System.Windows.Forms.Padding(2);
             this.dtgSemillas.Name = "dtgSemillas";
             this.dtgSemillas.ReadOnly = true;
             this.dtgSemillas.RowHeadersWidth = 82;
@@ -221,76 +220,77 @@
             // 
             // btnNuevo
             // 
-            this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnNuevo.ForeColor = System.Drawing.Color.White;
             this.btnNuevo.Location = new System.Drawing.Point(26, 597);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(2);
             this.btnNuevo.Name = "btnNuevo";
             this.btnNuevo.Size = new System.Drawing.Size(120, 37);
             this.btnNuevo.TabIndex = 3;
             this.btnNuevo.Text = "Nuevo";
-            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.UseVisualStyleBackColor = false;
             this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // btnModificar
             // 
-            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnModificar.ForeColor = System.Drawing.Color.White;
             this.btnModificar.Location = new System.Drawing.Point(172, 597);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
             this.btnModificar.Name = "btnModificar";
             this.btnModificar.Size = new System.Drawing.Size(120, 37);
             this.btnModificar.TabIndex = 4;
             this.btnModificar.Text = "Modificar";
-            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.UseVisualStyleBackColor = false;
             this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
             this.btnEliminar.Location = new System.Drawing.Point(318, 597);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(120, 37);
             this.btnEliminar.TabIndex = 5;
             this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.UseVisualStyleBackColor = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrar.Location = new System.Drawing.Point(982, 597);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnCerrar.ForeColor = System.Drawing.Color.White;
+            this.btnCerrar.Location = new System.Drawing.Point(1001, 597);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(120, 37);
             this.btnCerrar.TabIndex = 6;
             this.btnCerrar.Text = "Cerrar";
-            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnConsultar
             // 
-            this.btnConsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            this.btnConsultar.Location = new System.Drawing.Point(398, 101);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnConsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnConsultar.ForeColor = System.Drawing.Color.White;
+            this.btnConsultar.Location = new System.Drawing.Point(394, 96);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(2);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(132, 36);
-
-            this.btnConsultar.Location = new System.Drawing.Point(787, 198);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(268, 78);
-
-            this.btnConsultar.Location = new System.Drawing.Point(787, 198);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(268, 78);
-
+            this.btnConsultar.Size = new System.Drawing.Size(111, 31);
             this.btnConsultar.TabIndex = 1;
             this.btnConsultar.Text = "Consultar";
-            this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.UseVisualStyleBackColor = false;
             this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // pnlSemilla
             // 
+            this.pnlSemilla.BackColor = System.Drawing.Color.Transparent;
             this.pnlSemilla.Controls.Add(this.cboCalidad);
             this.pnlSemilla.Controls.Add(this.cboTipoSemilla);
             this.pnlSemilla.Controls.Add(this.btnFinalizar);
@@ -313,18 +313,18 @@
             this.pnlSemilla.Controls.Add(this.lblStockMin);
             this.pnlSemilla.Controls.Add(this.lblNombre);
             this.pnlSemilla.Controls.Add(this.lblPanelSemilla);
-            this.pnlSemilla.Location = new System.Drawing.Point(696, 20);
-            this.pnlSemilla.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlSemilla.Location = new System.Drawing.Point(696, 39);
+            this.pnlSemilla.Margin = new System.Windows.Forms.Padding(2);
             this.pnlSemilla.Name = "pnlSemilla";
-            this.pnlSemilla.Size = new System.Drawing.Size(425, 551);
+            this.pnlSemilla.Size = new System.Drawing.Size(425, 532);
             this.pnlSemilla.TabIndex = 7;
             // 
             // cboCalidad
             // 
             this.cboCalidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCalidad.FormattingEnabled = true;
-            this.cboCalidad.Location = new System.Drawing.Point(228, 418);
-            this.cboCalidad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboCalidad.Location = new System.Drawing.Point(201, 418);
+            this.cboCalidad.Margin = new System.Windows.Forms.Padding(2);
             this.cboCalidad.Name = "cboCalidad";
             this.cboCalidad.Size = new System.Drawing.Size(158, 28);
             this.cboCalidad.TabIndex = 8;
@@ -333,53 +333,59 @@
             // 
             this.cboTipoSemilla.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTipoSemilla.FormattingEnabled = true;
-            this.cboTipoSemilla.Location = new System.Drawing.Point(228, 380);
-            this.cboTipoSemilla.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboTipoSemilla.Location = new System.Drawing.Point(201, 380);
+            this.cboTipoSemilla.Margin = new System.Windows.Forms.Padding(2);
             this.cboTipoSemilla.Name = "cboTipoSemilla";
             this.cboTipoSemilla.Size = new System.Drawing.Size(158, 28);
             this.cboTipoSemilla.TabIndex = 7;
             // 
             // btnFinalizar
             // 
-            this.btnFinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinalizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnFinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnFinalizar.ForeColor = System.Drawing.Color.White;
             this.btnFinalizar.Location = new System.Drawing.Point(301, 491);
-            this.btnFinalizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnFinalizar.Margin = new System.Windows.Forms.Padding(2);
             this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(110, 47);
+            this.btnFinalizar.Size = new System.Drawing.Size(110, 36);
             this.btnFinalizar.TabIndex = 11;
             this.btnFinalizar.Text = "Finalizar";
-            this.btnFinalizar.UseVisualStyleBackColor = true;
+            this.btnFinalizar.UseVisualStyleBackColor = false;
             this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnLimpiar.ForeColor = System.Drawing.Color.White;
             this.btnLimpiar.Location = new System.Drawing.Point(155, 491);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(110, 47);
+            this.btnLimpiar.Size = new System.Drawing.Size(110, 36);
             this.btnLimpiar.TabIndex = 10;
             this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.UseVisualStyleBackColor = false;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnAceptar
             // 
-            this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnAceptar.ForeColor = System.Drawing.Color.White;
             this.btnAceptar.Location = new System.Drawing.Point(9, 491);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(2);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(110, 47);
+            this.btnAceptar.Size = new System.Drawing.Size(110, 36);
             this.btnAceptar.TabIndex = 9;
             this.btnAceptar.Text = "Aceptar";
-            this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // txtDescripcion
             // 
             this.txtDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescripcion.Location = new System.Drawing.Point(228, 248);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescripcion.Location = new System.Drawing.Point(201, 248);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(158, 72);
@@ -388,13 +394,9 @@
             // txtHabilitado
             // 
             this.txtHabilitado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-
-            this.txtHabilitado.Location = new System.Drawing.Point(228, 214);
-            this.txtHabilitado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-
-            this.txtHabilitado.Location = new System.Drawing.Point(457, 412);
+            this.txtHabilitado.Location = new System.Drawing.Point(201, 214);
+            this.txtHabilitado.Margin = new System.Windows.Forms.Padding(2);
             this.txtHabilitado.MaxLength = 2;
-
             this.txtHabilitado.Name = "txtHabilitado";
             this.txtHabilitado.Size = new System.Drawing.Size(48, 26);
             this.txtHabilitado.TabIndex = 4;
@@ -402,8 +404,8 @@
             // txtPrecioSugerido
             // 
             this.txtPrecioSugerido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecioSugerido.Location = new System.Drawing.Point(228, 343);
-            this.txtPrecioSugerido.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPrecioSugerido.Location = new System.Drawing.Point(201, 343);
+            this.txtPrecioSugerido.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrecioSugerido.Name = "txtPrecioSugerido";
             this.txtPrecioSugerido.Size = new System.Drawing.Size(88, 26);
             this.txtPrecioSugerido.TabIndex = 6;
@@ -411,8 +413,8 @@
             // txtPrecio_X_Tonelada
             // 
             this.txtPrecio_X_Tonelada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecio_X_Tonelada.Location = new System.Drawing.Point(228, 181);
-            this.txtPrecio_X_Tonelada.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPrecio_X_Tonelada.Location = new System.Drawing.Point(201, 181);
+            this.txtPrecio_X_Tonelada.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrecio_X_Tonelada.Name = "txtPrecio_X_Tonelada";
             this.txtPrecio_X_Tonelada.Size = new System.Drawing.Size(88, 26);
             this.txtPrecio_X_Tonelada.TabIndex = 3;
@@ -420,8 +422,8 @@
             // txtStock
             // 
             this.txtStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStock.Location = new System.Drawing.Point(228, 148);
-            this.txtStock.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtStock.Location = new System.Drawing.Point(201, 148);
+            this.txtStock.Margin = new System.Windows.Forms.Padding(2);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(88, 26);
             this.txtStock.TabIndex = 2;
@@ -429,8 +431,8 @@
             // txtStockMin
             // 
             this.txtStockMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtStockMin.Location = new System.Drawing.Point(228, 114);
-            this.txtStockMin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtStockMin.Location = new System.Drawing.Point(201, 114);
+            this.txtStockMin.Margin = new System.Windows.Forms.Padding(2);
             this.txtStockMin.Name = "txtStockMin";
             this.txtStockMin.Size = new System.Drawing.Size(88, 26);
             this.txtStockMin.TabIndex = 1;
@@ -438,8 +440,8 @@
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(228, 81);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombre.Location = new System.Drawing.Point(201, 81);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(158, 26);
             this.txtNombre.TabIndex = 0;
@@ -447,7 +449,9 @@
             // lblHabilitado
             // 
             this.lblHabilitado.AutoSize = true;
+            this.lblHabilitado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblHabilitado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHabilitado.ForeColor = System.Drawing.Color.White;
             this.lblHabilitado.Location = new System.Drawing.Point(86, 214);
             this.lblHabilitado.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblHabilitado.Name = "lblHabilitado";
@@ -458,7 +462,9 @@
             // lblCalidad
             // 
             this.lblCalidad.AutoSize = true;
+            this.lblCalidad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblCalidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCalidad.ForeColor = System.Drawing.Color.White;
             this.lblCalidad.Location = new System.Drawing.Point(108, 418);
             this.lblCalidad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCalidad.Name = "lblCalidad";
@@ -469,7 +475,9 @@
             // lblPrecioSugerido
             // 
             this.lblPrecioSugerido.AutoSize = true;
+            this.lblPrecioSugerido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblPrecioSugerido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecioSugerido.ForeColor = System.Drawing.Color.White;
             this.lblPrecioSugerido.Location = new System.Drawing.Point(48, 343);
             this.lblPrecioSugerido.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPrecioSugerido.Name = "lblPrecioSugerido";
@@ -480,7 +488,9 @@
             // lblTipoSemilla
             // 
             this.lblTipoSemilla.AutoSize = true;
+            this.lblTipoSemilla.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblTipoSemilla.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTipoSemilla.ForeColor = System.Drawing.Color.White;
             this.lblTipoSemilla.Location = new System.Drawing.Point(52, 380);
             this.lblTipoSemilla.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTipoSemilla.Name = "lblTipoSemilla";
@@ -491,7 +501,9 @@
             // lblDescripcion
             // 
             this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescripcion.ForeColor = System.Drawing.Color.White;
             this.lblDescripcion.Location = new System.Drawing.Point(78, 248);
             this.lblDescripcion.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDescripcion.Name = "lblDescripcion";
@@ -502,7 +514,9 @@
             // lblPrecio_X_Tonelada
             // 
             this.lblPrecio_X_Tonelada.AutoSize = true;
+            this.lblPrecio_X_Tonelada.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblPrecio_X_Tonelada.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPrecio_X_Tonelada.ForeColor = System.Drawing.Color.White;
             this.lblPrecio_X_Tonelada.Location = new System.Drawing.Point(16, 181);
             this.lblPrecio_X_Tonelada.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPrecio_X_Tonelada.Name = "lblPrecio_X_Tonelada";
@@ -513,7 +527,9 @@
             // lblStock
             // 
             this.lblStock.AutoSize = true;
+            this.lblStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblStock.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStock.ForeColor = System.Drawing.Color.White;
             this.lblStock.Location = new System.Drawing.Point(122, 148);
             this.lblStock.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStock.Name = "lblStock";
@@ -524,7 +540,9 @@
             // lblStockMin
             // 
             this.lblStockMin.AutoSize = true;
+            this.lblStockMin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblStockMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblStockMin.ForeColor = System.Drawing.Color.White;
             this.lblStockMin.Location = new System.Drawing.Point(66, 114);
             this.lblStockMin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblStockMin.Name = "lblStockMin";
@@ -535,7 +553,9 @@
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
+            this.lblNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.ForeColor = System.Drawing.Color.White;
             this.lblNombre.Location = new System.Drawing.Point(104, 81);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombre.Name = "lblNombre";
@@ -547,42 +567,37 @@
             // 
             this.lblPanelSemilla.AutoSize = true;
             this.lblPanelSemilla.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPanelSemilla.Location = new System.Drawing.Point(132, 10);
+            this.lblPanelSemilla.Location = new System.Drawing.Point(121, 11);
             this.lblPanelSemilla.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPanelSemilla.Name = "lblPanelSemilla";
             this.lblPanelSemilla.Size = new System.Drawing.Size(201, 26);
             this.lblPanelSemilla.TabIndex = 12;
             this.lblPanelSemilla.Text = "Datos de la Semilla";
             // 
-
             // btnActualizar
             // 
-            this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnActualizar.Location = new System.Drawing.Point(1071, 198);
+            this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.btnActualizar.ForeColor = System.Drawing.Color.White;
+            this.btnActualizar.Location = new System.Drawing.Point(558, 574);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(2);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(268, 78);
+            this.btnActualizar.Size = new System.Drawing.Size(110, 27);
             this.btnActualizar.TabIndex = 8;
             this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.UseVisualStyleBackColor = false;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
-
             // frmSemilla
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-
-            this.ClientSize = new System.Drawing.Size(1174, 658);
-
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(2269, 1257);
-            this.Controls.Add(this.btnActualizar);
-
-
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(2269, 1257);
+            this.BackgroundImage = global::ProyectoAgronegocios.Properties.Resources.semilla;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.ClientSize = new System.Drawing.Size(1157, 660);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.pnlSemilla);
             this.Controls.Add(this.btnConsultar);
@@ -593,7 +608,7 @@
             this.Controls.Add(this.dtgSemillas);
             this.Controls.Add(this.grpFiltros);
             this.Controls.Add(this.lblSemillasTitulo);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmSemilla";
             this.Text = "Semillas";
             this.Load += new System.EventHandler(this.frmSemilla_Load);

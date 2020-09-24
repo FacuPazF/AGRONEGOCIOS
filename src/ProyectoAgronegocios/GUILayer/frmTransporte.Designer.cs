@@ -79,8 +79,9 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(19, 119);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(107, 20);
@@ -91,8 +92,9 @@
             // 
             this.txtTransporte.Location = new System.Drawing.Point(154, 86);
             this.txtTransporte.Name = "txtTransporte";
-            this.txtTransporte.Size = new System.Drawing.Size(146, 20);
+            this.txtTransporte.Size = new System.Drawing.Size(144, 20);
             this.txtTransporte.TabIndex = 2;
+            this.txtTransporte.TextChanged += new System.EventHandler(this.txtTransporte_TextChanged);
             // 
             // btnConsultarTransporte
             // 
@@ -111,6 +113,7 @@
             // 
             this.dtgTransporte.AllowUserToAddRows = false;
             this.dtgTransporte.AllowUserToDeleteRows = false;
+            this.dtgTransporte.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.dtgTransporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgTransporte.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.IdEmpresa,
@@ -168,7 +171,7 @@
             this.btnNuevoTransp.ForeColor = System.Drawing.Color.White;
             this.btnNuevoTransp.Location = new System.Drawing.Point(15, 497);
             this.btnNuevoTransp.Name = "btnNuevoTransp";
-            this.btnNuevoTransp.Size = new System.Drawing.Size(84, 44);
+            this.btnNuevoTransp.Size = new System.Drawing.Size(106, 33);
             this.btnNuevoTransp.TabIndex = 5;
             this.btnNuevoTransp.Text = "Nuevo";
             this.btnNuevoTransp.UseVisualStyleBackColor = false;
@@ -181,7 +184,7 @@
             this.btnModificarTransp.ForeColor = System.Drawing.Color.White;
             this.btnModificarTransp.Location = new System.Drawing.Point(127, 497);
             this.btnModificarTransp.Name = "btnModificarTransp";
-            this.btnModificarTransp.Size = new System.Drawing.Size(84, 44);
+            this.btnModificarTransp.Size = new System.Drawing.Size(100, 33);
             this.btnModificarTransp.TabIndex = 5;
             this.btnModificarTransp.Text = "Modificar";
             this.btnModificarTransp.UseVisualStyleBackColor = false;
@@ -194,7 +197,7 @@
             this.btnEliminarTransp.ForeColor = System.Drawing.Color.White;
             this.btnEliminarTransp.Location = new System.Drawing.Point(244, 497);
             this.btnEliminarTransp.Name = "btnEliminarTransp";
-            this.btnEliminarTransp.Size = new System.Drawing.Size(84, 44);
+            this.btnEliminarTransp.Size = new System.Drawing.Size(97, 33);
             this.btnEliminarTransp.TabIndex = 5;
             this.btnEliminarTransp.Text = "Eliminar";
             this.btnEliminarTransp.UseVisualStyleBackColor = false;
@@ -207,7 +210,7 @@
             this.btnCerrar.ForeColor = System.Drawing.Color.White;
             this.btnCerrar.Location = new System.Drawing.Point(943, 497);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(84, 44);
+            this.btnCerrar.Size = new System.Drawing.Size(84, 33);
             this.btnCerrar.TabIndex = 5;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = false;
@@ -215,7 +218,7 @@
             // 
             // panelTransporte
             // 
-            this.panelTransporte.BackgroundImage = global::ProyectoAgronegocios.Properties.Resources.Camion_Nuevo_Transporte_3;
+            this.panelTransporte.BackColor = System.Drawing.Color.Transparent;
             this.panelTransporte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelTransporte.Controls.Add(this.cmbBarrio);
             this.panelTransporte.Controls.Add(this.label3);
@@ -235,7 +238,6 @@
             this.panelTransporte.Name = "panelTransporte";
             this.panelTransporte.Size = new System.Drawing.Size(400, 383);
             this.panelTransporte.TabIndex = 6;
-            this.panelTransporte.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTransporte_Paint);
             // 
             // cmbBarrio
             // 
@@ -251,11 +253,11 @@
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(37, 12);
+            this.label3.Location = new System.Drawing.Point(68, 12);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(332, 25);
+            this.label3.Size = new System.Drawing.Size(258, 25);
             this.label3.TabIndex = 0;
-            this.label3.Text = "Nueva Empresa de Transporte";
+            this.label3.Text = "Empresa de Transporte";
             // 
             // btnFinalizarTransp
             // 
@@ -299,8 +301,9 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(27, 245);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(55, 20);
@@ -310,8 +313,9 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(19, 77);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(96, 20);
@@ -321,8 +325,9 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(19, 161);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 20);
@@ -332,8 +337,9 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(23, 203);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 20);
@@ -352,7 +358,7 @@
             this.txtTelefono.Location = new System.Drawing.Point(146, 161);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(146, 20);
-            this.txtTelefono.TabIndex = 3;
+            this.txtTelefono.TabIndex = 2;
             // 
             // txtDireccion
             // 

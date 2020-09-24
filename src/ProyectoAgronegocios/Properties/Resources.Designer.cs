@@ -73,6 +73,16 @@ namespace ProyectoAgronegocios.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Agregar_semilla1 {
+            get {
+                object obj = ResourceManager.GetObject("Agregar semilla1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Camion_Nuevo_Transporte_3 {
             get {
                 object obj = ResourceManager.GetObject("Camion Nuevo Transporte 3", resourceCulture);
@@ -126,6 +136,16 @@ namespace ProyectoAgronegocios.Properties {
         internal static System.Drawing.Bitmap semilla1 {
             get {
                 object obj = ResourceManager.GetObject("semilla1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap semilla2 {
+            get {
+                object obj = ResourceManager.GetObject("semilla2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

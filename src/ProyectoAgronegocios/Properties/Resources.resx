@@ -121,8 +121,11 @@
   <data name="campo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\campo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ago18s0104_camion_semillas_campo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ago18s0104_camion_semillas_campo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="semilla" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\semilla.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Camion Nuevo Transporte 3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Camion Nuevo Transporte 3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="semilla-mano" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\semilla-mano.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -130,13 +133,16 @@
   <data name="Clientes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Clientes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="ago18s0104_camion_semillas_campo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ago18s0104_camion_semillas_campo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="semilla2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\semilla2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="semilla1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\semilla1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="semilla" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\semilla.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Camion Nuevo Transporte 3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Camion Nuevo Transporte 3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Agregar semilla1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Agregar semilla1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
