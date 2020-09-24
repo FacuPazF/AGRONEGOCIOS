@@ -14,7 +14,7 @@ namespace ProyectoAgronegocios
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new frmSemilla());
+            Application.Run(new formPrincipal());
 
         }
     }

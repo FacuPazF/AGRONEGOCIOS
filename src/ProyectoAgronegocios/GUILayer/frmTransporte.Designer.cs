@@ -33,6 +33,12 @@
             this.txtTransporte = new System.Windows.Forms.TextBox();
             this.btnConsultarTransporte = new System.Windows.Forms.Button();
             this.dtgTransporte = new System.Windows.Forms.DataGridView();
+            this.IdEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Barrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnNuevoTransp = new System.Windows.Forms.Button();
             this.btnModificarTransp = new System.Windows.Forms.Button();
             this.btnEliminarTransp = new System.Windows.Forms.Button();
@@ -54,12 +60,6 @@
             this.btnActualizarGrilla = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.IdEmpresa = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.RazonSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Barrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgTransporte)).BeginInit();
             this.panelTransporte.SuspendLayout();
             this.SuspendLayout();
@@ -124,6 +124,42 @@
             this.dtgTransporte.ReadOnly = true;
             this.dtgTransporte.Size = new System.Drawing.Size(596, 326);
             this.dtgTransporte.TabIndex = 4;
+            // 
+            // IdEmpresa
+            // 
+            this.IdEmpresa.HeaderText = "Id ";
+            this.IdEmpresa.Name = "IdEmpresa";
+            this.IdEmpresa.ReadOnly = true;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.HeaderText = "Descripcion";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            // 
+            // RazonSocial
+            // 
+            this.RazonSocial.HeaderText = "Razon Social";
+            this.RazonSocial.Name = "RazonSocial";
+            this.RazonSocial.ReadOnly = true;
+            // 
+            // Telefono
+            // 
+            this.Telefono.HeaderText = "Telefono";
+            this.Telefono.Name = "Telefono";
+            this.Telefono.ReadOnly = true;
+            // 
+            // Direccion
+            // 
+            this.Direccion.HeaderText = "Direccion";
+            this.Direccion.Name = "Direccion";
+            this.Direccion.ReadOnly = true;
+            // 
+            // Barrio
+            // 
+            this.Barrio.HeaderText = "Barrio";
+            this.Barrio.Name = "Barrio";
+            this.Barrio.ReadOnly = true;
             // 
             // btnNuevoTransp
             // 
@@ -199,6 +235,7 @@
             this.panelTransporte.Name = "panelTransporte";
             this.panelTransporte.Size = new System.Drawing.Size(400, 383);
             this.panelTransporte.TabIndex = 6;
+            this.panelTransporte.Paint += new System.Windows.Forms.PaintEventHandler(this.panelTransporte_Paint);
             // 
             // cmbBarrio
             // 
@@ -315,7 +352,7 @@
             this.txtTelefono.Location = new System.Drawing.Point(146, 161);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(146, 20);
-            this.txtTelefono.TabIndex = 2;
+            this.txtTelefono.TabIndex = 3;
             // 
             // txtDireccion
             // 
@@ -365,42 +402,6 @@
             this.label9.TabIndex = 7;
             this.label9.Text = "Ingrese Razon Social ";
             this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // IdEmpresa
-            // 
-            this.IdEmpresa.HeaderText = "Id ";
-            this.IdEmpresa.Name = "IdEmpresa";
-            this.IdEmpresa.ReadOnly = true;
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.HeaderText = "Descripcion";
-            this.Descripcion.Name = "Descripcion";
-            this.Descripcion.ReadOnly = true;
-            // 
-            // RazonSocial
-            // 
-            this.RazonSocial.HeaderText = "Razon Social";
-            this.RazonSocial.Name = "RazonSocial";
-            this.RazonSocial.ReadOnly = true;
-            // 
-            // Telefono
-            // 
-            this.Telefono.HeaderText = "Telefono";
-            this.Telefono.Name = "Telefono";
-            this.Telefono.ReadOnly = true;
-            // 
-            // Direccion
-            // 
-            this.Direccion.HeaderText = "Direccion";
-            this.Direccion.Name = "Direccion";
-            this.Direccion.ReadOnly = true;
-            // 
-            // Barrio
-            // 
-            this.Barrio.HeaderText = "Barrio";
-            this.Barrio.Name = "Barrio";
-            this.Barrio.ReadOnly = true;
             // 
             // frmTransporte
             // 

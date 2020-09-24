@@ -110,6 +110,9 @@
     <EmbeddedResource Include="GUILayer\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="GUILayer\frmSemilla.resx">
+      <DependentUpon>frmSemilla.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmTransporte.resx">
       <DependentUpon>frmTransporte.cs</DependentUpon>
     </EmbeddedResource>

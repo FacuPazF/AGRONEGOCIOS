@@ -206,7 +206,10 @@ namespace ProyectoAgronegocios.GUILayer
      
         }
 
+        private void panelTransporte_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 }
 
