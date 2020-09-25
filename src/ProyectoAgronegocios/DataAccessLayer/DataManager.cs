@@ -12,10 +12,11 @@ public class DataManager
     public DataManager()
     {
         dbConnection = new SqlConnection();
-       // var dataBaseName = ConfigurationManager.AppSettings["dataBaseName"];
-       // var string_conexion = ConfigurationManager.ConnectionStrings[dataBaseName].ConnectionString;
-       // dbConnection.ConnectionString = "Data Source=localhost;Initial Catalog=BugsTracker;User ID=sa;Password=****";
-        dbConnection.ConnectionString = @"Data Source=DESKTOP-MQ9I1RE\SQLEXPRESS;Initial Catalog=AgroNegocios_ultimate;Integrated Security=True";
+        // var dataBaseName = ConfigurationManager.AppSettings["dataBaseName"];
+        // var string_conexion = ConfigurationManager.ConnectionStrings[dataBaseName].ConnectionString;
+        // dbConnection.ConnectionString = "Data Source=localhost;Initial Catalog=BugsTracker;User ID=sa;Password=****";
+        //dbConnection.ConnectionString = @"Data Source=DESKTOP-MQ9I1RE\SQLEXPRESS;Initial Catalog=AgroNegocios_ultimate;Integrated Security=True";
+        dbConnection.ConnectionString = @"Data Source=DESKTOP-6US2DFF\SQLEXPRESS; Initial Catalog = Agronegocios; Integrated Security = True";
     }
 
     public void BeginTransaction()

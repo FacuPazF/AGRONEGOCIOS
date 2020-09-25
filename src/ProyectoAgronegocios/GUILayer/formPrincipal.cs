@@ -1,4 +1,6 @@
-﻿using ProyectoAgronegocios.GUILayer;
+﻿using ProyectoAgronegocios.DataAccessLayer;
+using ProyectoAgronegocios.Entities;
+using ProyectoAgronegocios.GUILayer;
 using System;
 using System.Windows.Forms;
 
@@ -6,6 +8,7 @@ namespace ProyectoAgronegocios
 {
     public partial class formPrincipal : Form
     {
+        
         public formPrincipal()
         {
             InitializeComponent();
@@ -52,6 +55,12 @@ namespace ProyectoAgronegocios
         {
             frmEmpleado formEmpleado = new frmEmpleado();
             formEmpleado.ShowDialog();
+        }
+
+        private void facturarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmFactura formFactura = new frmFactura();
+            formFactura.ShowDialog();
         }
     }
 }

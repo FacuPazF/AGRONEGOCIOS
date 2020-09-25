@@ -1,5 +1,6 @@
 ﻿using ProyectoAgronegocios.BusinessLayer;
 using ProyectoAgronegocios.Entities;
+using ProyectoAgronegocios.Support;
 using System;
 using System.Windows.Forms;
 
@@ -43,6 +44,7 @@ namespace ProyectoAgronegocios.GUILayer
             }
 
             User = EmpleadoService.validarUsuario(txtUsuario.Text, txtClave.Text);
+            Sesion.GetInstance().User = User;
 
             if (user != null)
             {

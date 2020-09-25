@@ -13,6 +13,7 @@ namespace ProyectoAgronegocios.BusinessLayer
     {
         private ClienteDAO daoCliente = new ClienteDAO();
 
+        // ----------  ABM
         public void registrarCliente(Cliente cliente)
         {
            daoCliente.registrarCliente(cliente);
@@ -27,10 +28,14 @@ namespace ProyectoAgronegocios.BusinessLayer
         {
             daoCliente.borrarCliente(id);
         }
+
+        // ---------------- Consultas
         public DataTable consultarClientesSinParametros()
         {
             return daoCliente.consultarClientesSinParametros();
         }
+
+        
         public DataTable consultarClientesConCuil(string cuil)
         {
             return daoCliente.consultarClientesConCuil(cuil);

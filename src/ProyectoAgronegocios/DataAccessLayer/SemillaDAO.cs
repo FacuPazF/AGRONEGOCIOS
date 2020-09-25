@@ -57,8 +57,10 @@ namespace ProyectoAgronegocios.DataAccessLayer
 	                        +" s.habilitado AS 'Habilitado',"
 	                        +" s.descripcion AS 'Descripcion',"
 	                        +" tp.precio_sugerido AS 'Precio Sugerido',"
-	                        + " ts.id_Tipo_Semilla AS 'Tipo de Semilla',"
-                            + " c.id_Calidad AS 'Calidad'"
+	                        +" ts.id_Tipo_Semilla AS 'Tipo de Semilla',"
+                            +" c.id_Calidad AS 'Calidad',"
+                            +" ts.nombre AS 'Nombre Tipo Semilla',"
+                            +" c.nombre AS 'Nombre Calidad'"
                         + " FROM Semilla s"
                         +" JOIN TiposXsemillas tp ON s.id_Semilla = tp.id_Semilla"
                         +" JOIN Tipo_Semilla ts ON tp.id_Tipo_Semilla = ts.id_Tipo_Semilla"
@@ -76,7 +78,7 @@ namespace ProyectoAgronegocios.DataAccessLayer
                      + semilla.Nombre + "', "
                      + semilla.Stock_minimo + ", "
                      + semilla.Stock + ", "
-                     + semilla.Precio_x_tonelada + ", "
+                     + semilla.Precio_x_tonelada.ToString().Replace(",", ".") + ", "
                      + "'" + semilla.Descripcion + "', "
                      + "'" + semilla.Habilitado + "', "
                      + semilla.Borrado + ") ";
@@ -91,7 +93,7 @@ namespace ProyectoAgronegocios.DataAccessLayer
                  + tipos_x_semillas.Id_semilla + ", "
                  + tipos_x_semillas.Id_tipo_semilla + ", "
                  + tipos_x_semillas.Id_calidad + ", "
-                 + tipos_x_semillas.Precio_sugerido + ")";
+                 + tipos_x_semillas.Precio_sugerido.ToString().Replace(",", ".") + ")";
 
             DataManager.GetInstance().EjecutarSQL(strSQL);
             
@@ -104,7 +106,7 @@ namespace ProyectoAgronegocios.DataAccessLayer
                 + "nombre = '" + semilla.Nombre + "', "
                 + "stock_Minimo = " + semilla.Stock_minimo + ", "
                 + "stock = " + semilla.Stock + ", "
-                + "precio_Tonelada = " + semilla.Precio_x_tonelada + ", "
+                + "precio_Tonelada = " + semilla.Precio_x_tonelada.ToString().Replace(",", ".") + ", "
                 + "descripcion = '" + semilla.Descripcion + "', "
                 + "habilitado = '" + semilla.Habilitado + "' "
                 + "WHERE id_Semilla = " + semilla.Id_semilla;
@@ -114,7 +116,7 @@ namespace ProyectoAgronegocios.DataAccessLayer
             strSQL = "UPDATE TiposXsemillas SET "
                 + "id_Tipo_Semilla = " + tipos_x_semillas.Id_tipo_semilla + ", "
                 + "id_Calidad = " + tipos_x_semillas.Id_calidad + ", "
-                + "precio_sugerido = " + tipos_x_semillas.Precio_sugerido + " "
+                + "precio_sugerido = " + tipos_x_semillas.Precio_sugerido.ToString().Replace(",", ".") + " "
                 + " WHERE id_Semilla = " + tipos_x_semillas.Id_semilla;
             DataManager.GetInstance().EjecutarSQL(strSQL);
         }

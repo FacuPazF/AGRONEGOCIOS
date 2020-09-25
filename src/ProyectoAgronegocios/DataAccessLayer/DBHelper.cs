@@ -9,8 +9,8 @@ namespace ProyectoAgronegocios.DataAccessLayer
         private static SqlCommand comando = new SqlCommand();
 
         //Facu acosta: private static string cadenaConexion = @"Data Source=DESKTOP-JAHJSOF\SQLEXPRESS;Initial Catalog=Agronegocios;Integrated Security=True";
-        private static string cadenaConexion = @"Data Source=DESKTOP-MQ9I1RE\SQLEXPRESS;Initial Catalog=AgroNegocios_ultimate;Integrated Security=True"; // Neuen 
-        //private static string cadenaConexion = @"Data Source=DESKTOP-6US2DFF\SQLEXPRESS;Initial Catalog=Agronegocios;Integrated Security=True";
+        //private static string cadenaConexion = @"Data Source=DESKTOP-MQ9I1RE\SQLEXPRESS;Initial Catalog=AgroNegocios_ultimate;Integrated Security=True"; // Neuen 
+        private static string cadenaConexion = @"Data Source=DESKTOP-6US2DFF\SQLEXPRESS;Initial Catalog=Agronegocios;Integrated Security=True";
         //private static string cadenaConexion = @"Data Source=NIICO\SQLEXPRESS;Initial Catalog = Agronegocios; Integrated Security = True";
         private static void conectar()
         {
