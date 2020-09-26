@@ -61,6 +61,14 @@
             this.btnAgregar = new System.Windows.Forms.Button();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.btnFacturar = new System.Windows.Forms.Button();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.btnBorrar = new System.Windows.Forms.Button();
+            this.lblTotalNum = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cboTipoFactura = new System.Windows.Forms.ComboBox();
+            this.dtpFechaFactura = new System.Windows.Forms.DateTimePicker();
+            this.lblFechaFactura = new System.Windows.Forms.Label();
             this.grpFiltros.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDetalles)).BeginInit();
             this.SuspendLayout();
@@ -196,14 +204,14 @@
             this.precioVenta,
             this.cantidad,
             this.subTotal});
-            this.dtgDetalles.Location = new System.Drawing.Point(164, 532);
+            this.dtgDetalles.Location = new System.Drawing.Point(132, 520);
             this.dtgDetalles.Margin = new System.Windows.Forms.Padding(4);
             this.dtgDetalles.Name = "dtgDetalles";
             this.dtgDetalles.ReadOnly = true;
             this.dtgDetalles.RowHeadersWidth = 82;
             this.dtgDetalles.RowTemplate.Height = 33;
             this.dtgDetalles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgDetalles.Size = new System.Drawing.Size(1150, 689);
+            this.dtgDetalles.Size = new System.Drawing.Size(1356, 551);
             this.dtgDetalles.TabIndex = 11;
             // 
             // id_Semilla
@@ -212,7 +220,7 @@
             this.id_Semilla.MinimumWidth = 10;
             this.id_Semilla.Name = "id_Semilla";
             this.id_Semilla.ReadOnly = true;
-            this.id_Semilla.Width = 200;
+            this.id_Semilla.Width = 120;
             // 
             // nombre
             // 
@@ -220,7 +228,7 @@
             this.nombre.MinimumWidth = 10;
             this.nombre.Name = "nombre";
             this.nombre.ReadOnly = true;
-            this.nombre.Width = 200;
+            this.nombre.Width = 120;
             // 
             // precioVenta
             // 
@@ -228,7 +236,7 @@
             this.precioVenta.MinimumWidth = 10;
             this.precioVenta.Name = "precioVenta";
             this.precioVenta.ReadOnly = true;
-            this.precioVenta.Width = 200;
+            this.precioVenta.Width = 120;
             // 
             // cantidad
             // 
@@ -236,7 +244,7 @@
             this.cantidad.MinimumWidth = 10;
             this.cantidad.Name = "cantidad";
             this.cantidad.ReadOnly = true;
-            this.cantidad.Width = 200;
+            this.cantidad.Width = 120;
             // 
             // subTotal
             // 
@@ -244,7 +252,7 @@
             this.subTotal.MinimumWidth = 10;
             this.subTotal.Name = "subTotal";
             this.subTotal.ReadOnly = true;
-            this.subTotal.Width = 200;
+            this.subTotal.Width = 120;
             // 
             // lblIdSemilla
             // 
@@ -277,6 +285,7 @@
             // 
             // txtNombreSemilla
             // 
+            this.txtNombreSemilla.Enabled = false;
             this.txtNombreSemilla.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombreSemilla.Location = new System.Drawing.Point(405, 338);
             this.txtNombreSemilla.Name = "txtNombreSemilla";
@@ -354,6 +363,7 @@
             // 
             // txtPrecioDetalle
             // 
+            this.txtPrecioDetalle.Enabled = false;
             this.txtPrecioDetalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrecioDetalle.Location = new System.Drawing.Point(850, 443);
             this.txtPrecioDetalle.Name = "txtPrecioDetalle";
@@ -379,13 +389,100 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.Location = new System.Drawing.Point(1341, 1294);
+            this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrar.Location = new System.Drawing.Point(1292, 1294);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(185, 58);
+            this.btnCerrar.Size = new System.Drawing.Size(196, 63);
             this.btnCerrar.TabIndex = 20;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // btnFacturar
+            // 
+            this.btnFacturar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFacturar.Location = new System.Drawing.Point(132, 1294);
+            this.btnFacturar.Name = "btnFacturar";
+            this.btnFacturar.Size = new System.Drawing.Size(196, 63);
+            this.btnFacturar.TabIndex = 21;
+            this.btnFacturar.Text = "Facturar";
+            this.btnFacturar.UseVisualStyleBackColor = true;
+            this.btnFacturar.Click += new System.EventHandler(this.btnFacturar_Click);
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(1163, 1101);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(169, 37);
+            this.lblTotal.TabIndex = 22;
+            this.lblTotal.Text = "Total: AR$";
+            // 
+            // btnBorrar
+            // 
+            this.btnBorrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBorrar.Location = new System.Drawing.Point(1196, 420);
+            this.btnBorrar.Name = "btnBorrar";
+            this.btnBorrar.Size = new System.Drawing.Size(88, 61);
+            this.btnBorrar.TabIndex = 24;
+            this.btnBorrar.Text = "-";
+            this.btnBorrar.UseVisualStyleBackColor = true;
+            this.btnBorrar.Click += new System.EventHandler(this.btnBorrar_Click);
+            // 
+            // lblTotalNum
+            // 
+            this.lblTotalNum.AutoSize = true;
+            this.lblTotalNum.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.lblTotalNum.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalNum.Location = new System.Drawing.Point(1348, 1101);
+            this.lblTotalNum.Name = "lblTotalNum";
+            this.lblTotalNum.Size = new System.Drawing.Size(35, 37);
+            this.lblTotalNum.TabIndex = 25;
+            this.lblTotalNum.Text = "0";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(126, 1164);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(212, 31);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "Tipo de Factura:";
+            // 
+            // cboTipoFactura
+            // 
+            this.cboTipoFactura.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTipoFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboTipoFactura.FormattingEnabled = true;
+            this.cboTipoFactura.Items.AddRange(new object[] {
+            "A",
+            "B"});
+            this.cboTipoFactura.Location = new System.Drawing.Point(385, 1164);
+            this.cboTipoFactura.Name = "cboTipoFactura";
+            this.cboTipoFactura.Size = new System.Drawing.Size(199, 39);
+            this.cboTipoFactura.TabIndex = 27;
+            // 
+            // dtpFechaFactura
+            // 
+            this.dtpFechaFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaFactura.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFechaFactura.Location = new System.Drawing.Point(385, 1101);
+            this.dtpFechaFactura.Name = "dtpFechaFactura";
+            this.dtpFechaFactura.Size = new System.Drawing.Size(199, 38);
+            this.dtpFechaFactura.TabIndex = 28;
+            // 
+            // lblFechaFactura
+            // 
+            this.lblFechaFactura.AutoSize = true;
+            this.lblFechaFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaFactura.Location = new System.Drawing.Point(240, 1107);
+            this.lblFechaFactura.Name = "lblFechaFactura";
+            this.lblFechaFactura.Size = new System.Drawing.Size(98, 31);
+            this.lblFechaFactura.TabIndex = 29;
+            this.lblFechaFactura.Text = "Fecha:";
             // 
             // frmFactura
             // 
@@ -393,6 +490,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(1636, 1401);
+            this.Controls.Add(this.lblFechaFactura);
+            this.Controls.Add(this.dtpFechaFactura);
+            this.Controls.Add(this.cboTipoFactura);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblTotalNum);
+            this.Controls.Add(this.btnBorrar);
+            this.Controls.Add(this.lblTotal);
+            this.Controls.Add(this.btnFacturar);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.lblPrecioSugerido);
             this.Controls.Add(this.lblTitPrecioSugerido);
@@ -456,12 +561,20 @@
         private System.Windows.Forms.Label lblPrecioDetalle;
         private System.Windows.Forms.TextBox txtPrecioDetalle;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Button btnFacturar;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Button btnBorrar;
+        private System.Windows.Forms.Label lblTotalNum;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_Semilla;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn precioVenta;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn subTotal;
-        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
-        private System.Windows.Forms.Button btnCerrar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cboTipoFactura;
+        private System.Windows.Forms.DateTimePicker dtpFechaFactura;
+        private System.Windows.Forms.Label lblFechaFactura;
     }
 }

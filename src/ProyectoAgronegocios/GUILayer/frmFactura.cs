@@ -1,4 +1,5 @@
 ﻿using ProyectoAgronegocios.BusinessLayer;
+using ProyectoAgronegocios.Entities;
 using ProyectoAgronegocios.Support;
 using System;
 using System.Collections.Generic;
@@ -15,8 +16,9 @@ namespace ProyectoAgronegocios.GUILayer
     public partial class frmFactura : Form
     {
         private ClienteService sCliente = new ClienteService();
-        private int id_Cliente;
+        private int id_Cliente = -1;
         private SemillaService sSemilla = new SemillaService();
+        private FacturaService sFactura = new FacturaService();
         public frmFactura()
         {
             InitializeComponent();
@@ -54,7 +56,7 @@ namespace ProyectoAgronegocios.GUILayer
         private void txtCantidad_TextChanged(object sender, EventArgs e)
         {
             int num;
-            if (Int32.TryParse(txtCantidad.Text, out num))
+            if (Int32.TryParse(txtCantidad.Text, out num) && txtNombreSemilla.Text != "")
             {
                 txtPrecioDetalle.Text = (Convert.ToDouble(num) * Convert.ToDouble(lblPrecioSugerido.Text)).ToString();
             }
@@ -98,13 +100,79 @@ namespace ProyectoAgronegocios.GUILayer
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            //Agregar fila Detalle a Grilla
-            //dtgDetalles.Rows.Add();
+            if (txtCantidad.Text != "")
+            {
+                dtgDetalles.Rows.Add(
+                txtIdSemilla.Text,
+                txtNombreSemilla.Text,
+                lblPrecioSugerido.Text,
+                txtCantidad.Text,
+                txtPrecioDetalle.Text
+                );
+                lblTotalNum.Text = (Convert.ToDouble(lblTotalNum.Text) + Convert.ToDouble(txtPrecioDetalle.Text)).ToString();
+            }
+            else
+            {
+                MessageBox.Show("Ingrese Cantidad", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtCantidad.Focus();
+            }
+                
+            
+            
+            
+
+
+        }
+        private void btnBorrar_Click(object sender, EventArgs e)
+        {
+            if (dtgDetalles.CurrentRow.Selected && 
+                MessageBox.Show("¿Desea eliminar el detalle seleccionado?","", MessageBoxButtons.YesNo, 
+                MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                lblTotalNum.Text = (Convert.ToDouble(lblTotalNum.Text) - 
+                            Convert.ToDouble(dtgDetalles.CurrentRow.Cells["Subtotal"].Value)).ToString();
+                dtgDetalles.Rows.Remove(dtgDetalles.CurrentRow);
+                MessageBox.Show("Detalle eliminado");
+            }
+            else
+            {
+                MessageBox.Show("Seleccione un Detalle");
+            }
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnFacturar_Click(object sender, EventArgs e)
+        {
+            Factura oFact = new Factura(cboTipoFactura.Text, -1, dtpFechaFactura.Value, 
+                            Convert.ToDouble(lblTotalNum.Text), Sesion.GetInstance().User.Cod_Empleado, id_Cliente);
+            List<DetalleFactura> lista = new List<DetalleFactura>();
+            for (int i = 0; i < dtgDetalles.Rows.Count; i++)
+            {
+                DetalleFactura oDetalleFact = new DetalleFactura();
+                oDetalleFact.Tipo_Factura = cboTipoFactura.Text;
+                oDetalleFact.Id_Semilla = Convert.ToInt32(dtgDetalles.Rows[i].Cells["id_Semilla"].Value);
+                oDetalleFact.Precio_Venta = Convert.ToDouble(dtgDetalles.Rows[i].Cells["precioVenta"].Value);
+                oDetalleFact.Cantidad = Convert.ToInt32(dtgDetalles.Rows[i].Cells["cantidad"].Value);
+                oDetalleFact.Subtotal = Convert.ToDouble(dtgDetalles.Rows[i].Cells["subTotal"].Value);
+                lista.Add(oDetalleFact);
+                
+            }
+            if (lista.Count != 0 && id_Cliente != -1 && cboTipoFactura.Text != "" )
+            {
+                sFactura.InsertarFactura(oFact, lista);
+                MessageBox.Show("Factura Generada con Éxito");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Faltan agregar detalles o cliente o el tipo de factura");
+            }
+                
+
         }
     }
 }
