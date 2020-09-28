@@ -199,5 +199,8 @@
   <ItemGroup>
     <None Include="Resources\Agregar semilla1.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\factura.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
