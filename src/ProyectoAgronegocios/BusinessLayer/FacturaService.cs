@@ -11,9 +11,9 @@ namespace ProyectoAgronegocios.BusinessLayer
     class FacturaService
     {
         FacturaDAO facturaDAO = new FacturaDAO();
-        public void InsertarFactura(Factura oFact, List<DetalleFactura> lista)
+        public void InsertarFactura(Factura oFact, List<DetalleFactura> lista_DF, List<FormaPagoXfactura> lista_FP)
         {
-            facturaDAO.InsertarFactura(oFact, lista);
+            facturaDAO.InsertarFactura(oFact, lista_DF, lista_FP);
         }
     }
 }

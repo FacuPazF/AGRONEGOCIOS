@@ -19,6 +19,7 @@ namespace ProyectoAgronegocios.GUILayer
         private int id_Cliente = -1;
         private SemillaService sSemilla = new SemillaService();
         private FacturaService sFactura = new FacturaService();
+        private FormaPagoService sFP = new FormaPagoService();
         public frmFactura()
         {
             InitializeComponent();
@@ -29,6 +30,8 @@ namespace ProyectoAgronegocios.GUILayer
             lblUsuarioLoguedo.Text = "Empleado: " + Sesion.GetInstance().User.Nombre + " " +
                                     Sesion.GetInstance().User.Apellido + " (" +
                                     Sesion.GetInstance().User.Cod_Empleado + ")";
+            cargarCombo(cboFormaPago1, sFP.recuperarFormasPago());
+            cargarCombo(cboFormaPago2, sFP.recuperarFormasPago());
         }
 
         private void txtIdSemilla_TextChanged(object sender, EventArgs e)
@@ -61,6 +64,30 @@ namespace ProyectoAgronegocios.GUILayer
                 txtPrecioDetalle.Text = (Convert.ToDouble(num) * Convert.ToDouble(lblPrecioSugerido.Text)).ToString();
             }
 
+        }
+        private void cboFormaPago1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboFormaPago1.Text == "Efectivo")
+            {
+                nudDias1.Enabled = false;
+                nudDias1.Value = 0;
+            }
+            else
+            {
+                nudDias1.Enabled = true;
+            }
+        }
+        private void cboFormaPago2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cboFormaPago2.Text == "Efectivo")
+            {
+                nudDias2.Enabled = false;
+                nudDias2.Value = 0;
+            }
+            else
+            {
+                nudDias2.Enabled = true;
+            }
         }
         // ------------- Botones
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -96,10 +123,9 @@ namespace ProyectoAgronegocios.GUILayer
          
             
         }
-
-
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+
             if (txtCantidad.Text != "")
             {
                 dtgDetalles.Rows.Add(
@@ -110,6 +136,7 @@ namespace ProyectoAgronegocios.GUILayer
                 txtPrecioDetalle.Text
                 );
                 lblTotalNum.Text = (Convert.ToDouble(lblTotalNum.Text) + Convert.ToDouble(txtPrecioDetalle.Text)).ToString();
+                grbFormasPago.Enabled = true;
             }
             else
             {
@@ -133,23 +160,27 @@ namespace ProyectoAgronegocios.GUILayer
                             Convert.ToDouble(dtgDetalles.CurrentRow.Cells["Subtotal"].Value)).ToString();
                 dtgDetalles.Rows.Remove(dtgDetalles.CurrentRow);
                 MessageBox.Show("Detalle eliminado");
+                if (Convert.ToDouble(lblTotalNum.Text) == 0)
+                {
+                    grbFormasPago.Enabled = false;
+                }
             }
             else
             {
                 MessageBox.Show("Seleccione un Detalle");
             }
+            
         }
-
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
         private void btnFacturar_Click(object sender, EventArgs e)
         {
             Factura oFact = new Factura(cboTipoFactura.Text, -1, dtpFechaFactura.Value, 
                             Convert.ToDouble(lblTotalNum.Text), Sesion.GetInstance().User.Cod_Empleado, id_Cliente);
-            List<DetalleFactura> lista = new List<DetalleFactura>();
+            List<DetalleFactura> lista_DF = new List<DetalleFactura>();
+            List<FormaPagoXfactura> lista_FP = new List<FormaPagoXfactura>();
             for (int i = 0; i < dtgDetalles.Rows.Count; i++)
             {
                 DetalleFactura oDetalleFact = new DetalleFactura();
@@ -158,12 +189,22 @@ namespace ProyectoAgronegocios.GUILayer
                 oDetalleFact.Precio_Venta = Convert.ToDouble(dtgDetalles.Rows[i].Cells["precioVenta"].Value);
                 oDetalleFact.Cantidad = Convert.ToInt32(dtgDetalles.Rows[i].Cells["cantidad"].Value);
                 oDetalleFact.Subtotal = Convert.ToDouble(dtgDetalles.Rows[i].Cells["subTotal"].Value);
-                lista.Add(oDetalleFact);
+                lista_DF.Add(oDetalleFact);
                 
             }
-            if (lista.Count != 0 && id_Cliente != -1 && cboTipoFactura.Text != "" )
+            for (int i = 0; i < dtgFormasPago.Rows.Count; i++)
             {
-                sFactura.InsertarFactura(oFact, lista);
+                FormaPagoXfactura oFormaPago = new FormaPagoXfactura();
+                oFormaPago.Tipo_Factura = cboTipoFactura.Text;
+                oFormaPago.Id_Forma_Pago = Convert.ToInt32(dtgFormasPago.Rows[i].Cells["id_FormaPago"].Value);
+                oFormaPago.Monto = Convert.ToDouble(dtgFormasPago.Rows[i].Cells["monto"].Value);
+                oFormaPago.Dias_de_Plazo = Convert.ToInt32(dtgFormasPago.Rows[i].Cells["dias_plazo"].Value);
+                lista_FP.Add(oFormaPago);
+
+            }
+            if (lista_DF.Count != 0 && id_Cliente != -1 && cboTipoFactura.Text != "" && dtgFormasPago.Rows.Count != 0 )
+            {
+                sFactura.InsertarFactura(oFact, lista_DF, lista_FP);
                 MessageBox.Show("Factura Generada con Éxito");
                 this.Close();
             }
@@ -174,5 +215,74 @@ namespace ProyectoAgronegocios.GUILayer
                 
 
         }
+        private void btnAgregarFP1_Click(object sender, EventArgs e)
+        {
+            if (txtMontoFP1.Text != "" && txtMontoFP1.Text != "0" && nudDias1.Value >= 0)
+            {
+                dtgFormasPago.Rows.Add(cboFormaPago1.SelectedValue,
+                    cboFormaPago1.Text,
+                    txtMontoFP1.Text,
+                    nudDias1.Value
+                    );
+                if ((Convert.ToDouble(lblTotalNum.Text) - Convert.ToDouble(txtMontoFP1.Text)) == 0)
+                {
+                    btnFacturar.Focus();
+                    return;
+                }
+                btnAgregarFP1.Enabled = false;
+                lblFormaPago2.Enabled = true;
+                btnAgregarFP2.Enabled = true;
+                if (cboFormaPago1.Text == "Efectivo")
+                {
+                    cboFormaPago2.SelectedValue = 2;
+                }
+                else
+                {
+                    cboFormaPago2.SelectedValue = 1;
+                }
+                txtMontoFP2.Text = (Convert.ToDouble(lblTotalNum.Text) - Convert.ToDouble(txtMontoFP1.Text)).ToString();
+            }
+        }
+        private void btnAgregarFP2_Click(object sender, EventArgs e)
+        {
+            if (nudDias2.Value >= 0)
+            {
+                dtgFormasPago.Rows.Add(cboFormaPago2.SelectedValue,
+                    cboFormaPago2.Text,
+                    txtMontoFP2.Text,
+                    nudDias2.Value
+                    );
+                btnAgregarFP2.Enabled = false;
+                btnFacturar.Focus();
+            }
+        }
+        private void btnQuitarFP_Click(object sender, EventArgs e)
+        {
+            dtgFormasPago.Rows.Clear();
+            cboFormaPago1.SelectedIndex = -1;
+            cboFormaPago2.SelectedIndex = -1;
+            txtMontoFP1.Clear();
+            txtMontoFP2.Clear();
+            nudDias1.Value = 0;
+            nudDias2.Value = 0;
+            btnAgregarFP1.Enabled = true;
+            btnAgregarFP2.Enabled = false;
+            lblFormaPago2.Enabled = false;
+
+
+        }
+
+        // -------------- Métodos de soporte
+        private void cargarCombo(ComboBox combo, DataTable tabla)
+        {
+            
+            combo.DataSource = tabla;
+            combo.DisplayMember = tabla.Columns[1].ColumnName;
+            combo.ValueMember = tabla.Columns[0].ColumnName;
+            combo.SelectedValue = -1;
+
+        }
+
+        
     }
 }

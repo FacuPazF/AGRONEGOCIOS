@@ -10,7 +10,7 @@ namespace ProyectoAgronegocios.DataAccessLayer
     class FacturaDAO
     {
        
-        public void InsertarFactura(Factura fact, List<DetalleFactura> lista)
+        public void InsertarFactura(Factura fact, List<DetalleFactura> lista, List<FormaPagoXfactura> lista_FP)
         {
             DataManager dm = new DataManager();
             try
@@ -40,6 +40,19 @@ namespace ProyectoAgronegocios.DataAccessLayer
                            + lista[i].Precio_Venta + ", "
                            + lista[i].Cantidad + ", "
                            + lista[i].Subtotal + " )";
+                    dm.EjecutarSQL(cSQL);
+
+                }
+                for (int i = 0; i < lista_FP.Count; i++)
+                {
+                    cSQL = "INSERT INTO Forma_PagoXfactura (id_Forma_Pago, tipo_Factura, numero_Factura, monto, dias_de_Plazo) VALUES "
+                           + " ("
+                           + lista_FP[i].Id_Forma_Pago + ", '"
+                           + lista_FP[i].Tipo_Factura + "', "
+                           + id_Factura + ", "
+                           + lista_FP[i].Monto + ", "
+                           + lista_FP[i].Dias_de_Plazo + ")";
+                           
                     dm.EjecutarSQL(cSQL);
 
                 }

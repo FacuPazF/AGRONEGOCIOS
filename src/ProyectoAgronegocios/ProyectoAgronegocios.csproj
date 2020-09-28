@@ -49,6 +49,7 @@
     <Compile Include="BusinessLayer\BarrioService.cs" />
     <Compile Include="BusinessLayer\CalidadService.cs" />
     <Compile Include="BusinessLayer\FacturaService.cs" />
+    <Compile Include="BusinessLayer\FormaPagoService.cs" />
     <Compile Include="BusinessLayer\TipoEmpleadoService.cs" />
     <Compile Include="BusinessLayer\ClienteService.cs" />
     <Compile Include="BusinessLayer\EmpleadoService.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="DataAccessLayer\BarrioDAO.cs" />
     <Compile Include="DataAccessLayer\CalidadDAO.cs" />
     <Compile Include="DataAccessLayer\FacturaDAO.cs" />
+    <Compile Include="DataAccessLayer\FormaPagoDAO.cs" />
     <Compile Include="DataAccessLayer\TipoEmpleadoDAO.cs" />
     <Compile Include="DataAccessLayer\ClienteDAO.cs" />
     <Compile Include="DataAccessLayer\DataManager.cs" />
@@ -74,6 +76,7 @@
     <Compile Include="Entities\DetalleFactura.cs" />
     <Compile Include="Entities\Empleado.cs" />
     <Compile Include="Entities\Factura.cs" />
+    <Compile Include="Entities\FormaPagoXfactura.cs" />
     <Compile Include="Entities\Semilla.cs" />
     <Compile Include="Entities\TiposXsemillas.cs" />
     <Compile Include="Entities\Transporte.cs" />

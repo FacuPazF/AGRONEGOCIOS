@@ -109,6 +109,7 @@ namespace ProyectoAgronegocios.GUILayer
             {
                 sSemilla.borrarSemilla(Convert.ToInt32(dtgSemillas.CurrentRow.Cells[0].Value));
                 MessageBox.Show("Semilla Borrada con Éxito", "Semilla Borrada", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dtgSemillas.ClearSelection();
             }
         }
         private void btnConsultar_Click(object sender, EventArgs e)
