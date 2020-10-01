@@ -16,15 +16,18 @@ namespace ProyectoAgronegocios.GUILayer
     public partial class frmFactura : Form
     {
         private ClienteService sCliente = new ClienteService();
-        private int id_Cliente = -1;
         private SemillaService sSemilla = new SemillaService();
         private FacturaService sFactura = new FacturaService();
         private FormaPagoService sFP = new FormaPagoService();
+        private int id_Cliente = -1;
+        
         public frmFactura()
         {
             InitializeComponent();
         }
-        // ----------- Formulario
+        
+        // ----------- Formulario ------------------------------------------------------
+
         private void frmFactura_Load(object sender, EventArgs e)
         {
             lblUsuarioLoguedo.Text = "Empleado: " + Sesion.GetInstance().User.Nombre + " " +
@@ -33,7 +36,6 @@ namespace ProyectoAgronegocios.GUILayer
             cargarCombo(cboFormaPago1, sFP.recuperarFormasPago());
             cargarCombo(cboFormaPago2, sFP.recuperarFormasPago());
         }
-
         private void txtIdSemilla_TextChanged(object sender, EventArgs e)
         {
             DataTable tabla = new DataTable();
@@ -89,7 +91,9 @@ namespace ProyectoAgronegocios.GUILayer
                 nudDias2.Enabled = true;
             }
         }
-        // ------------- Botones
+        
+        // ------------- Botones -------------------------------------------------------
+
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             if (txtFilterCuil.Text == "" || txtFilterCuil.Text == "Ingrese Cuil o Cuit....")
@@ -126,7 +130,7 @@ namespace ProyectoAgronegocios.GUILayer
         private void btnAgregar_Click(object sender, EventArgs e)
         {
 
-            if (txtCantidad.Text != "")
+            if (txtCantidad.Text != "" )
             {
                 dtgDetalles.Rows.Add(
                 txtIdSemilla.Text,
@@ -181,6 +185,7 @@ namespace ProyectoAgronegocios.GUILayer
                             Convert.ToDouble(lblTotalNum.Text), Sesion.GetInstance().User.Cod_Empleado, id_Cliente);
             List<DetalleFactura> lista_DF = new List<DetalleFactura>();
             List<FormaPagoXfactura> lista_FP = new List<FormaPagoXfactura>();
+           
             for (int i = 0; i < dtgDetalles.Rows.Count; i++)
             {
                 DetalleFactura oDetalleFact = new DetalleFactura();
@@ -192,6 +197,7 @@ namespace ProyectoAgronegocios.GUILayer
                 lista_DF.Add(oDetalleFact);
                 
             }
+
             for (int i = 0; i < dtgFormasPago.Rows.Count; i++)
             {
                 FormaPagoXfactura oFormaPago = new FormaPagoXfactura();
@@ -202,7 +208,18 @@ namespace ProyectoAgronegocios.GUILayer
                 lista_FP.Add(oFormaPago);
 
             }
-            if (lista_DF.Count != 0 && id_Cliente != -1 && cboTipoFactura.Text != "" && dtgFormasPago.Rows.Count != 0 )
+
+            double tot = 0;
+            for (int i = 0; i < dtgFormasPago.Rows.Count; i++)
+            {
+                tot += Convert.ToDouble(dtgFormasPago.Rows[i].Cells["monto"].Value);
+            }
+         
+            if (lista_DF.Count != 0 
+                && id_Cliente != -1 
+                && cboTipoFactura.Text != "" 
+                && dtgFormasPago.Rows.Count != 0 
+                && tot <= Convert.ToDouble(lblTotalNum.Text))
             {
                 sFactura.InsertarFactura(oFact, lista_DF, lista_FP);
                 MessageBox.Show("Factura Generada con Éxito");
@@ -210,14 +227,16 @@ namespace ProyectoAgronegocios.GUILayer
             }
             else
             {
-                MessageBox.Show("Faltan agregar detalles o cliente o el tipo de factura");
+                MessageBox.Show("Faltan agregar detalles, datos del cliente, tipo de factura o formas de pago");
             }
-                
-
         }
         private void btnAgregarFP1_Click(object sender, EventArgs e)
         {
-            if (txtMontoFP1.Text != "" && txtMontoFP1.Text != "0" && nudDias1.Value >= 0)
+            if (txtMontoFP1.Text != "" 
+                && txtMontoFP1.Text != "0" 
+                && nudDias1.Value >= 0 
+                && (Convert.ToDouble(txtMontoFP1.Text)) <= (Convert.ToDouble(lblTotalNum.Text))
+                && cboFormaPago1.Text != "")
             {
                 dtgFormasPago.Rows.Add(cboFormaPago1.SelectedValue,
                     cboFormaPago1.Text,
@@ -272,7 +291,8 @@ namespace ProyectoAgronegocios.GUILayer
 
         }
 
-        // -------------- Métodos de soporte
+        // -------------- Métodos de soporte -------------------------------------------
+
         private void cargarCombo(ComboBox combo, DataTable tabla)
         {
             
@@ -283,6 +303,7 @@ namespace ProyectoAgronegocios.GUILayer
 
         }
 
-        
+        //------------------------------------------------------------------------------
+
     }
 }
