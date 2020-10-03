@@ -23,7 +23,7 @@ namespace ProyectoAgronegocios.DataAccessLayer
                                  + " ('"
                                  + fact.Tipo_factura + "', '"
                                  + fact.Fecha_Factura.ToString("yyyy-MM-dd") + "', "
-                                 + fact.Total + ", "
+                                 + (fact.Total).ToString().Replace(",",".") + ", "
                                  + fact.Cod_Empleado + ", "
                                  + fact.Id_cliente + ")";
                 dm.EjecutarSQL(cSQL);
@@ -37,9 +37,9 @@ namespace ProyectoAgronegocios.DataAccessLayer
                            + lista[i].Tipo_Factura + "', "
                            + lista[i].Id_Semilla + ", "
                            + id_Factura + ", "
-                           + lista[i].Precio_Venta + ", "
+                           + lista[i].Precio_Venta.ToString().Replace(",", ".") + ", "
                            + lista[i].Cantidad + ", "
-                           + lista[i].Subtotal + " )";
+                           + lista[i].Subtotal.ToString().Replace(",", ".") + " )";
                     dm.EjecutarSQL(cSQL);
 
                 }
@@ -50,7 +50,7 @@ namespace ProyectoAgronegocios.DataAccessLayer
                            + lista_FP[i].Id_Forma_Pago + ", '"
                            + lista_FP[i].Tipo_Factura + "', "
                            + id_Factura + ", "
-                           + lista_FP[i].Monto + ", "
+                           + lista_FP[i].Monto.ToString().Replace(",", ".") + ", "
                            + lista_FP[i].Dias_de_Plazo + ")";
                            
                     dm.EjecutarSQL(cSQL);

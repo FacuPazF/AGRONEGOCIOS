@@ -20,6 +20,7 @@ namespace ProyectoAgronegocios.GUILayer
         private SemillaService sSemilla = new SemillaService();
         private FacturaService sFactura = new FacturaService();
         private FormaPagoService sFP = new FormaPagoService();
+        private double totalFP = 0;
         public frmFactura()
         {
             InitializeComponent();
@@ -31,9 +32,7 @@ namespace ProyectoAgronegocios.GUILayer
                                     Sesion.GetInstance().User.Apellido + " (" +
                                     Sesion.GetInstance().User.Cod_Empleado + ")";
             cargarCombo(cboFormaPago1, sFP.recuperarFormasPago());
-            cargarCombo(cboFormaPago2, sFP.recuperarFormasPago());
         }
-
         private void txtIdSemilla_TextChanged(object sender, EventArgs e)
         {
             DataTable tabla = new DataTable();
@@ -53,6 +52,7 @@ namespace ProyectoAgronegocios.GUILayer
                     lblCalidadSemilla.Text = "Calidad: ";
                     lblTipoSemilla.Text = "Tipo Semilla: ";
                     lblPrecioSugerido.Text = " - ";
+                    txtCantidad.Text = "";
                 }
             }
         }
@@ -75,18 +75,6 @@ namespace ProyectoAgronegocios.GUILayer
             else
             {
                 nudDias1.Enabled = true;
-            }
-        }
-        private void cboFormaPago2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cboFormaPago2.Text == "Efectivo")
-            {
-                nudDias2.Enabled = false;
-                nudDias2.Value = 0;
-            }
-            else
-            {
-                nudDias2.Enabled = true;
             }
         }
         // ------------- Botones
@@ -126,8 +114,18 @@ namespace ProyectoAgronegocios.GUILayer
         private void btnAgregar_Click(object sender, EventArgs e)
         {
 
-            if (txtCantidad.Text != "")
+            if (validarDatosSemilla())
             {
+                for (int i = 0; i < dtgDetalles.Rows.Count; i++)
+                {
+                    if (dtgDetalles.Rows[i].Cells["id_Semilla"].Value.ToString() == txtIdSemilla.Text)
+                    {
+                        dtgDetalles.Rows[i].Cells["cantidad"].Value = (Convert.ToDouble(dtgDetalles.Rows[i].Cells["cantidad"].Value) + Convert.ToDouble(txtCantidad.Text)).ToString();
+                        dtgDetalles.Rows[i].Cells["subTotal"].Value = (Convert.ToDouble(dtgDetalles.Rows[i].Cells["subTotal"].Value) + Convert.ToDouble(txtPrecioDetalle.Text)).ToString();
+                        lblTotalNum.Text = (Convert.ToDouble(lblTotalNum.Text) + Convert.ToDouble(txtPrecioDetalle.Text)).ToString();
+                        return;
+                    }
+                }
                 dtgDetalles.Rows.Add(
                 txtIdSemilla.Text,
                 txtNombreSemilla.Text,
@@ -137,18 +135,25 @@ namespace ProyectoAgronegocios.GUILayer
                 );
                 lblTotalNum.Text = (Convert.ToDouble(lblTotalNum.Text) + Convert.ToDouble(txtPrecioDetalle.Text)).ToString();
                 grbFormasPago.Enabled = true;
+                
             }
             else
             {
-                MessageBox.Show("Ingrese Cantidad", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                txtCantidad.Focus();
+                if (txtNombreSemilla.Text == "" || txtIdSemilla.Text == "")
+                {
+                    MessageBox.Show("Ingrese un ID de Semilla válido", "Semilla inexistente", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtIdSemilla.Focus();
+                }
+                else
+                {
+                    MessageBox.Show("Ingrese Cantidad", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txtCantidad.Focus();
+                }
+
+
+                
             }
                 
-            
-            
-            
-
-
         }
         private void btnBorrar_Click(object sender, EventArgs e)
         {
@@ -217,57 +222,54 @@ namespace ProyectoAgronegocios.GUILayer
         }
         private void btnAgregarFP1_Click(object sender, EventArgs e)
         {
-            if (txtMontoFP1.Text != "" && txtMontoFP1.Text != "0" && nudDias1.Value >= 0)
+            // Validaciones
+            if (cboFormaPago1.Text == "")
+            {
+                MessageBox.Show("Ingrese forma de Pago", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            
+            if (txtMontoFP1.Text == "" || Convert.ToDouble(txtMontoFP1.Text) <= 0 || Convert.ToDouble(txtMontoFP1.Text) > Convert.ToDouble(lblTotalNum.Text))
+            {
+                MessageBox.Show("Ingrese monto válido", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txtMontoFP1.Focus();
+                return;
+            }
+            if (cboFormaPago1.Text == "Cheque" && nudDias1.Value <= 0)
+            {
+                MessageBox.Show("Ingrese días de plazo para el cheque", "", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+            // Ingreso a la Grilla
+            if (validarMontoExedente(totalFP))
             {
                 dtgFormasPago.Rows.Add(cboFormaPago1.SelectedValue,
                     cboFormaPago1.Text,
                     txtMontoFP1.Text,
                     nudDias1.Value
                     );
-                if ((Convert.ToDouble(lblTotalNum.Text) - Convert.ToDouble(txtMontoFP1.Text)) == 0)
-                {
-                    btnFacturar.Focus();
-                    return;
-                }
-                btnAgregarFP1.Enabled = false;
-                lblFormaPago2.Enabled = true;
-                btnAgregarFP2.Enabled = true;
-                if (cboFormaPago1.Text == "Efectivo")
-                {
-                    cboFormaPago2.SelectedValue = 2;
-                }
-                else
-                {
-                    cboFormaPago2.SelectedValue = 1;
-                }
-                txtMontoFP2.Text = (Convert.ToDouble(lblTotalNum.Text) - Convert.ToDouble(txtMontoFP1.Text)).ToString();
             }
-        }
-        private void btnAgregarFP2_Click(object sender, EventArgs e)
-        {
-            if (nudDias2.Value >= 0)
+            else
             {
-                dtgFormasPago.Rows.Add(cboFormaPago2.SelectedValue,
-                    cboFormaPago2.Text,
-                    txtMontoFP2.Text,
-                    nudDias2.Value
-                    );
-                btnAgregarFP2.Enabled = false;
-                btnFacturar.Focus();
+                MessageBox.Show("Ingrese un monto menor o igual a " + (Convert.ToDouble(lblTotalNum.Text) - totalFP).ToString(), 
+                                "Monto excedido", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
             }
+            
+            
         }
         private void btnQuitarFP_Click(object sender, EventArgs e)
         {
             dtgFormasPago.Rows.Clear();
             cboFormaPago1.SelectedIndex = -1;
-            cboFormaPago2.SelectedIndex = -1;
+            
             txtMontoFP1.Clear();
-            txtMontoFP2.Clear();
+            
             nudDias1.Value = 0;
-            nudDias2.Value = 0;
+            
             btnAgregarFP1.Enabled = true;
-            btnAgregarFP2.Enabled = false;
-            lblFormaPago2.Enabled = false;
+            
+            
 
 
         }
@@ -282,7 +284,20 @@ namespace ProyectoAgronegocios.GUILayer
             combo.SelectedValue = -1;
 
         }
+        private bool validarDatosSemilla()
+        {   
+            return (txtCantidad.Text != "" && Convert.ToInt32(txtCantidad.Text) > 0 && txtNombreSemilla.Text != "" && txtIdSemilla.Text != "");
+        }
+        private bool validarMontoExedente(double total)
+        {
+            for (int i = 0; i < dtgFormasPago.Rows.Count; i++)
+            {
+                total += Convert.ToDouble(dtgFormasPago.Rows[i].Cells["monto"].Value);
+            }
+            total += Convert.ToDouble(txtMontoFP1.Text);
+            return total <= Convert.ToDouble(lblTotalNum.Text);
+        }
 
-        
+
     }
 }
