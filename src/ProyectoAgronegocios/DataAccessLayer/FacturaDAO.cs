@@ -28,7 +28,7 @@ namespace ProyectoAgronegocios.DataAccessLayer
                                  + fact.Id_cliente + ")";
                 dm.EjecutarSQL(cSQL);
 
-                int id_Factura = Convert.ToInt32(dm.ConsultaSQLScalar("SELECT MAX(numero) FROM Facturas"));
+                int id_Factura = Convert.ToInt32(dm.ConsultaSQLScalar("SELECT @@IDENTITY AS 'PK_Factura'"));
 
                 for (int i = 0; i < lista.Count; i++)
                 {
