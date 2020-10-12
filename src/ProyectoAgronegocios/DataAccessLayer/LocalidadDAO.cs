@@ -16,5 +16,12 @@ namespace ProyectoAgronegocios.DataAccessLayer
 
             return DBHelper.consultar(consulta);
         }
+
+        public DataTable recuperarLocalidades(int id_prov)
+        {
+            consulta = "SELECT * FROM Localidad WHERE id_Provincia = " + id_prov;
+
+            return DBHelper.consultar(consulta);
+        }
     }
 }

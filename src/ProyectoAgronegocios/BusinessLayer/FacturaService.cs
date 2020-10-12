@@ -2,6 +2,7 @@
 using ProyectoAgronegocios.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,5 +16,16 @@ namespace ProyectoAgronegocios.BusinessLayer
         {
             facturaDAO.InsertarFactura(oFact, lista_DF, lista_FP);
         }
+
+        public DataTable buscarFacturasPorCliente(int id_Cliente)
+        {
+            return facturaDAO.buscarFacturasPorCliente(id_Cliente);
+        }
+
+        public DataTable recuperarDetalles(int num, string tipo_factura)
+        {
+            return facturaDAO.recuperarDetalles(num, tipo_factura);
+        }
     }
+
 }

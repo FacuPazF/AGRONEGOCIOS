@@ -16,5 +16,9 @@ namespace ProyectoAgronegocios.BusinessLayer
         {
             return daoLocalidad.recuperarLocalidades();
         }
+        public DataTable recuperarLocalidades(int id_prov)
+        {
+            return daoLocalidad.recuperarLocalidades(id_prov);
+        }
     }
 }

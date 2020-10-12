@@ -14,7 +14,8 @@ public class DataManager
         dbConnection = new SqlConnection();
         // dbConnection.ConnectionString = "Data Source=localhost;Initial Catalog=BugsTracker;User ID=sa;Password=****";
         //dbConnection.ConnectionString = @"Data Source=DESKTOP-MQ9I1RE\SQLEXPRESS;Initial Catalog=Agronegocios;Integrated Security=True";
-        dbConnection.ConnectionString = @"Data Source=DESKTOP-6US2DFF\SQLEXPRESS; Initial Catalog = Agronegocios; Integrated Security = True";
+        // dbConnection.ConnectionString = @"Data Source=DESKTOP-6US2DFF\SQLEXPRESS; Initial Catalog = Agronegocios; Integrated Security = True";
+        dbConnection.ConnectionString = @"Data Source=NIICO\SQLEXPRESS;Initial Catalog = Agronegocios; Integrated Security = True";
     }
 
 

@@ -312,6 +312,7 @@ namespace ProyectoAgronegocios.GUILayer
             return total;
         }
 
+
        //------------------------------------------------------------------------------
 
     }

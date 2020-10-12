@@ -20,6 +20,7 @@ namespace ProyectoAgronegocios.GUILayer
         {
             InitializeComponent();
         }
+        
         private void frmEnvio_Load(object sender, EventArgs e)
         {
             recargarFormulario(DialogResult.Yes);
@@ -27,6 +28,7 @@ namespace ProyectoAgronegocios.GUILayer
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+
             double cuil_cliente;
             if (!double.TryParse(txtFilterCuil.Text,out cuil_cliente))
             {
@@ -57,16 +59,23 @@ namespace ProyectoAgronegocios.GUILayer
                 lblRealRazonSocial.Text = gesEnvios.ClienteSeleccionado.Razon_Social;
                 grbDatosEnvio.Enabled = true;
                 btnRegistrarEnvio.Enabled = true;
+
             }
             else
             {
                 MessageBox.Show("Cliente no encontrado");
+                lblRealNomApe.Text = "_________";
+                lblRealCuil.Text = "_________";
+                lblRealRazonSocial.Text = "_________";
+                grbDatosEnvio.Enabled = false;
+                btnRegistrarEnvio.Enabled = false;
                 return;
             }
 
             //Búsqueda de Facturas
-            //buscarFacturas();
+            buscarFacturas();
         }
+        
         private void btnRegistrarEnvio_Click(object sender, EventArgs e)
         {
             if (dtpFechaEnvio.Value < DateTime.Today)
@@ -121,64 +130,69 @@ namespace ProyectoAgronegocios.GUILayer
             gesEnvios.registrarEnvio();
         }
 
-
-
-
-
+        private void btnDetalleFactura_Click(object sender, EventArgs e)
+        {
+            gesEnvios.tomarFacturaSeleccionada(dtgFacturas.CurrentRow);
+            frmDetFacturaConsulta frmDetalle = new frmDetFacturaConsulta();
+            frmDetalle.GesEnvio = this.gesEnvios;
+            frmDetalle.ShowDialog();
+        }
 
         // ---------------------- Métodos de Soporte
-        //private void buscarFacturas()
-        //{
-        //    if (gesEnvios.ClienteSeleccionado == null)
-        //    {
-        //        return;
-        //    }
-        //    DataTable facturas = gesEnvios.buscarFacturasCliente(gesEnvios.ClienteSeleccionado);
-        //    if (facturas.Rows.Count != 0)
-        //    {
-        //        for (int i = 0; i < facturas.Rows.Count; i++)
-        //        {
-        //            dtgFacturas.Rows.Add(
-        //                facturas.Rows[i]["Tipo de Factura"],
-        //                facturas.Rows[i]["Numero de Factura"],
-        //                facturas.Rows[i]["Fecha de Emision"],
-        //                facturas.Rows[i]["Monto Total"],
-        //                facturas.Rows[i]["Empleado"]);
-        //        }
+        private void buscarFacturas()
+        {
+            if (gesEnvios.ClienteSeleccionado == null)
+            {
+                return;
+            }
+            DataTable facturas = gesEnvios.buscarFacturasCliente(gesEnvios.ClienteSeleccionado);
+            if (facturas.Rows.Count != 0)
+            {
+                for (int i = 0; i < facturas.Rows.Count; i++)
+                {
+                    dtgFacturas.Rows.Add(
+                        facturas.Rows[i]["Tipo de Factura"],
+                        facturas.Rows[i]["Numero de Factura"],
+                        facturas.Rows[i]["Fecha de Emision"],
+                        facturas.Rows[i]["Monto Total"],
+                        facturas.Rows[i]["Empleado"]);
+                }
 
-        //    }
-        //    else
-        //    {
-        //        DialogResult msjSinFacturas = MessageBox.Show("Este cliente no tiene Facturas. ¿Desea registrar una nueva Factura?",
-        //                                                      "Cliente sin Facturas",
-        //                                                      MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
-        //        if (msjSinFacturas == DialogResult.Yes)
-        //        {
-        //            frmFactura factura = new frmFactura();
-        //            factura.ShowDialog();
-        //        }
+            }
+            else
+            {
+                DialogResult msjSinFacturas = MessageBox.Show("Este cliente no tiene Facturas. ¿Desea registrar una nueva Factura?",
+                                                              "Cliente sin Facturas",
+                                                              MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+                if (msjSinFacturas == DialogResult.Yes)
+                {
+                    frmFactura factura = new frmFactura();
+                    factura.ShowDialog();
+                }
 
-        //    }
-        //}
+            }
+        }
+
         private void cargarCombo(ComboBox combo, DataTable tabla)
         {
-
             combo.DataSource = tabla;
             combo.DisplayMember = tabla.Columns[1].ColumnName;
             combo.ValueMember = tabla.Columns[0].ColumnName;
-            combo.SelectedValue = -1;
-
+            combo.SelectedIndex = -1;
+   
         }
+       
         private void recargarFormulario(DialogResult msj)
         {
             if (msj == DialogResult.Yes)
             {
                 cargarCombo(cboProvincia, gesEnvios.buscarProvincias());
+                cargarCombo(cboLocalidad, gesEnvios.buscarLocalidades());
+                cargarCombo(cboBarrio, gesEnvios.buscarBarrios());
                 cargarCombo(cboEmpresaTransporte, gesEnvios.buscarEmpresasTransporte());
+                
                 cboBarrio.SelectedIndex = -1;
                 cboLocalidad.SelectedIndex = -1;
-                cboBarrio.DataSource = null;
-                cboLocalidad.DataSource = null;
                 txtDireccionEnvio.Text = "";
                 dtpFechaEnvio.Value = DateTime.Today;
                 cboEmpresaTransporte.SelectedIndex = -1;
@@ -195,28 +209,21 @@ namespace ProyectoAgronegocios.GUILayer
             }
             
         }
-        private void cboProvincia_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //if (cboProvincia.SelectedIndex != -1)
-            //    cargarCombo(cboLocalidad, gesEnvios.buscarLocalidad(Convert.ToInt32(cboProvincia.SelectedValue)));
-        }
-        private void cboLocalidad_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //if (cboLocalidad.SelectedIndex != -1)
-            //    cargarCombo(cboBarrio, gesEnvios.buscarBarrios(Convert.ToInt32(cboLocalidad.SelectedValue)));
-        }
-
+        
+        
         // --- Botones No críticos
         private void btnRefrescar_Click(object sender, EventArgs e)
         {
-            //buscarFacturas();
+            buscarFacturas();
         }
+       
         private void btnCancelarEnvio_Click(object sender, EventArgs e)
         {
             DialogResult msjCancelarEnvio = MessageBox.Show("¿Desea limpiar todos los campos seleccionados y cargar un nuevo envío?", "Cancelar Envío",
                                                             MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             recargarFormulario(msjCancelarEnvio);
         }
+       
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();

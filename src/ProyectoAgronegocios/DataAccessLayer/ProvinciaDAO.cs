@@ -12,7 +12,7 @@ namespace ProyectoAgronegocios.DataAccessLayer
         private string consulta;
         public DataTable recuperarProvincias()
         {
-            consulta = "SELECT * FROM Provincia ";
+            consulta = "SELECT * FROM Provincia";
 
             return DBHelper.consultar(consulta);
         }
