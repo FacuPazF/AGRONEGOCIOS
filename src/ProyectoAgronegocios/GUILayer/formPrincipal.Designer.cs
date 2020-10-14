@@ -40,12 +40,16 @@
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.facturarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.asignarEnvioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblBienvenida = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeFacturasPorClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cantidadDeSemillasCompradasPorClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblBienvenida = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.reporteDeEnviosPorProvinciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeVentasPorEmpleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeEnviosPorEmpresaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteDeAntigüedadDeEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -143,6 +147,33 @@
             this.asignarEnvioToolStripMenuItem.Text = "Asignar Envio";
             this.asignarEnvioToolStripMenuItem.Click += new System.EventHandler(this.asignarEnvioToolStripMenuItem_Click);
             // 
+            // reportesToolStripMenuItem
+            // 
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.reporteDeFacturasPorClienteToolStripMenuItem,
+            this.cantidadDeSemillasCompradasPorClienteToolStripMenuItem,
+            this.reporteDeEnviosPorProvinciaToolStripMenuItem,
+            this.reporteDeVentasPorEmpleadoToolStripMenuItem,
+            this.reporteDeEnviosPorEmpresaToolStripMenuItem,
+            this.reporteDeAntigüedadDeEmpleadosToolStripMenuItem});
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 22);
+            this.reportesToolStripMenuItem.Text = "Reportes";
+            // 
+            // reporteDeFacturasPorClienteToolStripMenuItem
+            // 
+            this.reporteDeFacturasPorClienteToolStripMenuItem.Name = "reporteDeFacturasPorClienteToolStripMenuItem";
+            this.reporteDeFacturasPorClienteToolStripMenuItem.Size = new System.Drawing.Size(273, 22);
+            this.reporteDeFacturasPorClienteToolStripMenuItem.Text = "Reporte de Facturas por Cliente";
+            this.reporteDeFacturasPorClienteToolStripMenuItem.Click += new System.EventHandler(this.reporteDeFacturasPorClienteToolStripMenuItem_Click);
+            // 
+            // cantidadDeSemillasCompradasPorClienteToolStripMenuItem
+            // 
+            this.cantidadDeSemillasCompradasPorClienteToolStripMenuItem.Name = "cantidadDeSemillasCompradasPorClienteToolStripMenuItem";
+            this.cantidadDeSemillasCompradasPorClienteToolStripMenuItem.Size = new System.Drawing.Size(273, 22);
+            this.cantidadDeSemillasCompradasPorClienteToolStripMenuItem.Text = "Reporte de Semillas por cliente";
+            this.cantidadDeSemillasCompradasPorClienteToolStripMenuItem.Click += new System.EventHandler(this.cantidadDeSemillasCompradasPorClienteToolStripMenuItem_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -178,28 +209,33 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // reportesToolStripMenuItem
+            // reporteDeEnviosPorProvinciaToolStripMenuItem
             // 
-            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.reporteDeFacturasPorClienteToolStripMenuItem,
-            this.cantidadDeSemillasCompradasPorClienteToolStripMenuItem});
-            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 22);
-            this.reportesToolStripMenuItem.Text = "Reportes";
+            this.reporteDeEnviosPorProvinciaToolStripMenuItem.Name = "reporteDeEnviosPorProvinciaToolStripMenuItem";
+            this.reporteDeEnviosPorProvinciaToolStripMenuItem.Size = new System.Drawing.Size(273, 22);
+            this.reporteDeEnviosPorProvinciaToolStripMenuItem.Text = "Reporte de Envios por Provincia";
+            this.reporteDeEnviosPorProvinciaToolStripMenuItem.Click += new System.EventHandler(this.reporteDeEnviosPorProvinciaToolStripMenuItem_Click);
             // 
-            // reporteDeFacturasPorClienteToolStripMenuItem
+            // reporteDeVentasPorEmpleadoToolStripMenuItem
             // 
-            this.reporteDeFacturasPorClienteToolStripMenuItem.Name = "reporteDeFacturasPorClienteToolStripMenuItem";
-            this.reporteDeFacturasPorClienteToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
-            this.reporteDeFacturasPorClienteToolStripMenuItem.Text = "Reporte de Facturas por Cliente";
-            this.reporteDeFacturasPorClienteToolStripMenuItem.Click += new System.EventHandler(this.reporteDeFacturasPorClienteToolStripMenuItem_Click);
+            this.reporteDeVentasPorEmpleadoToolStripMenuItem.Name = "reporteDeVentasPorEmpleadoToolStripMenuItem";
+            this.reporteDeVentasPorEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(273, 22);
+            this.reporteDeVentasPorEmpleadoToolStripMenuItem.Text = "Reporte de Ventas por Empleado";
+            this.reporteDeVentasPorEmpleadoToolStripMenuItem.Click += new System.EventHandler(this.reporteDeVentasPorEmpleadoToolStripMenuItem_Click);
             // 
-            // cantidadDeSemillasCompradasPorClienteToolStripMenuItem
+            // reporteDeEnviosPorEmpresaToolStripMenuItem
             // 
-            this.cantidadDeSemillasCompradasPorClienteToolStripMenuItem.Name = "cantidadDeSemillasCompradasPorClienteToolStripMenuItem";
-            this.cantidadDeSemillasCompradasPorClienteToolStripMenuItem.Size = new System.Drawing.Size(239, 22);
-            this.cantidadDeSemillasCompradasPorClienteToolStripMenuItem.Text = "Reporte de Semillas por cliente";
-            this.cantidadDeSemillasCompradasPorClienteToolStripMenuItem.Click += new System.EventHandler(this.cantidadDeSemillasCompradasPorClienteToolStripMenuItem_Click);
+            this.reporteDeEnviosPorEmpresaToolStripMenuItem.Name = "reporteDeEnviosPorEmpresaToolStripMenuItem";
+            this.reporteDeEnviosPorEmpresaToolStripMenuItem.Size = new System.Drawing.Size(273, 22);
+            this.reporteDeEnviosPorEmpresaToolStripMenuItem.Text = "Reporte de Envios por Empresa";
+            this.reporteDeEnviosPorEmpresaToolStripMenuItem.Click += new System.EventHandler(this.reporteDeEnviosPorEmpresaToolStripMenuItem_Click);
+            // 
+            // reporteDeAntigüedadDeEmpleadosToolStripMenuItem
+            // 
+            this.reporteDeAntigüedadDeEmpleadosToolStripMenuItem.Name = "reporteDeAntigüedadDeEmpleadosToolStripMenuItem";
+            this.reporteDeAntigüedadDeEmpleadosToolStripMenuItem.Size = new System.Drawing.Size(273, 22);
+            this.reporteDeAntigüedadDeEmpleadosToolStripMenuItem.Text = "Reporte de Antigüedad de Empleados";
+            this.reporteDeAntigüedadDeEmpleadosToolStripMenuItem.Click += new System.EventHandler(this.reporteDeAntigüedadDeEmpleadosToolStripMenuItem_Click);
             // 
             // formPrincipal
             // 
@@ -247,6 +283,10 @@
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reporteDeFacturasPorClienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cantidadDeSemillasCompradasPorClienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteDeEnviosPorProvinciaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteDeVentasPorEmpleadoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteDeEnviosPorEmpresaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteDeAntigüedadDeEmpleadosToolStripMenuItem;
     }
 }
 

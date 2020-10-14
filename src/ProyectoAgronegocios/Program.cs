@@ -15,7 +15,7 @@ namespace ProyectoAgronegocios
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new frmReporteDetFacturas());
+            Application.Run(new formPrincipal());
 
         }
     }

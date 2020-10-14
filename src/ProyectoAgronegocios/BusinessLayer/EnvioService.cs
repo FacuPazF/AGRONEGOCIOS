@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ProyectoAgronegocios.Entities;
 using ProyectoAgronegocios.DataAccessLayer;
+using System.Data;
 
 namespace ProyectoAgronegocios.BusinessLayer
 {
@@ -17,5 +18,14 @@ namespace ProyectoAgronegocios.BusinessLayer
             daoEnv.registrarEnvio(env);
         }
 
+        public DataTable buscarEnviosProv(DateTime fd, DateTime fh)
+        {
+            return daoEnv.buscarEnviosProv(fd, fh);
+        }
+
+        public DataTable buscarEnviosEmpresa(DateTime fd, DateTime fh)
+        {
+            return daoEnv.buscarEnviosEmpresa(fd, fh);
+        }
     }
 }

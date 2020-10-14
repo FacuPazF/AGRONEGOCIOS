@@ -81,5 +81,29 @@ namespace ProyectoAgronegocios
             frmReporteDetFacturas frmRDF = new frmReporteDetFacturas();
             frmRDF.ShowDialog();
         }
+
+        private void reporteDeEnviosPorProvinciaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporteEnviosProv frmREP = new frmReporteEnviosProv();
+            frmREP.ShowDialog();
+        }
+
+        private void reporteDeVentasPorEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporteVentasEmpleado frmRVE = new frmReporteVentasEmpleado();
+            frmRVE.ShowDialog();
+        }
+
+        private void reporteDeEnviosPorEmpresaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporteEnviosEmpresa frmREE = new frmReporteEnviosEmpresa();
+            frmREE.ShowDialog();
+        }
+
+        private void reporteDeAntigüedadDeEmpleadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporteAntigEmpleados frmRAE = new frmReporteAntigEmpleados();
+            frmRAE.ShowDialog();
+        }
     }
 }

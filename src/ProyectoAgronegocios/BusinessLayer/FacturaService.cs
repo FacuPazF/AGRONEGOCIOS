@@ -36,6 +36,11 @@ namespace ProyectoAgronegocios.BusinessLayer
         {
             return facturaDAO.buscarDetFacturasReporte(fd, fh, idc);
         }
+
+        public DataTable buscarVentasEmpleado(DateTime fd, DateTime fh)
+        {
+            return facturaDAO.buscarVentasEmpleado(fd, fh);
+        }
     }
 
 }

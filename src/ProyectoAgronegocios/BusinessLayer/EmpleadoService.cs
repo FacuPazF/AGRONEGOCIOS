@@ -54,5 +54,10 @@ namespace ProyectoAgronegocios.BusinessLayer
         {
             daoEmpleado.modificarEmpleado(emp);
         }
+
+        public DataTable buscarAntiguedades(DateTime fd, DateTime fh)
+        {
+            return daoEmpleado.buscarAntiguedades(fd, fh);
+        }
     }
 }

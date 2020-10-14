@@ -2,11 +2,11 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <Body>
     <ReportItems>
-      <Tablix Name="Tablix1">
+      <Tablix Name="Tablix4">
         <TablixBody>
           <TablixColumns>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.46469cm</Width>
             </TablixColumn>
             <TablixColumn>
               <Width>2.5cm</Width>
@@ -15,7 +15,10 @@
               <Width>2.5cm</Width>
             </TablixColumn>
             <TablixColumn>
-              <Width>2.5cm</Width>
+              <Width>3.21438cm</Width>
+            </TablixColumn>
+            <TablixColumn>
+              <Width>3.55833cm</Width>
             </TablixColumn>
           </TablixColumns>
           <TablixRows>
@@ -24,7 +27,40 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox3">
+                    <Textbox Name="Textbox26">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Codigo de Empleado</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox26</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <BackgroundColor>LightSalmon</BackgroundColor>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox28">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
@@ -35,10 +71,12 @@
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox3</rd:DefaultName>
+                      <rd:DefaultName>Textbox28</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -55,21 +93,23 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox5">
+                    <Textbox Name="Textbox30">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Tipo</Value>
+                              <Value>Apellido</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox5</rd:DefaultName>
+                      <rd:DefaultName>Textbox30</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -86,21 +126,23 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox7">
+                    <Textbox Name="Textbox34">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Calidad</Value>
+                              <Value>Antigüedad en Días</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox7</rd:DefaultName>
+                      <rd:DefaultName>Textbox34</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -117,21 +159,23 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Textbox9">
+                    <Textbox Name="Textbox32">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>Cantidad</Value>
+                              <Value>Antigüedad en Meses</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
-                          <Style />
+                          <Style>
+                            <TextAlign>Center</TextAlign>
+                          </Style>
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Textbox9</rd:DefaultName>
+                      <rd:DefaultName>Textbox32</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -153,21 +197,21 @@
               <TablixCells>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Expr1">
+                    <Textbox Name="Codigo">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Expr1.Value</Value>
+                              <Value>=Fields!Codigo.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Expr1</rd:DefaultName>
+                      <rd:DefaultName>Codigo</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -183,21 +227,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Expr2">
+                    <Textbox Name="Nombre">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Expr2.Value</Value>
+                              <Value>=Fields!Nombre.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Expr2</rd:DefaultName>
+                      <rd:DefaultName>Nombre</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -213,21 +257,21 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="nombre1">
+                    <Textbox Name="Apellido">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!nombre.Value</Value>
+                              <Value>=Fields!Apellido.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>nombre1</rd:DefaultName>
+                      <rd:DefaultName>Apellido</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -243,21 +287,51 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
-                    <Textbox Name="Expr3">
+                    <Textbox Name="DiffDias">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
                       <Paragraphs>
                         <Paragraph>
                           <TextRuns>
                             <TextRun>
-                              <Value>=Fields!Expr3.Value</Value>
+                              <Value>=Fields!DiffDias.Value</Value>
                               <Style />
                             </TextRun>
                           </TextRuns>
                           <Style />
                         </Paragraph>
                       </Paragraphs>
-                      <rd:DefaultName>Expr3</rd:DefaultName>
+                      <rd:DefaultName>DiffDias</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="DiffMeses">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!DiffMeses.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>DiffMeses</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -281,6 +355,7 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
+            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -293,11 +368,11 @@
             </TablixMember>
           </TablixMembers>
         </TablixRowHierarchy>
-        <DataSetName>ReporteDetFacturas</DataSetName>
-        <Top>0.79058cm</Top>
-        <Left>1.18745cm</Left>
+        <DataSetName>ReporteAntigEmpleados1</DataSetName>
+        <Top>0.86995cm</Top>
+        <Left>2.35162cm</Left>
         <Height>1.2cm</Height>
-        <Width>10cm</Width>
+        <Width>15.2374cm</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -308,10 +383,10 @@
     <Height>2in</Height>
     <Style />
   </Body>
-  <Width>6.16009in</Width>
+  <Width>7.95659in</Width>
   <Page>
     <PageHeader>
-      <Height>2.56398cm</Height>
+      <Height>2.69875cm</Height>
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
@@ -322,7 +397,7 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>Cantidad de semillas compradas por un cliente</Value>
+                  <Value>Antigüedad de Empleados</Value>
                   <Style>
                     <FontFamily>Upbolters New</FontFamily>
                     <FontSize>14pt</FontSize>
@@ -334,10 +409,10 @@
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.54997cm</Top>
-          <Left>0.7112cm</Left>
+          <Top>0.41982cm</Top>
+          <Left>1.35776cm</Left>
           <Height>1.26146cm</Height>
-          <Width>10.86084cm</Width>
+          <Width>9.85542cm</Width>
           <Style>
             <Border>
               <Style>None</Style>
@@ -352,10 +427,10 @@
           <Source>Embedded</Source>
           <Value>AgronegociosMA</Value>
           <Sizing>Fit</Sizing>
-          <Top>0.14993cm</Top>
-          <Left>12.31666cm</Left>
-          <Height>2.23766cm</Height>
-          <Width>2.38125cm</Width>
+          <Top>0.0113cm</Top>
+          <Left>15.78724cm</Left>
+          <Height>2.5287cm</Height>
+          <Width>2.64583cm</Width>
           <ZIndex>1</ZIndex>
           <Style>
             <Border>
@@ -375,7 +450,7 @@
       <PrintOnFirstPage>true</PrintOnFirstPage>
       <PrintOnLastPage>true</PrintOnLastPage>
       <ReportItems>
-        <Textbox Name="Textbox2">
+        <Textbox Name="Textbox15">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
           <Paragraphs>
@@ -389,9 +464,9 @@
               <Style />
             </Paragraph>
           </Paragraphs>
-          <rd:DefaultName>Textbox2</rd:DefaultName>
-          <Top>0.55245cm</Top>
-          <Left>11.91979cm</Left>
+          <rd:DefaultName>Textbox15</rd:DefaultName>
+          <Top>0.97cm</Top>
+          <Left>15.93307cm</Left>
           <Height>0.6cm</Height>
           <Width>2.5cm</Width>
           <Style>
@@ -422,52 +497,49 @@
   </Page>
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="AgronegociosDataSet1">
+    <DataSource Name="Empleados">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>8dc84184-6d73-4460-8f80-2aa816b87bda</rd:DataSourceID>
-    </DataSource>
-    <DataSource Name="AgronegociosDataSet2">
-      <ConnectionProperties>
-        <DataProvider>System.Data.DataSet</DataProvider>
-        <ConnectString>/* Local Connection */</ConnectString>
-      </ConnectionProperties>
-      <rd:DataSourceID>3f1ee717-2e97-43f3-a2ed-1565eb323ff2</rd:DataSourceID>
+      <rd:DataSourceID>c25a2044-17f0-4157-bf29-649e8a737efd</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="ReporteDetFacturas">
+    <DataSet Name="ReporteAntigEmpleados1">
       <Query>
-        <DataSourceName>AgronegociosDataSet2</DataSourceName>
+        <DataSourceName>Empleados</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="nombre">
-          <DataField>nombre</DataField>
+        <Field Name="Codigo">
+          <DataField>Codigo</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="Nombre">
+          <DataField>Nombre</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Expr1">
-          <DataField>Expr1</DataField>
+        <Field Name="Apellido">
+          <DataField>Apellido</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="Expr2">
-          <DataField>Expr2</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
+        <Field Name="DiffDias">
+          <DataField>DiffDias</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Expr3">
-          <DataField>Expr3</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
+        <Field Name="DiffMeses">
+          <DataField>DiffMeses</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>AgronegociosDataSet2</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Niico\Desktop\PAV\TPSE Agronegocios\AGRONEGOCIOS\AGRONEGOCIOS\src\ProyectoAgronegocios\AgronegociosDataSet2.xsd</rd:SchemaPath>
-        <rd:TableName>ReporteDetFactura</rd:TableName>
+        <rd:DataSetName>ReporteAntigEmpleados1</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\Niico\Desktop\PAV\TPSE Agronegocios\AGRONEGOCIOS\AGRONEGOCIOS\src\ProyectoAgronegocios\ReporteAntigEmpleados1.xsd</rd:SchemaPath>
+        <rd:TableName>ReporteAntigEmpleados</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>ReporteDetFacturaTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>ReporteAntigEmpleadosTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -585,5 +657,5 @@ qXkgXMS4nYxK6ZthSTY9Wj4x2xs6Kxd2w+pEAAGAAodAAgAlJRNQTMH8lYBidlDa29utuoqlFYpRtUV2
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>63b3c2d6-febc-4389-9af4-30ac14e7be6b</rd:ReportID>
+  <rd:ReportID>1c023b46-8ad7-45e5-a48b-d9356d0146d3</rd:ReportID>
 </Report>

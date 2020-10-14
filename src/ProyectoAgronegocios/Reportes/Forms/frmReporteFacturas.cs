@@ -17,7 +17,7 @@ namespace ProyectoAgronegocios.Reportes.Forms
     {
         private ClienteService sCliente = new ClienteService();
         private FacturaService sFactura = new FacturaService();
-        private string consulta = "";
+        
         public frmReporteFacturas()
         {
             InitializeComponent();

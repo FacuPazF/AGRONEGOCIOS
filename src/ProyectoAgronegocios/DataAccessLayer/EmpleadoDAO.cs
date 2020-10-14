@@ -148,5 +148,18 @@ namespace ProyectoAgronegocios.DataAccessLayer
             DBHelper.actualizar(consulta);
 
         }
+
+        public DataTable buscarAntiguedades(DateTime fd, DateTime fh)
+        {
+            string consulta;
+            consulta = "SELECT cod_Empleado AS Codigo, nombre AS Nombre, apellido AS Apellido, " + 
+                       " DATEDIFF(day, fecha_Alta, CONVERT(varchar, GETDATE(), 23)) AS DiffDias, " + 
+                       " DATEDIFF(MM, fecha_Alta, CONVERT(varchar, GETDATE(), 23)) AS DiffMeses " + 
+                       " FROM Empleados" +
+                       " WHERE borrado = 0 AND tipo_Empleado = 2" +
+                       " AND (fecha_Alta BETWEEN '" + fd.ToString("yyyy-MM-dd") + "' AND '" + fh.ToString("yyyy-MM-dd") + "')";
+
+            return DataManager.GetInstance().ConsultaSQL(consulta);
+        }
     }
 }

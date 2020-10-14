@@ -1,4 +1,5 @@
 ﻿using ProyectoAgronegocios.Entities;
+using ProyectoAgronegocios.Support;
 using ProyectoAgronegocios.Support.Gestores;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,7 @@ namespace ProyectoAgronegocios.GUILayer
         
         private void frmEnvio_Load(object sender, EventArgs e)
         {
+            lblUsuarioLoguedo.Text += Sesion.GetInstance().User.Nombre + " " + Sesion.GetInstance().User.Apellido + " (" + Sesion.GetInstance().User.Cod_Empleado + ")";
             recargarFormulario(DialogResult.Yes);
         }
 

@@ -133,6 +133,20 @@ namespace ProyectoAgronegocios.DataAccessLayer
 
             return DataManager.GetInstance().ConsultaSQL(consulta);
         }
+
+        public DataTable buscarVentasEmpleado(DateTime fd, DateTime fh)
+        {
+            string consulta;
+            consulta = "SELECT e.cod_Empleado AS Codigo, e.nombre AS Nombre, e.apellido AS Apellido, COUNT(f.numero) AS Cantidad" +
+                       " FROM Facturas f " +
+                       " JOIN Empleados e ON f.cod_Empleado = e.cod_Empleado " +
+                       " WHERE (f.fecha_Factura BETWEEN '" + fd.ToString("yyyy-MM-dd") + "' AND '" + fh.ToString("yyyy-MM-dd") + "')" +
+                       " AND e.borrado = 0 " +
+                       " AND e.tipo_Empleado = 2" +
+                       " GROUP BY e.cod_Empleado, e.nombre, e.apellido";
+
+            return DataManager.GetInstance().ConsultaSQL(consulta);
+        }
     }
 
 

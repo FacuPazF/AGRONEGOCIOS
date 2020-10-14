@@ -173,17 +173,61 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReporteAntigEmpleados1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteAntigEmpleados1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteEnviosEmpresa.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteEnviosEmpresa.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteEnviosProv.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteEnviosProv.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\Forms\frmReporteDetFacturas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\Forms\frmReporteDetFacturas.Designer.cs">
       <DependentUpon>frmReporteDetFacturas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Reportes\Forms\frmReporteEnviosEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Forms\frmReporteEnviosEmpresa.Designer.cs">
+      <DependentUpon>frmReporteEnviosEmpresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Forms\frmReporteEnviosProv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Forms\frmReporteEnviosProv.Designer.cs">
+      <DependentUpon>frmReporteEnviosProv.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\Forms\frmReporteFacturas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\Forms\frmReporteFacturas.Designer.cs">
       <DependentUpon>frmReporteFacturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Forms\frmReporteVentasEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Forms\frmReporteVentasEmpleado.Designer.cs">
+      <DependentUpon>frmReporteVentasEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\Forms\frmReporteAntigEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\Forms\frmReporteAntigEmpleados.Designer.cs">
+      <DependentUpon>frmReporteAntigEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteVentasEmpleado.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteVentasEmpleado.xsd</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Support\Gestores\GestorEnvios.cs" />
@@ -228,11 +272,27 @@
     <EmbeddedResource Include="Reportes\Forms\frmReporteDetFacturas.resx">
       <DependentUpon>frmReporteDetFacturas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Forms\frmReporteEnviosEmpresa.resx">
+      <DependentUpon>frmReporteEnviosEmpresa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Forms\frmReporteEnviosProv.resx">
+      <DependentUpon>frmReporteEnviosProv.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\Forms\frmReporteFacturas.resx">
       <DependentUpon>frmReporteFacturas.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Forms\frmReporteVentasEmpleado.resx">
+      <DependentUpon>frmReporteVentasEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\Forms\frmReporteAntigEmpleados.resx">
+      <DependentUpon>frmReporteAntigEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReporteAntigEmpleados.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteDetFacturas.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteEnviosEmpresa.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteEnviosProv.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteFacturas.rdlc" />
+    <EmbeddedResource Include="Reportes\ReporteVentasEmpleado.rdlc" />
     <None Include="RepFacturas.xsc">
       <DependentUpon>RepFacturas.xsd</DependentUpon>
     </None>
@@ -273,6 +333,50 @@
     <Folder Include="Recursos\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ReporteAntigEmpleados1.xsc">
+      <DependentUpon>ReporteAntigEmpleados1.xsd</DependentUpon>
+    </None>
+    <None Include="ReporteAntigEmpleados1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReporteAntigEmpleados1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReporteAntigEmpleados1.xss">
+      <DependentUpon>ReporteAntigEmpleados1.xsd</DependentUpon>
+    </None>
+    <None Include="ReporteEnviosEmpresa.xsc">
+      <DependentUpon>ReporteEnviosEmpresa.xsd</DependentUpon>
+    </None>
+    <None Include="ReporteEnviosEmpresa.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReporteEnviosEmpresa.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReporteEnviosEmpresa.xss">
+      <DependentUpon>ReporteEnviosEmpresa.xsd</DependentUpon>
+    </None>
+    <None Include="ReporteEnviosProv.xsc">
+      <DependentUpon>ReporteEnviosProv.xsd</DependentUpon>
+    </None>
+    <None Include="ReporteEnviosProv.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReporteEnviosProv.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReporteEnviosProv.xss">
+      <DependentUpon>ReporteEnviosProv.xsd</DependentUpon>
+    </None>
+    <None Include="ReporteVentasEmpleado.xsc">
+      <DependentUpon>ReporteVentasEmpleado.xsd</DependentUpon>
+    </None>
+    <None Include="ReporteVentasEmpleado.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReporteVentasEmpleado.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReporteVentasEmpleado.xss">
+      <DependentUpon>ReporteVentasEmpleado.xsd</DependentUpon>
+    </None>
     <None Include="Resources\Clientes.png" />
   </ItemGroup>
   <ItemGroup>

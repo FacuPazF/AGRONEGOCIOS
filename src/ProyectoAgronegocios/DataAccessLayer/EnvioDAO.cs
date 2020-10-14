@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,6 +47,33 @@ namespace ProyectoAgronegocios.DataAccessLayer
             {
                 dm.Close();
             }
+        }
+
+        public DataTable buscarEnviosProv(DateTime fd, DateTime fh)
+        {
+            string consulta;
+            consulta = "SELECT p.nombre AS Nombre, COUNT(e.nro_envio) AS Cantidad" + 
+                       " FROM Barrios b " +
+                       " JOIN Localidad l ON b.id_Localidad = l.id_Localidad " +
+                       " JOIN Provincia p ON l.id_Provincia = p.id_Provincia " +
+                       " JOIN Envios e ON b.id_Barrio = e.id_barrio " +
+                       " WHERE (e.fecha_Hora_envio BETWEEN '" + fd.ToString("yyyy-MM-dd") + "' AND '" + fh.ToString("yyyy-MM-dd") + "')" + 
+                       " GROUP BY p.nombre";
+
+            return DataManager.GetInstance().ConsultaSQL(consulta);
+
+        }
+
+        public DataTable buscarEnviosEmpresa(DateTime fd, DateTime fh)
+        {
+            string consulta;
+            consulta = "SELECT et.id_Empresa, et.razon_social, COUNT(e.nro_envio) AS Expr1 " +
+                       " FROM Envios e " +
+                       " JOIN Empresa_Transporte et ON e.id_Empresa_Transporte = et.id_Empresa " + 
+                       " WHERE(e.fecha_Hora_envio BETWEEN '" + fd.ToString("yyyy-MM-dd") + "' AND '" + fh.ToString("yyyy-MM-dd") + "')" +
+                       " GROUP BY et.id_Empresa, et.razon_social";
+
+            return DataManager.GetInstance().ConsultaSQL(consulta);
         }
     }
 }

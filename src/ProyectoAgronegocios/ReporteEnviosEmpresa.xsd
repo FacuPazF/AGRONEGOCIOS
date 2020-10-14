@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ReporteEnviosEmpresa" targetNamespace="http://tempuri.org/ReporteEnviosEmpresa.xsd" xmlns:mstns="http://tempuri.org/ReporteEnviosEmpresa.xsd" xmlns="http://tempuri.org/ReporteEnviosEmpresa.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="AgronegociosConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="AgronegociosConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ProyectoAgronegocios.Properties.Settings.GlobalReference.Default.AgronegociosConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ReporteEnviosEmpresaTableAdapter" GeneratorDataComponentClassName="ReporteEnviosEmpresaTableAdapter" Name="ReporteEnviosEmpresa" UserDataComponentName="ReporteEnviosEmpresaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="AgronegociosConnectionString (Settings)" DbObjectName="Agronegocios.dbo.ReporteEnviosEmpresa" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT id_Empresa, razon_social, Expr1 FROM dbo.ReporteEnviosEmpresa</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id_Empresa" DataSetColumn="id_Empresa" />
+              <Mapping SourceColumn="razon_social" DataSetColumn="razon_social" />
+              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ReporteEnviosEmpresa" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="ReporteEnviosEmpresa" msprop:Generator_UserDSName="ReporteEnviosEmpresa">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ReporteEnviosEmpresa" msprop:Generator_TableClassName="ReporteEnviosEmpresaDataTable" msprop:Generator_TableVarName="tableReporteEnviosEmpresa" msprop:Generator_TablePropName="_ReporteEnviosEmpresa" msprop:Generator_RowDeletingName="ReporteEnviosEmpresaRowDeleting" msprop:Generator_RowChangingName="ReporteEnviosEmpresaRowChanging" msprop:Generator_RowEvHandlerName="ReporteEnviosEmpresaRowChangeEventHandler" msprop:Generator_RowDeletedName="ReporteEnviosEmpresaRowDeleted" msprop:Generator_UserTableName="ReporteEnviosEmpresa" msprop:Generator_RowChangedName="ReporteEnviosEmpresaRowChanged" msprop:Generator_RowEvArgName="ReporteEnviosEmpresaRowChangeEvent" msprop:Generator_RowClassName="ReporteEnviosEmpresaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_Empresa" msprop:Generator_ColumnVarNameInTable="columnid_Empresa" msprop:Generator_ColumnPropNameInRow="id_Empresa" msprop:Generator_ColumnPropNameInTable="id_EmpresaColumn" msprop:Generator_UserColumnName="id_Empresa" type="xs:int" />
+              <xs:element name="razon_social" msprop:Generator_ColumnVarNameInTable="columnrazon_social" msprop:Generator_ColumnPropNameInRow="razon_social" msprop:Generator_ColumnPropNameInTable="razon_socialColumn" msprop:Generator_UserColumnName="razon_social" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Expr1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ReporteEnviosEmpresa" />
+      <xs:field xpath="mstns:id_Empresa" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
