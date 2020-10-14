@@ -125,9 +125,16 @@ namespace ProyectoAgronegocios.GUILayer
                 txtFilterCuil.Focus();
                 return;
             }
-                
-            
-            gesEnvios.registrarEnvio();
+
+            Envio envio = new Envio();
+            envio.Id_Factura = (int)dtgFacturas.CurrentRow.Cells["numero"].Value;
+            envio.Tipo_Factura = dtgFacturas.CurrentRow.Cells["tipo_Factura"].Value.ToString();
+            envio.Fecha_Hora_envio = dtpFechaEnvio.Value;
+            envio.Id_Empresa_Transporte = (int)cboEmpresaTransporte.SelectedValue;
+            envio.Direccion = txtDireccionEnvio.Text;
+            envio.Id_barrio = (int)cboBarrio.SelectedValue;
+            gesEnvios.registrarEnvio(envio);
+            MessageBox.Show("Envío asignado con éxito a la factura nro: " + envio.Id_Factura, "Envio Registrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnDetalleFactura_Click(object sender, EventArgs e)

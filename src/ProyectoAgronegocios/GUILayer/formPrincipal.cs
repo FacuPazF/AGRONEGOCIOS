@@ -1,6 +1,7 @@
 ﻿using ProyectoAgronegocios.DataAccessLayer;
 using ProyectoAgronegocios.Entities;
 using ProyectoAgronegocios.GUILayer;
+using ProyectoAgronegocios.Reportes.Forms;
 using System;
 using System.Windows.Forms;
 
@@ -61,6 +62,24 @@ namespace ProyectoAgronegocios
         {
             frmFactura formFactura = new frmFactura();
             formFactura.ShowDialog();
+        }
+
+        private void asignarEnvioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEnvio formEnvio = new frmEnvio();
+            formEnvio.ShowDialog();
+        }
+
+        private void reporteDeFacturasPorClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporteFacturas frmRF = new frmReporteFacturas();
+            frmRF.ShowDialog();
+        }
+
+        private void cantidadDeSemillasCompradasPorClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporteDetFacturas frmRDF = new frmReporteDetFacturas();
+            frmRDF.ShowDialog();
         }
     }
 }

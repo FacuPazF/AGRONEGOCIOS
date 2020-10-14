@@ -26,6 +26,16 @@ namespace ProyectoAgronegocios.BusinessLayer
         {
             return facturaDAO.recuperarDetalles(num, tipo_factura);
         }
+
+        public DataTable buscarFacturasConParametros(DateTime fd, DateTime fh, string tf, int idc)
+        {
+            return facturaDAO.buscarFacturasConParametros(fd, fh, tf, idc);
+        }
+
+        public DataTable buscarDetFacturasReporte(DateTime fd, DateTime fh, int idc)
+        {
+            return facturaDAO.buscarDetFacturasReporte(fd, fh, idc);
+        }
     }
 
 }

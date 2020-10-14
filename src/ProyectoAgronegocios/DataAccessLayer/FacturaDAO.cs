@@ -104,6 +104,35 @@ namespace ProyectoAgronegocios.DataAccessLayer
             return DataManager.GetInstance().ConsultaSQL(consulta);
 
         }
+
+        public DataTable buscarFacturasConParametros(DateTime fd, DateTime fh, string tf, int idc)
+        {
+            string consulta;
+            consulta = "SELECT * FROM Facturas" +
+                       " WHERE (fecha_Factura BETWEEN '" + fd.ToString("yyyy-MM-dd") + "' AND '" + fh.ToString("yyyy-MM-dd") + "')" + 
+                       " AND tipo_Factura = '" + tf + "'" +
+                       " AND id_cliente_Proveedor = " + idc;
+
+            return DataManager.GetInstance().ConsultaSQL(consulta);
+        }
+
+        public DataTable buscarDetFacturasReporte(DateTime fd, DateTime fh, int idc)
+        {
+            string consulta;
+            consulta = "SELECT c.nombre, s.nombre as Expr1, ts.nombre as Expr2, SUM(df.cantidad) as Expr3" +
+                       " FROM Facturas f " +
+                       " JOIN Detalles_de_Facturas df ON f.tipo_Factura = df.tipo_Factura AND f.numero = df.numero_Factura " +
+                       " JOIN Semilla s ON df.id_Semilla = s.id_Semilla " +
+                       " JOIN TiposXsemillas txs ON s.id_Semilla = txs.id_Semilla " +
+                       " JOIN Calidad c ON txs.id_Calidad = c.id_Calidad " +
+                       " JOIN Tipo_Semilla ts ON txs.id_Tipo_Semilla = ts.id_Tipo_Semilla " +
+                       " WHERE f.id_cliente_Proveedor = " + idc +
+                       " AND (f.fecha_Factura BETWEEN '" + fd.ToString("yyyy-MM-dd") + "' AND '" + fh.ToString("yyyy-MM-dd") + "')" +
+                       " AND s.borrado = 0" +
+                       " GROUP BY s.nombre, ts.nombre, c.nombre";
+
+            return DataManager.GetInstance().ConsultaSQL(consulta);
+        }
     }
 
 

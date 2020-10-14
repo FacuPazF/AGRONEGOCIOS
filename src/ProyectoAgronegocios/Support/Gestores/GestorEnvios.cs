@@ -21,6 +21,8 @@ namespace ProyectoAgronegocios.Support.Gestores
         private FacturaService sFactura = new FacturaService();
         private Factura facturaSeleccionada;
         private EmpleadoService sEmpleado = new EmpleadoService();
+        private EnvioService sEnvio = new EnvioService();
+
 
         // ----- Métodos get y set
         public Cliente ClienteSeleccionado { get => clienteSeleccionado; set => clienteSeleccionado = value; }
@@ -49,9 +51,9 @@ namespace ProyectoAgronegocios.Support.Gestores
             }
         }
 
-        public void registrarEnvio()
+        public void registrarEnvio(Envio env)
         {
-            MessageBox.Show("Envío registrado");
+            sEnvio.registrarEnvio(env);   
         }
         public DataTable buscarFacturasCliente(Cliente unCliente)
         {

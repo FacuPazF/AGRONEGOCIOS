@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 using ProyectoAgronegocios.GUILayer;
+using ProyectoAgronegocios.Reportes.Forms;
 namespace ProyectoAgronegocios
 {
     static class Program
@@ -14,7 +15,7 @@ namespace ProyectoAgronegocios
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Application.Run(new frmEnvio());
+            Application.Run(new frmReporteDetFacturas());
 
         }
     }

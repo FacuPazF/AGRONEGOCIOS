@@ -312,10 +312,11 @@
             // dtpFechaEnvio
             // 
             this.dtpFechaEnvio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFechaEnvio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFechaEnvio.Location = new System.Drawing.Point(178, 31);
             this.dtpFechaEnvio.Margin = new System.Windows.Forms.Padding(2);
             this.dtpFechaEnvio.Name = "dtpFechaEnvio";
-            this.dtpFechaEnvio.Size = new System.Drawing.Size(298, 26);
+            this.dtpFechaEnvio.Size = new System.Drawing.Size(144, 26);
             this.dtpFechaEnvio.TabIndex = 21;
             // 
             // lblFechaEnvio
