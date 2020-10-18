@@ -1,5 +1,6 @@
 ﻿using ProyectoAgronegocios.DataAccessLayer;
 using ProyectoAgronegocios.Entities;
+using ProyectoAgronegocios.Estadisticas.Forms;
 using ProyectoAgronegocios.GUILayer;
 using ProyectoAgronegocios.Reportes.Forms;
 using System;
@@ -104,6 +105,18 @@ namespace ProyectoAgronegocios
         {
             frmReporteAntigEmpleados frmRAE = new frmReporteAntigEmpleados();
             frmRAE.ShowDialog();
+        }
+
+        private void topVentasEnCantidadPorClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEstClientesVentas frmECV = new frmEstClientesVentas();
+            frmECV.ShowDialog();
+        }
+
+        private void topVentasEnPreciosPorClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEstClientesVentasP frmECVP = new frmEstClientesVentasP();
+            frmECVP.ShowDialog();
         }
     }
 }

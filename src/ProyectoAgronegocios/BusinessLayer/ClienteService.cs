@@ -45,5 +45,15 @@ namespace ProyectoAgronegocios.BusinessLayer
         {
             return daoCliente.recuperarDatosCliente(id);
         }
+
+        public DataTable recuperarCantidadVentas(DateTime fd, DateTime fh)
+        {
+            return daoCliente.recuperarCantidadVentas(fd, fh);
+        }
+
+        public DataTable recuperarCantidadVentasPrecio(DateTime fd, DateTime fh)
+        {
+            return daoCliente.recuperarCantidadVentasPrecio(fd, fh);
+        }
     }
 }

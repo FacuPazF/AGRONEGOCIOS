@@ -1,4 +1,6 @@
-﻿namespace ProyectoAgronegocios.Reportes.Forms
+﻿
+
+namespace ProyectoAgronegocios.Reportes.Forms
 {
     partial class frmReporteDetFacturas
     {

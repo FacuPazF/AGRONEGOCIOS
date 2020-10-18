@@ -50,5 +50,25 @@ namespace ProyectoAgronegocios.Reportes.Forms
             antigEmpleadosBS.DataSource = sEmpleado.buscarAntiguedades(fechaDesde, fechaHasta);
             this.rpvAntigEmpleados.RefreshReport();
         }
+
+        private void lblHasta_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDesde_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpHasta_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpDesde_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

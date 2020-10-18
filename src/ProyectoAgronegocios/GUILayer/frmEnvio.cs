@@ -116,11 +116,6 @@ namespace ProyectoAgronegocios.GUILayer
                 cboProvincia.Focus();
                 return;
             }
-            //if (dtgFacturas.CurrentRow.Index > dtgFacturas.Rows.Count || dtgFacturas.CurrentRow.Index < 0)
-            //{
-            //    MessageBox.Show("Seleccione una Factura", "Error - Factura no seleccionada", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
             if (gesEnvios.ClienteSeleccionado == null)
             {
                 MessageBox.Show("Seleccione un Cliente ", "Error - Cliente no seleccionado", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -136,7 +131,7 @@ namespace ProyectoAgronegocios.GUILayer
             envio.Direccion = txtDireccionEnvio.Text;
             envio.Id_barrio = (int)cboBarrio.SelectedValue;
             gesEnvios.registrarEnvio(envio);
-            MessageBox.Show("Envío asignado con éxito a la factura nro: " + envio.Id_Factura, "Envio Registrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("Envío asignado a la factura nro: " + envio.Id_Factura, "Envio Registrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void btnDetalleFactura_Click(object sender, EventArgs e)

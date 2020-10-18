@@ -2,6 +2,7 @@
 using System.Windows.Forms;
 using ProyectoAgronegocios.GUILayer;
 using ProyectoAgronegocios.Reportes.Forms;
+using ProyectoAgronegocios.Estadisticas.Forms;
 namespace ProyectoAgronegocios
 {
     static class Program

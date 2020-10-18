@@ -70,6 +70,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Estadisticas\Forms\frmEstClientesVentas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\Forms\frmEstClientesVentas.Designer.cs">
+      <DependentUpon>frmEstClientesVentas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\Forms\frmEstClientesVentasP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\Forms\frmEstClientesVentasP.Designer.cs">
+      <DependentUpon>frmEstClientesVentasP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EstClientesVentas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstClientesVentas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EstClientesVentasP.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstClientesVentasP.xsd</DependentUpon>
+    </Compile>
     <Compile Include="RepFacturas.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -232,6 +254,14 @@
     <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Support\Gestores\GestorEnvios.cs" />
     <Compile Include="Support\Sesion.cs" />
+    <EmbeddedResource Include="Estadisticas\EstClientesVentas.rdlc" />
+    <EmbeddedResource Include="Estadisticas\EstClientesVentasP.rdlc" />
+    <EmbeddedResource Include="Estadisticas\Forms\frmEstClientesVentas.resx">
+      <DependentUpon>frmEstClientesVentas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\Forms\frmEstClientesVentasP.resx">
+      <DependentUpon>frmEstClientesVentasP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmDetFacturaConsulta.resx">
       <DependentUpon>frmDetFacturaConsulta.cs</DependentUpon>
     </EmbeddedResource>
@@ -293,6 +323,28 @@
     <EmbeddedResource Include="Reportes\ReporteEnviosProv.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteFacturas.rdlc" />
     <EmbeddedResource Include="Reportes\ReporteVentasEmpleado.rdlc" />
+    <None Include="EstClientesVentas.xsc">
+      <DependentUpon>EstClientesVentas.xsd</DependentUpon>
+    </None>
+    <None Include="EstClientesVentas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EstClientesVentas.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EstClientesVentas.xss">
+      <DependentUpon>EstClientesVentas.xsd</DependentUpon>
+    </None>
+    <None Include="EstClientesVentasP.xsc">
+      <DependentUpon>EstClientesVentasP.xsd</DependentUpon>
+    </None>
+    <None Include="EstClientesVentasP.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EstClientesVentasP.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EstClientesVentasP.xss">
+      <DependentUpon>EstClientesVentasP.xsd</DependentUpon>
+    </None>
     <None Include="RepFacturas.xsc">
       <DependentUpon>RepFacturas.xsd</DependentUpon>
     </None>
@@ -330,6 +382,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="DataSets\" />
     <Folder Include="Recursos\" />
   </ItemGroup>
   <ItemGroup>

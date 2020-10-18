@@ -166,7 +166,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(699, 762);
+            this.ClientSize = new System.Drawing.Size(699, 783);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.txtCuil);
             this.Controls.Add(this.lblCuil);

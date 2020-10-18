@@ -29,7 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.antigEmpleadosBS = new System.Windows.Forms.BindingSource(this.components);
+            this.reporteAntigEmpleados1 = new ProyectoAgronegocios.ReporteAntigEmpleados1();
             this.rpvAntigEmpleados = new Microsoft.Reporting.WinForms.ReportViewer();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.btnListar = new System.Windows.Forms.Button();
@@ -37,8 +39,6 @@
             this.lblDesde = new System.Windows.Forms.Label();
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
             this.dtpDesde = new System.Windows.Forms.DateTimePicker();
-            this.antigEmpleadosBS = new System.Windows.Forms.BindingSource(this.components);
-            this.reporteAntigEmpleados1 = new ProyectoAgronegocios.ReporteAntigEmpleados1();
             this.reporteAntigEmpleadosTableAdapter = new ProyectoAgronegocios.ReporteAntigEmpleados1TableAdapters.ReporteAntigEmpleadosTableAdapter();
             this.ReporteAntigEmpleadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.antigEmpleadosBS)).BeginInit();
@@ -46,11 +46,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.ReporteAntigEmpleadosBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
+            // antigEmpleadosBS
+            // 
+            this.antigEmpleadosBS.DataMember = "ReporteAntigEmpleados";
+            this.antigEmpleadosBS.DataSource = this.reporteAntigEmpleados1;
+            // 
+            // reporteAntigEmpleados1
+            // 
+            this.reporteAntigEmpleados1.DataSetName = "ReporteAntigEmpleados1";
+            this.reporteAntigEmpleados1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // rpvAntigEmpleados
             // 
-            reportDataSource2.Name = "ReporteAntigEmpleados1";
-            reportDataSource2.Value = this.antigEmpleadosBS;
-            this.rpvAntigEmpleados.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource1.Name = "ReporteAntigEmpleados1";
+            reportDataSource1.Value = this.antigEmpleadosBS;
+            this.rpvAntigEmpleados.LocalReport.DataSources.Add(reportDataSource1);
             this.rpvAntigEmpleados.LocalReport.ReportEmbeddedResource = "ProyectoAgronegocios.Reportes.ReporteAntigEmpleados.rdlc";
             this.rpvAntigEmpleados.Location = new System.Drawing.Point(0, 0);
             this.rpvAntigEmpleados.Name = "rpvAntigEmpleados";
@@ -86,6 +96,7 @@
             this.lblHasta.Size = new System.Drawing.Size(38, 13);
             this.lblHasta.TabIndex = 38;
             this.lblHasta.Text = "Hasta:";
+            this.lblHasta.Click += new System.EventHandler(this.lblHasta_Click);
             // 
             // lblDesde
             // 
@@ -95,6 +106,7 @@
             this.lblDesde.Size = new System.Drawing.Size(41, 13);
             this.lblDesde.TabIndex = 37;
             this.lblDesde.Text = "Desde:";
+            this.lblDesde.Click += new System.EventHandler(this.lblDesde_Click);
             // 
             // dtpHasta
             // 
@@ -102,6 +114,7 @@
             this.dtpHasta.Name = "dtpHasta";
             this.dtpHasta.Size = new System.Drawing.Size(200, 20);
             this.dtpHasta.TabIndex = 36;
+            this.dtpHasta.ValueChanged += new System.EventHandler(this.dtpHasta_ValueChanged);
             // 
             // dtpDesde
             // 
@@ -109,16 +122,7 @@
             this.dtpDesde.Name = "dtpDesde";
             this.dtpDesde.Size = new System.Drawing.Size(200, 20);
             this.dtpDesde.TabIndex = 35;
-            // 
-            // antigEmpleadosBS
-            // 
-            this.antigEmpleadosBS.DataMember = "ReporteAntigEmpleados";
-            this.antigEmpleadosBS.DataSource = this.reporteAntigEmpleados1;
-            // 
-            // reporteAntigEmpleados1
-            // 
-            this.reporteAntigEmpleados1.DataSetName = "ReporteAntigEmpleados1";
-            this.reporteAntigEmpleados1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.dtpDesde.ValueChanged += new System.EventHandler(this.dtpDesde_ValueChanged);
             // 
             // reporteAntigEmpleadosTableAdapter
             // 

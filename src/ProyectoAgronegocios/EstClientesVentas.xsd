@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EstClientesVentas" targetNamespace="http://tempuri.org/EstClientesVentas.xsd" xmlns:mstns="http://tempuri.org/EstClientesVentas.xsd" xmlns="http://tempuri.org/EstClientesVentas.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="AgronegociosConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="AgronegociosConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ProyectoAgronegocios.Properties.Settings.GlobalReference.Default.AgronegociosConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EstClientesVentasTableAdapter" GeneratorDataComponentClassName="EstClientesVentasTableAdapter" Name="EstClientesVentas" UserDataComponentName="EstClientesVentasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="AgronegociosConnectionString (Settings)" DbObjectName="Agronegocios.dbo.EstClientesVentas" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT CUIL_CUIT, nombre, apellido, SumaCantidad FROM dbo.EstClientesVentas</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="CUIL_CUIT" DataSetColumn="CUIL_CUIT" />
+              <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
+              <Mapping SourceColumn="apellido" DataSetColumn="apellido" />
+              <Mapping SourceColumn="SumaCantidad" DataSetColumn="SumaCantidad" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EstClientesVentas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="EstClientesVentas" msprop:Generator_UserDSName="EstClientesVentas">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EstClientesVentas" msprop:Generator_TableClassName="EstClientesVentasDataTable" msprop:Generator_TableVarName="tableEstClientesVentas" msprop:Generator_TablePropName="_EstClientesVentas" msprop:Generator_RowDeletingName="EstClientesVentasRowDeleting" msprop:Generator_RowChangingName="EstClientesVentasRowChanging" msprop:Generator_RowEvHandlerName="EstClientesVentasRowChangeEventHandler" msprop:Generator_RowDeletedName="EstClientesVentasRowDeleted" msprop:Generator_UserTableName="EstClientesVentas" msprop:Generator_RowChangedName="EstClientesVentasRowChanged" msprop:Generator_RowEvArgName="EstClientesVentasRowChangeEvent" msprop:Generator_RowClassName="EstClientesVentasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CUIL_CUIT" msprop:Generator_ColumnVarNameInTable="columnCUIL_CUIT" msprop:Generator_ColumnPropNameInRow="CUIL_CUIT" msprop:Generator_ColumnPropNameInTable="CUIL_CUITColumn" msprop:Generator_UserColumnName="CUIL_CUIT">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="apellido" msprop:Generator_ColumnVarNameInTable="columnapellido" msprop:Generator_ColumnPropNameInRow="apellido" msprop:Generator_ColumnPropNameInTable="apellidoColumn" msprop:Generator_UserColumnName="apellido" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SumaCantidad" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSumaCantidad" msprop:Generator_ColumnPropNameInRow="SumaCantidad" msprop:Generator_ColumnPropNameInTable="SumaCantidadColumn" msprop:Generator_UserColumnName="SumaCantidad" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -81,8 +81,10 @@ namespace ProyectoAgronegocios.DataAccessLayer
                         + "f.total AS 'Monto Total', "
                         + "f.cod_Empleado AS 'Empleado' "
                         + "FROM Facturas f "
-                        + "JOIN Cliente_Proveedor c ON f.id_cliente_Proveedor = c.id_Cliente_Proveedor "
-                        + "WHERE c.id_Cliente_Proveedor = " + id_Cliente;
+                        + "JOIN Cliente_Proveedor c ON f.id_cliente_Proveedor = c.id_Cliente_Proveedor " 
+                        + "LEFT JOIN Envios e ON (e.id_Factura = f.numero AND e.tipo_Factura = f.tipo_Factura) "
+                        + "WHERE c.id_Cliente_Proveedor = " + id_Cliente
+                        + "AND e.id_Factura IS NULL"  ;
             return DataManager.GetInstance().ConsultaSQL(consulta);
         }
 

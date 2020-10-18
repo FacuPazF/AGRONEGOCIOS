@@ -79,6 +79,7 @@ namespace ProyectoAgronegocios.GUILayer
                 nudDias1.Enabled = true;
             }
         }
+        
         // ------------- Botones -------------------------------------------------------
         private void btnBuscar_Click(object sender, EventArgs e)
         {
@@ -224,7 +225,7 @@ namespace ProyectoAgronegocios.GUILayer
                 && tot <= Convert.ToDouble(lblTotalNum.Text))
             {
                 sFactura.InsertarFactura(oFact, lista_DF, lista_FP);
-                MessageBox.Show("Factura Generada con Éxito");
+                MessageBox.Show("Factura Generada");
                 this.Close();
             }
             else

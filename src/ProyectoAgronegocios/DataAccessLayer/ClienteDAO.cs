@@ -118,5 +118,32 @@ namespace ProyectoAgronegocios.DataAccessLayer
 
             DBHelper.actualizar(consulta);
         }
+
+        public DataTable recuperarCantidadVentas(DateTime fd, DateTime fh)
+        {
+            
+            consulta = "SELECT TOP (10) c.CUIL_CUIT, c.nombre, c.apellido, CONVERT(numeric(10, 0), SUM(df.cantidad)) AS SumaCantidad" +
+                       " FROM Facturas f " +
+                       " INNER JOIN Detalles_de_Facturas df ON f.tipo_Factura = df.tipo_Factura AND f.numero = df.numero_Factura " +
+                       " INNER JOIN Cliente_Proveedor c ON f.id_cliente_Proveedor = c.id_Cliente_Proveedor " +
+                       " WHERE (f.fecha_Factura BETWEEN '" + fd.ToString("yyyy-MM-dd") + "' AND '" + fh.ToString("yyyy-MM-dd") + "')" +
+                       " GROUP BY c.CUIL_CUIT, c.nombre, c.apellido" + 
+                       " ORDER BY SumaCantidad DESC";
+
+            return DataManager.GetInstance().ConsultaSQL(consulta);
+        }
+
+        public DataTable recuperarCantidadVentasPrecio(DateTime fd, DateTime fh)
+        {
+
+            consulta = "SELECT TOP (10) c.id_Cliente_Proveedor, c.nombre, c.apellido, SUM(f.total) AS SumaPrecio" +
+                       " FROM Facturas f " +
+                       " INNER JOIN Cliente_Proveedor c ON f.id_cliente_Proveedor = c.id_Cliente_Proveedor " +
+                       " WHERE (f.fecha_Factura BETWEEN '" + fd.ToString("yyyy-MM-dd") + "' AND '" + fh.ToString("yyyy-MM-dd") + "')" +
+                       " GROUP BY c.id_Cliente_Proveedor, c.nombre, c.apellido" +
+                       " ORDER BY SumaPrecio DESC";
+
+            return DataManager.GetInstance().ConsultaSQL(consulta);
+        }
     }
 }
