@@ -2,45 +2,41 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="EstClientesVentasP">
+    <DataSource Name="EstEnviosEmp">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>d51cf51e-28e1-458d-9bcf-ac0c974e0893</rd:DataSourceID>
+      <rd:DataSourceID>0c06a904-fb2c-4990-ae97-cf3d1c1e807d</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="EstClientesVentasP">
+    <DataSet Name="EstEnviosEmp">
       <Query>
-        <DataSourceName>EstClientesVentasP</DataSourceName>
+        <DataSourceName>EstEnviosEmp</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="id_Cliente_Proveedor">
-          <DataField>id_Cliente_Proveedor</DataField>
+        <Field Name="id_Empresa">
+          <DataField>id_Empresa</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="nombre">
-          <DataField>nombre</DataField>
+        <Field Name="razon_social">
+          <DataField>razon_social</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="apellido">
-          <DataField>apellido</DataField>
-          <rd:TypeName>System.String</rd:TypeName>
-        </Field>
-        <Field Name="SumaPrecio">
-          <DataField>SumaPrecio</DataField>
-          <rd:TypeName>System.Decimal</rd:TypeName>
+        <Field Name="CantEnvios">
+          <DataField>CantEnvios</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>EstClientesVentasP</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Niico\Desktop\PAV\TPSE Agronegocios\AGRONEGOCIOS\AGRONEGOCIOS\src\ProyectoAgronegocios\EstClientesVentasP.xsd</rd:SchemaPath>
-        <rd:TableName>EstClientesVentaP</rd:TableName>
+        <rd:DataSetName>EstEnviosEmp</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\Niico\Desktop\PAV\TPSE Agronegocios\AGRONEGOCIOS\AGRONEGOCIOS\src\ProyectoAgronegocios\EstEnviosEmp.xsd</rd:SchemaPath>
+        <rd:TableName>EstEnviosEmp</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>EstClientesVentaPTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>EstEnviosEmpTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -65,7 +61,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>0.4276cm</Top>
+            <Top>0.77156cm</Top>
             <Left>1.81916cm</Left>
             <Height>0.6cm</Height>
             <Width>12.87167cm</Width>
@@ -96,7 +92,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>1.40656cm</Top>
+            <Top>1.75052cm</Top>
             <Left>3.27437cm</Left>
             <Height>0.6cm</Height>
             <Width>3.00271cm</Width>
@@ -128,8 +124,8 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>1.40656cm</Top>
-            <Left>8.12398cm</Left>
+            <Top>1.75052cm</Top>
+            <Left>8.12399cm</Left>
             <Height>0.6cm</Height>
             <Width>0.39278cm</Width>
             <ZIndex>2</ZIndex>
@@ -160,7 +156,7 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox3</rd:DefaultName>
-            <Top>1.40656cm</Top>
+            <Top>1.75052cm</Top>
             <Left>8.69316cm</Left>
             <Height>0.6cm</Height>
             <Width>3.05563cm</Width>
@@ -175,53 +171,53 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
-          <Chart Name="Chart1">
+          <Chart Name="Chart2">
             <ChartCategoryHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Group Name="Chart1_CategoryGroup1">
+                  <Group Name="Chart2_CategoryGroup1">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!nombre.Value</GroupExpression>
+                      <GroupExpression>=Fields!razon_social.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!nombre.Value</Value>
+                      <Value>=Fields!razon_social.Value</Value>
                     </SortExpression>
                   </SortExpressions>
                   <ChartMembers>
                     <ChartMember>
-                      <Group Name="Chart1_CategoryGroup2">
+                      <Group Name="Chart2_CategoryGroup2">
                         <GroupExpressions>
-                          <GroupExpression>=Fields!apellido.Value</GroupExpression>
+                          <GroupExpression>=Fields!CantEnvios.Value</GroupExpression>
                         </GroupExpressions>
                       </Group>
                       <SortExpressions>
                         <SortExpression>
-                          <Value>=Fields!apellido.Value</Value>
+                          <Value>=Fields!CantEnvios.Value</Value>
                         </SortExpression>
                       </SortExpressions>
-                      <Label>=Fields!apellido.Value</Label>
+                      <Label>=Fields!CantEnvios.Value</Label>
                     </ChartMember>
                   </ChartMembers>
-                  <Label>=Fields!nombre.Value</Label>
+                  <Label>=Fields!razon_social.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
             <ChartSeriesHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Label>Suma Precio</Label>
+                  <Label>Cant Envios</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartSeriesHierarchy>
             <ChartData>
               <ChartSeriesCollection>
-                <ChartSeries Name="SumaPrecio">
+                <ChartSeries Name="CantEnvios">
                   <ChartDataPoints>
                     <ChartDataPoint>
                       <ChartDataPointValues>
-                        <Y>=Sum(Fields!SumaPrecio.Value)</Y>
+                        <Y>=Sum(Fields!CantEnvios.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
@@ -233,6 +229,7 @@
                       <DataElementOutput>Output</DataElementOutput>
                     </ChartDataPoint>
                   </ChartDataPoints>
+                  <Type>Shape</Type>
                   <Style />
                   <ChartEmptyPoints>
                     <Style />
@@ -478,6 +475,9 @@
                     </ChartAxisScaleBreak>
                   </ChartAxis>
                 </ChartValueAxes>
+                <ChartThreeDProperties>
+                  <Enabled>true</Enabled>
+                </ChartThreeDProperties>
                 <Style>
                   <BackgroundColor>#00ffffff</BackgroundColor>
                   <BackgroundGradientType>None</BackgroundGradientType>
@@ -490,7 +490,8 @@
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontSize>8pt</FontSize>
                 </Style>
-                <Position>TopLeft</Position>
+                <Position>RightCenter</Position>
+                <DockOutsideChartArea>true</DockOutsideChartArea>
                 <ChartLegendTitle>
                   <Caption />
                   <Style>
@@ -505,7 +506,7 @@
             </ChartLegends>
             <ChartTitles>
               <ChartTitle Name="Default">
-                <Caption>Título del gráfico</Caption>
+                <Caption>Cantidad de Envios por Empresa</Caption>
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontSize>9pt</FontSize>
@@ -534,11 +535,10 @@
                 <VerticalAlign>Top</VerticalAlign>
               </Style>
             </ChartNoDataMessage>
-            <DataSetName>EstClientesVentasP</DataSetName>
-            <Top>2.69558cm</Top>
-            <Left>1.15581cm</Left>
-            <Height>11.35cm</Height>
-            <Width>14.19838cm</Width>
+            <DataSetName>EstEnviosEmp</DataSetName>
+            <Top>2.98662cm</Top>
+            <Height>10.88637cm</Height>
+            <Width>18.99708cm</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>
@@ -549,71 +549,11 @@
               <BackgroundGradientType>None</BackgroundGradientType>
             </Style>
           </Chart>
-          <Textbox Name="Textbox7">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Promedio de Ventas en Precio: $</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox7</rd:DefaultName>
-            <Top>14.46953cm</Top>
-            <Left>1.81916cm</Left>
-            <Height>0.6cm</Height>
-            <Width>5.41042cm</Width>
-            <ZIndex>5</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox8">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=Parameters!Promedio.Value</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>14.46953cm</Top>
-            <Left>7.61683cm</Left>
-            <Height>0.6cm</Height>
-            <Width>2.5cm</Width>
-            <ZIndex>6</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
         </ReportItems>
-        <Height>6.0683in</Height>
+        <Height>5.53125in</Height>
         <Style />
       </Body>
-      <Width>6.5in</Width>
+      <Width>7.47917in</Width>
       <Page>
         <PageHeader>
           <Height>2.54cm</Height>
@@ -627,7 +567,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Top Clientes que mas compraron en precios.</Value>
+                      <Value>Cantidad de Envios por Empresa</Value>
                       <Style>
                         <FontFamily>Upbolters New</FontFamily>
                         <FontSize>14pt</FontSize>
@@ -639,7 +579,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>0.48065cm</Top>
+              <Top>0.50587cm</Top>
               <Left>1.15581cm</Left>
               <Height>1.26146cm</Height>
               <Width>10.86084cm</Width>
@@ -658,7 +598,7 @@
               <Value>AgronegociosMA</Value>
               <Sizing>Fit</Sizing>
               <Top>0.12595cm</Top>
-              <Left>12.97294cm</Left>
+              <Left>15.51294cm</Left>
               <Height>2.23766cm</Height>
               <Width>2.38125cm</Width>
               <ZIndex>1</ZIndex>
@@ -676,7 +616,7 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>1.98438cm</Height>
+          <Height>2.54cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -695,7 +635,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>0.6525cm</Top>
+              <Top>0.97cm</Top>
               <Left>12.85419cm</Left>
               <Height>0.6cm</Height>
               <Width>2.5cm</Width>
@@ -738,11 +678,6 @@
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="Promedio">
-      <DataType>String</DataType>
-      <AllowBlank>true</AllowBlank>
-      <Prompt>ReportParameter1</Prompt>
-    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
@@ -758,11 +693,6 @@
           <ColumnIndex>1</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>FechaHasta</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>2</ColumnIndex>
-          <RowIndex>0</RowIndex>
-          <ParameterName>Promedio</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
@@ -881,5 +811,5 @@ qXkgXMS4nYxK6ZthSTY9Wj4x2xs6Kxd2w+pEAAGAAodAAgAlJRNQTMH8lYBidlDa29utuoqlFYpRtUV2
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>e428ee00-2f39-4cab-bfec-ec0411791de4</rd:ReportID>
+  <rd:ReportID>60c8fda9-6f4e-4757-b28f-5f78852c0eb1</rd:ReportID>
 </Report>

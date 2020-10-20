@@ -145,5 +145,25 @@ namespace ProyectoAgronegocios.DataAccessLayer
 
             return DataManager.GetInstance().ConsultaSQL(consulta);
         }
+
+        public double promedioVentasP(DateTime fd, DateTime fh)
+        {
+            
+            DataTable tabla = DataManager.GetInstance().ConsultaSQL("SELECT AVG(f.total) FROM Facturas f " +
+                " JOIN Cliente_Proveedor c ON(f.id_cliente_Proveedor = c.id_Cliente_Proveedor)" +
+                " WHERE (f.fecha_Factura BETWEEN '" + fd.ToString("yyyy-MM-dd") + "' AND '" + fh.ToString("yyyy-MM-dd") + "')");
+
+            return Convert.ToDouble(tabla.Rows[0][0]);
+        }
+
+        public double promedioVentasC(DateTime fd, DateTime fh)
+        {
+
+            DataTable tabla = DataManager.GetInstance().ConsultaSQL("SELECT AVG(SUM(df.cantidad)) FROM Facturas f " +
+                " JOIN Detalles_de_Factura ON(f.id_cliente_Proveedor = c.id_Cliente_Proveedor)" +
+                " WHERE (f.fecha_Factura BETWEEN '" + fd.ToString("yyyy-MM-dd") + "' AND '" + fh.ToString("yyyy-MM-dd") + "')");
+
+            return Convert.ToDouble(tabla.Rows[0][0]);
+        }
     }
 }

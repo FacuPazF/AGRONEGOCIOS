@@ -75,5 +75,34 @@ namespace ProyectoAgronegocios.DataAccessLayer
 
             return DataManager.GetInstance().ConsultaSQL(consulta);
         }
+
+        public DataTable recuperarVentasProv(DateTime fd, DateTime fh)
+        {
+            string consulta;
+            consulta = "SELECT p.nombre, (SUM(f.total)/(SELECT SUM(f.total) FROM Facturas f JOIN Envios e ON (f.numero = e.id_Factura AND f.tipo_Factura = e.tipo_Factura)  ) * 100) as Porc" +
+                        " FROM Facturas f  " +
+                        " JOIN Envios e ON (f.numero = e.id_Factura AND f.tipo_Factura = e.tipo_Factura) " +
+                        " JOIN Barrios b ON (e.id_barrio = b.id_Barrio) " +
+                        " JOIN Localidad l ON (b.id_Localidad = l.id_Localidad) " +
+                        " JOIN Provincia p ON (l.id_Provincia = p.id_Provincia) " +
+                        " WHERE f.fecha_Factura BETWEEN '" + fd.ToString("yyyy-MM-dd") + "' AND '" + fh.ToString("yyyy-MM-dd") + "' " +
+                        " GROUP BY p.nombre";
+            return DataManager.GetInstance().ConsultaSQL(consulta);
+        }
+
+        public DataTable recuperarEnviosEmp(DateTime fd, DateTime fh)
+        {
+            string consulta;
+            consulta = " SELECT emp.id_Empresa, emp.razon_social, COUNT(env.nro_envio) as CantEnvios" +
+                       " FROM Envios env" +
+                       " JOIN Empresa_Transporte emp ON env.id_Empresa_Transporte = emp.id_Empresa " +
+                       " WHERE emp.borrado = 0" +
+                       " GROUP BY emp.id_Empresa, emp.razon_social"+
+                       " ORDER BY CantEnvios";
+
+            return DataManager.GetInstance().ConsultaSQL(consulta);
+        }
+       
+
     }
 }

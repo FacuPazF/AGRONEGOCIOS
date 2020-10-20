@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EstVentasSemillas" targetNamespace="http://tempuri.org/EstVentasSemillas.xsd" xmlns:mstns="http://tempuri.org/EstVentasSemillas.xsd" xmlns="http://tempuri.org/EstVentasSemillas.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="AgronegociosConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="AgronegociosConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.ProyectoAgronegocios.Properties.Settings.GlobalReference.Default.AgronegociosConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="EstVentasSemillasTableAdapter" GeneratorDataComponentClassName="EstVentasSemillasTableAdapter" Name="EstVentasSemillas" UserDataComponentName="EstVentasSemillasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="AgronegociosConnectionString (Settings)" DbObjectName="Agronegocios.dbo.EstVentasSemillas" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT nombre, CantSemilla FROM dbo.EstVentasSemillas</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="nombre" DataSetColumn="nombre" />
+              <Mapping SourceColumn="CantSemilla" DataSetColumn="CantSemilla" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EstVentasSemillas" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="EstVentasSemillas" msprop:Generator_UserDSName="EstVentasSemillas">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EstVentasSemillas" msprop:Generator_TableClassName="EstVentasSemillasDataTable" msprop:Generator_TableVarName="tableEstVentasSemillas" msprop:Generator_TablePropName="_EstVentasSemillas" msprop:Generator_RowDeletingName="EstVentasSemillasRowDeleting" msprop:Generator_RowChangingName="EstVentasSemillasRowChanging" msprop:Generator_RowEvHandlerName="EstVentasSemillasRowChangeEventHandler" msprop:Generator_RowDeletedName="EstVentasSemillasRowDeleted" msprop:Generator_UserTableName="EstVentasSemillas" msprop:Generator_RowChangedName="EstVentasSemillasRowChanged" msprop:Generator_RowEvArgName="EstVentasSemillasRowChangeEvent" msprop:Generator_RowClassName="EstVentasSemillasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="nombre" msprop:Generator_ColumnVarNameInTable="columnnombre" msprop:Generator_ColumnPropNameInRow="nombre" msprop:Generator_ColumnPropNameInTable="nombreColumn" msprop:Generator_UserColumnName="nombre" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CantSemilla" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnCantSemilla" msprop:Generator_ColumnPropNameInRow="CantSemilla" msprop:Generator_ColumnPropNameInTable="CantSemillaColumn" msprop:Generator_UserColumnName="CantSemilla" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -70,6 +70,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Estadisticas\Forms\frmEstEnviosEmp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\Forms\frmEstEnviosEmp.Designer.cs">
+      <DependentUpon>frmEstEnviosEmp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\Forms\frmEstPorcVentasProv.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\Forms\frmEstPorcVentasProv.Designer.cs">
+      <DependentUpon>frmEstPorcVentasProv.cs</DependentUpon>
+    </Compile>
     <Compile Include="Estadisticas\Forms\frmEstClientesVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -82,6 +94,18 @@
     <Compile Include="Estadisticas\Forms\frmEstClientesVentasP.Designer.cs">
       <DependentUpon>frmEstClientesVentasP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Estadisticas\Forms\frmEstVentasEmpleados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\Forms\frmEstVentasEmpleados.Designer.cs">
+      <DependentUpon>frmEstVentasEmpleados.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Estadisticas\Forms\frmEstVentasSemillas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\Forms\frmEstVentasSemillas.Designer.cs">
+      <DependentUpon>frmEstVentasSemillas.cs</DependentUpon>
+    </Compile>
     <Compile Include="EstClientesVentas.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -91,6 +115,26 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>EstClientesVentasP.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EstEnviosEmp.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstEnviosEmp.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EstPorcVentasXEmpleado.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstPorcVentasXEmpleado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EstVentasEmpleados.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstVentasEmpleados.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EstVentSemillas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstVentSemillas.xsd</DependentUpon>
     </Compile>
     <Compile Include="RepFacturas.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -256,11 +300,27 @@
     <Compile Include="Support\Sesion.cs" />
     <EmbeddedResource Include="Estadisticas\EstClientesVentas.rdlc" />
     <EmbeddedResource Include="Estadisticas\EstClientesVentasP.rdlc" />
+    <EmbeddedResource Include="Estadisticas\EstEnviosEmp.rdlc" />
+    <EmbeddedResource Include="Estadisticas\EstPorcVentasProv.rdlc" />
+    <EmbeddedResource Include="Estadisticas\EstVentasEmpleado.rdlc" />
+    <EmbeddedResource Include="Estadisticas\EstVentasSemillas.rdlc" />
+    <EmbeddedResource Include="Estadisticas\Forms\frmEstEnviosEmp.resx">
+      <DependentUpon>frmEstEnviosEmp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\Forms\frmEstPorcVentasProv.resx">
+      <DependentUpon>frmEstPorcVentasProv.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Estadisticas\Forms\frmEstClientesVentas.resx">
       <DependentUpon>frmEstClientesVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Estadisticas\Forms\frmEstClientesVentasP.resx">
       <DependentUpon>frmEstClientesVentasP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\Forms\frmEstVentasEmpleados.resx">
+      <DependentUpon>frmEstVentasEmpleados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\Forms\frmEstVentasSemillas.resx">
+      <DependentUpon>frmEstVentasSemillas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GUILayer\frmDetFacturaConsulta.resx">
       <DependentUpon>frmDetFacturaConsulta.cs</DependentUpon>
@@ -344,6 +404,50 @@
     </None>
     <None Include="EstClientesVentasP.xss">
       <DependentUpon>EstClientesVentasP.xsd</DependentUpon>
+    </None>
+    <None Include="EstEnviosEmp.xsc">
+      <DependentUpon>EstEnviosEmp.xsd</DependentUpon>
+    </None>
+    <None Include="EstEnviosEmp.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EstEnviosEmp.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EstEnviosEmp.xss">
+      <DependentUpon>EstEnviosEmp.xsd</DependentUpon>
+    </None>
+    <None Include="EstPorcVentasXEmpleado.xsc">
+      <DependentUpon>EstPorcVentasXEmpleado.xsd</DependentUpon>
+    </None>
+    <None Include="EstPorcVentasXEmpleado.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EstPorcVentasXEmpleado.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EstPorcVentasXEmpleado.xss">
+      <DependentUpon>EstPorcVentasXEmpleado.xsd</DependentUpon>
+    </None>
+    <None Include="EstVentasEmpleados.xsc">
+      <DependentUpon>EstVentasEmpleados.xsd</DependentUpon>
+    </None>
+    <None Include="EstVentasEmpleados.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EstVentasEmpleados.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EstVentasEmpleados.xss">
+      <DependentUpon>EstVentasEmpleados.xsd</DependentUpon>
+    </None>
+    <None Include="EstVentSemillas.xsc">
+      <DependentUpon>EstVentSemillas.xsd</DependentUpon>
+    </None>
+    <None Include="EstVentSemillas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EstVentSemillas.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EstVentSemillas.xss">
+      <DependentUpon>EstVentSemillas.xsd</DependentUpon>
     </None>
     <None Include="RepFacturas.xsc">
       <DependentUpon>RepFacturas.xsd</DependentUpon>

@@ -129,5 +129,21 @@ namespace ProyectoAgronegocios.DataAccessLayer
                 + " WHERE id_Semilla =" + id;
             DataManager.GetInstance().EjecutarSQL(strSQL);
         }
+
+        public DataTable recuperarVentasSemilla(DateTime fd, DateTime fh)
+        {
+            string consulta;
+            consulta = "SELECT TOP(10) s.nombre, SUM(df.cantidad) as CantSemilla " +
+                        " FROM Semilla s " +
+                        " JOIN Detalles_de_Facturas df ON s.id_Semilla = df.id_Semilla" +
+                        " JOIN Facturas f ON (df.tipo_Factura = f.tipo_Factura AND df.numero_Factura = f.numero)" +
+                        " WHERE s.borrado = 0 AND f.fecha_Factura BETWEEN '" + fd.ToString("yyyy-MM-dd") + "' AND '" + fh.ToString("yyyy-MM-dd") + "' "+
+                        " GROUP BY s.nombre" +
+                        " ORDER BY CantSemilla DESC";
+
+
+        return DataManager.GetInstance().ConsultaSQL(consulta);
+        }
+
     }
 }

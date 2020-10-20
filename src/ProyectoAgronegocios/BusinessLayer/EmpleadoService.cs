@@ -59,5 +59,8 @@ namespace ProyectoAgronegocios.BusinessLayer
         {
             return daoEmpleado.buscarAntiguedades(fd, fh);
         }
+
+        public DataTable recuperarVentasEmpleados(DateTime fd, DateTime fh) => daoEmpleado.recuperarVentasEmpleados(fd, fh);
+
     }
 }

@@ -48,5 +48,9 @@ namespace ProyectoAgronegocios.BusinessLayer
         {
             daoSemilla.borrarSemilla(id);
         }
+
+        public DataTable recuperarVentasSemilla(DateTime fd, DateTime fh) => daoSemilla.recuperarVentasSemilla(fd, fh);
+        
+
     }
 }

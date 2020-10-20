@@ -118,5 +118,29 @@ namespace ProyectoAgronegocios
             frmEstClientesVentasP frmECVP = new frmEstClientesVentasP();
             frmECVP.ShowDialog();
         }
+
+        private void porcentajeDeVentasPorProvinciaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEstPorcVentasProv frmEPVP = new frmEstPorcVentasProv();
+            frmEPVP.ShowDialog();
+        }
+
+        private void cantidadDeVentasPorEmpleadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEstVentasEmpleados frmEVE = new frmEstVentasEmpleados();
+            frmEVE.ShowDialog();
+        }
+
+        private void cantidadDeEnviosPorEmpresaDeTransporteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEstEnviosEmp frmEE = new frmEstEnviosEmp();
+            frmEE.ShowDialog();
+        }
+
+        private void cantidadDeSemillasMasVendidasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEstVentasSemillas frmEVS = new frmEstVentasSemillas();
+            frmEVS.ShowDialog();
+        }
     }
 }

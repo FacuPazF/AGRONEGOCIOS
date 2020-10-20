@@ -2,23 +2,23 @@
 <Report xmlns="http://schemas.microsoft.com/sqlserver/reporting/2016/01/reportdefinition" xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner">
   <AutoRefresh>0</AutoRefresh>
   <DataSources>
-    <DataSource Name="EstClientesVentasP">
+    <DataSource Name="EstVentasEmpleados">
       <ConnectionProperties>
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>d51cf51e-28e1-458d-9bcf-ac0c974e0893</rd:DataSourceID>
+      <rd:DataSourceID>69e145d6-9cf0-4687-b7db-5fc088b20e77</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="EstClientesVentasP">
+    <DataSet Name="EstVentasEmpleados">
       <Query>
-        <DataSourceName>EstClientesVentasP</DataSourceName>
+        <DataSourceName>EstVentasEmpleados</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="id_Cliente_Proveedor">
-          <DataField>id_Cliente_Proveedor</DataField>
+        <Field Name="cod_Empleado">
+          <DataField>cod_Empleado</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="nombre">
@@ -29,18 +29,18 @@
           <DataField>apellido</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="SumaPrecio">
-          <DataField>SumaPrecio</DataField>
+        <Field Name="Total">
+          <DataField>Total</DataField>
           <rd:TypeName>System.Decimal</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
-        <rd:DataSetName>EstClientesVentasP</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Niico\Desktop\PAV\TPSE Agronegocios\AGRONEGOCIOS\AGRONEGOCIOS\src\ProyectoAgronegocios\EstClientesVentasP.xsd</rd:SchemaPath>
-        <rd:TableName>EstClientesVentaP</rd:TableName>
+        <rd:DataSetName>EstVentasEmpleados</rd:DataSetName>
+        <rd:SchemaPath>C:\Users\Niico\Desktop\PAV\TPSE Agronegocios\AGRONEGOCIOS\AGRONEGOCIOS\src\ProyectoAgronegocios\EstVentasEmpleados.xsd</rd:SchemaPath>
+        <rd:TableName>EstVentasEmpleados</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
-        <rd:TableAdapterName>EstClientesVentaPTableAdapter</rd:TableAdapterName>
+        <rd:TableAdapterName>EstVentasEmpleadosTableAdapter</rd:TableAdapterName>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -175,23 +175,23 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
-          <Chart Name="Chart1">
+          <Chart Name="Chart2">
             <ChartCategoryHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Group Name="Chart1_CategoryGroup1">
+                  <Group Name="Chart2_CategoryGroup2">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!nombre.Value</GroupExpression>
+                      <GroupExpression>=Fields!cod_Empleado.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!nombre.Value</Value>
+                      <Value>=Fields!cod_Empleado.Value</Value>
                     </SortExpression>
                   </SortExpressions>
                   <ChartMembers>
                     <ChartMember>
-                      <Group Name="Chart1_CategoryGroup2">
+                      <Group Name="Chart2_CategoryGroup1">
                         <GroupExpressions>
                           <GroupExpression>=Fields!apellido.Value</GroupExpression>
                         </GroupExpressions>
@@ -201,27 +201,42 @@
                           <Value>=Fields!apellido.Value</Value>
                         </SortExpression>
                       </SortExpressions>
+                      <ChartMembers>
+                        <ChartMember>
+                          <Group Name="Chart2_CategoryGroup3">
+                            <GroupExpressions>
+                              <GroupExpression>=Fields!Total.Value</GroupExpression>
+                            </GroupExpressions>
+                          </Group>
+                          <SortExpressions>
+                            <SortExpression>
+                              <Value>=Fields!Total.Value</Value>
+                            </SortExpression>
+                          </SortExpressions>
+                          <Label>=Fields!Total.Value</Label>
+                        </ChartMember>
+                      </ChartMembers>
                       <Label>=Fields!apellido.Value</Label>
                     </ChartMember>
                   </ChartMembers>
-                  <Label>=Fields!nombre.Value</Label>
+                  <Label>=Fields!cod_Empleado.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
             <ChartSeriesHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Label>Suma Precio</Label>
+                  <Label>Total</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartSeriesHierarchy>
             <ChartData>
               <ChartSeriesCollection>
-                <ChartSeries Name="SumaPrecio">
+                <ChartSeries Name="Total">
                   <ChartDataPoints>
                     <ChartDataPoint>
                       <ChartDataPointValues>
-                        <Y>=Sum(Fields!SumaPrecio.Value)</Y>
+                        <Y>=Sum(Fields!Total.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
@@ -233,6 +248,8 @@
                       <DataElementOutput>Output</DataElementOutput>
                     </ChartDataPoint>
                   </ChartDataPoints>
+                  <Type>Shape</Type>
+                  <Subtype>Doughnut</Subtype>
                   <Style />
                   <ChartEmptyPoints>
                     <Style />
@@ -488,9 +505,11 @@
               <ChartLegend Name="Default">
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
-                  <FontSize>8pt</FontSize>
+                  <FontSize>12pt</FontSize>
                 </Style>
-                <Position>TopLeft</Position>
+                <Position>RightCenter</Position>
+                <DockToChartArea>Default</DockToChartArea>
+                <DockOutsideChartArea>true</DockOutsideChartArea>
                 <ChartLegendTitle>
                   <Caption />
                   <Style>
@@ -499,13 +518,14 @@
                     <TextAlign>Center</TextAlign>
                   </Style>
                 </ChartLegendTitle>
+                <MinFontSize>10pt</MinFontSize>
                 <HeaderSeparatorColor>Black</HeaderSeparatorColor>
                 <ColumnSeparatorColor>Black</ColumnSeparatorColor>
               </ChartLegend>
             </ChartLegends>
             <ChartTitles>
               <ChartTitle Name="Default">
-                <Caption>Título del gráfico</Caption>
+                <Caption>Recaudaciones por empleado</Caption>
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontSize>9pt</FontSize>
@@ -534,11 +554,10 @@
                 <VerticalAlign>Top</VerticalAlign>
               </Style>
             </ChartNoDataMessage>
-            <DataSetName>EstClientesVentasP</DataSetName>
-            <Top>2.69558cm</Top>
-            <Left>1.15581cm</Left>
-            <Height>11.35cm</Height>
-            <Width>14.19838cm</Width>
+            <DataSetName>EstVentasEmpleados</DataSetName>
+            <Top>2.65149cm</Top>
+            <Height>10.87755cm</Height>
+            <Width>16.51cm</Width>
             <ZIndex>4</ZIndex>
             <Style>
               <Border>
@@ -549,68 +568,8 @@
               <BackgroundGradientType>None</BackgroundGradientType>
             </Style>
           </Chart>
-          <Textbox Name="Textbox7">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>Promedio de Ventas en Precio: $</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox7</rd:DefaultName>
-            <Top>14.46953cm</Top>
-            <Left>1.81916cm</Left>
-            <Height>0.6cm</Height>
-            <Width>5.41042cm</Width>
-            <ZIndex>5</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox8">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=Parameters!Promedio.Value</Value>
-                    <Style />
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox8</rd:DefaultName>
-            <Top>14.46953cm</Top>
-            <Left>7.61683cm</Left>
-            <Height>0.6cm</Height>
-            <Width>2.5cm</Width>
-            <ZIndex>6</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
         </ReportItems>
-        <Height>6.0683in</Height>
+        <Height>5.35417in</Height>
         <Style />
       </Body>
       <Width>6.5in</Width>
@@ -627,7 +586,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Top Clientes que mas compraron en precios.</Value>
+                      <Value>Top Ventas por Empleado (recaudación)</Value>
                       <Style>
                         <FontFamily>Upbolters New</FontFamily>
                         <FontSize>14pt</FontSize>
@@ -639,7 +598,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>0.48065cm</Top>
+              <Top>0.50587cm</Top>
               <Left>1.15581cm</Left>
               <Height>1.26146cm</Height>
               <Width>10.86084cm</Width>
@@ -657,7 +616,7 @@
               <Source>Embedded</Source>
               <Value>AgronegociosMA</Value>
               <Sizing>Fit</Sizing>
-              <Top>0.12595cm</Top>
+              <Top>0.15117cm</Top>
               <Left>12.97294cm</Left>
               <Height>2.23766cm</Height>
               <Width>2.38125cm</Width>
@@ -676,7 +635,7 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>1.98438cm</Height>
+          <Height>2.54cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -695,7 +654,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>0.6525cm</Top>
+              <Top>0.97cm</Top>
               <Left>12.85419cm</Left>
               <Height>0.6cm</Height>
               <Width>2.5cm</Width>
@@ -738,11 +697,6 @@
       <AllowBlank>true</AllowBlank>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="Promedio">
-      <DataType>String</DataType>
-      <AllowBlank>true</AllowBlank>
-      <Prompt>ReportParameter1</Prompt>
-    </ReportParameter>
   </ReportParameters>
   <ReportParametersLayout>
     <GridLayoutDefinition>
@@ -758,11 +712,6 @@
           <ColumnIndex>1</ColumnIndex>
           <RowIndex>0</RowIndex>
           <ParameterName>FechaHasta</ParameterName>
-        </CellDefinition>
-        <CellDefinition>
-          <ColumnIndex>2</ColumnIndex>
-          <RowIndex>0</RowIndex>
-          <ParameterName>Promedio</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
@@ -881,5 +830,5 @@ qXkgXMS4nYxK6ZthSTY9Wj4x2xs6Kxd2w+pEAAGAAodAAgAlJRNQTMH8lYBidlDa29utuoqlFYpRtUV2
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>e428ee00-2f39-4cab-bfec-ec0411791de4</rd:ReportID>
+  <rd:ReportID>4cd1faad-fd9c-4add-9662-fa64425c92f8</rd:ReportID>
 </Report>

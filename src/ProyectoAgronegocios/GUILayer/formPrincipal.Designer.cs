@@ -47,12 +47,16 @@
             this.reporteDeVentasPorEmpleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeEnviosPorEmpresaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reporteDeAntigüedadDeEmpleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblBienvenida = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.estadísticasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.topVentasEnCantidadPorClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.topVentasEnPreciosPorClienteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblBienvenida = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.porcentajeDeVentasPorProvinciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cantidadDeVentasPorEmpleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cantidadDeEnviosPorEmpresaDeTransporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cantidadDeSemillasMasVendidasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -206,6 +210,33 @@
             this.reporteDeAntigüedadDeEmpleadosToolStripMenuItem.Text = "Reporte de Antigüedad de Empleados";
             this.reporteDeAntigüedadDeEmpleadosToolStripMenuItem.Click += new System.EventHandler(this.reporteDeAntigüedadDeEmpleadosToolStripMenuItem_Click);
             // 
+            // estadísticasToolStripMenuItem
+            // 
+            this.estadísticasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.topVentasEnCantidadPorClienteToolStripMenuItem,
+            this.topVentasEnPreciosPorClienteToolStripMenuItem,
+            this.porcentajeDeVentasPorProvinciaToolStripMenuItem,
+            this.cantidadDeVentasPorEmpleadoToolStripMenuItem,
+            this.cantidadDeEnviosPorEmpresaDeTransporteToolStripMenuItem,
+            this.cantidadDeSemillasMasVendidasToolStripMenuItem});
+            this.estadísticasToolStripMenuItem.Name = "estadísticasToolStripMenuItem";
+            this.estadísticasToolStripMenuItem.Size = new System.Drawing.Size(79, 22);
+            this.estadísticasToolStripMenuItem.Text = "Estadísticas";
+            // 
+            // topVentasEnCantidadPorClienteToolStripMenuItem
+            // 
+            this.topVentasEnCantidadPorClienteToolStripMenuItem.Name = "topVentasEnCantidadPorClienteToolStripMenuItem";
+            this.topVentasEnCantidadPorClienteToolStripMenuItem.Size = new System.Drawing.Size(318, 22);
+            this.topVentasEnCantidadPorClienteToolStripMenuItem.Text = "Top Ventas en Cantidad por Cliente";
+            this.topVentasEnCantidadPorClienteToolStripMenuItem.Click += new System.EventHandler(this.topVentasEnCantidadPorClienteToolStripMenuItem_Click);
+            // 
+            // topVentasEnPreciosPorClienteToolStripMenuItem
+            // 
+            this.topVentasEnPreciosPorClienteToolStripMenuItem.Name = "topVentasEnPreciosPorClienteToolStripMenuItem";
+            this.topVentasEnPreciosPorClienteToolStripMenuItem.Size = new System.Drawing.Size(318, 22);
+            this.topVentasEnPreciosPorClienteToolStripMenuItem.Text = "Top Ventas en Precios por Cliente";
+            this.topVentasEnPreciosPorClienteToolStripMenuItem.Click += new System.EventHandler(this.topVentasEnPreciosPorClienteToolStripMenuItem_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -241,28 +272,33 @@
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
-            // estadísticasToolStripMenuItem
+            // porcentajeDeVentasPorProvinciaToolStripMenuItem
             // 
-            this.estadísticasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.topVentasEnCantidadPorClienteToolStripMenuItem,
-            this.topVentasEnPreciosPorClienteToolStripMenuItem});
-            this.estadísticasToolStripMenuItem.Name = "estadísticasToolStripMenuItem";
-            this.estadísticasToolStripMenuItem.Size = new System.Drawing.Size(79, 22);
-            this.estadísticasToolStripMenuItem.Text = "Estadísticas";
+            this.porcentajeDeVentasPorProvinciaToolStripMenuItem.Name = "porcentajeDeVentasPorProvinciaToolStripMenuItem";
+            this.porcentajeDeVentasPorProvinciaToolStripMenuItem.Size = new System.Drawing.Size(318, 22);
+            this.porcentajeDeVentasPorProvinciaToolStripMenuItem.Text = "Porcentaje de Ventas por Provincia";
+            this.porcentajeDeVentasPorProvinciaToolStripMenuItem.Click += new System.EventHandler(this.porcentajeDeVentasPorProvinciaToolStripMenuItem_Click);
             // 
-            // topVentasEnCantidadPorClienteToolStripMenuItem
+            // cantidadDeVentasPorEmpleadoToolStripMenuItem
             // 
-            this.topVentasEnCantidadPorClienteToolStripMenuItem.Name = "topVentasEnCantidadPorClienteToolStripMenuItem";
-            this.topVentasEnCantidadPorClienteToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
-            this.topVentasEnCantidadPorClienteToolStripMenuItem.Text = "Top Ventas en Cantidad por Cliente";
-            this.topVentasEnCantidadPorClienteToolStripMenuItem.Click += new System.EventHandler(this.topVentasEnCantidadPorClienteToolStripMenuItem_Click);
+            this.cantidadDeVentasPorEmpleadoToolStripMenuItem.Name = "cantidadDeVentasPorEmpleadoToolStripMenuItem";
+            this.cantidadDeVentasPorEmpleadoToolStripMenuItem.Size = new System.Drawing.Size(318, 22);
+            this.cantidadDeVentasPorEmpleadoToolStripMenuItem.Text = "Cantidad de Ventas por Empleado";
+            this.cantidadDeVentasPorEmpleadoToolStripMenuItem.Click += new System.EventHandler(this.cantidadDeVentasPorEmpleadoToolStripMenuItem_Click);
             // 
-            // topVentasEnPreciosPorClienteToolStripMenuItem
+            // cantidadDeEnviosPorEmpresaDeTransporteToolStripMenuItem
             // 
-            this.topVentasEnPreciosPorClienteToolStripMenuItem.Name = "topVentasEnPreciosPorClienteToolStripMenuItem";
-            this.topVentasEnPreciosPorClienteToolStripMenuItem.Size = new System.Drawing.Size(258, 22);
-            this.topVentasEnPreciosPorClienteToolStripMenuItem.Text = "Top Ventas en Precios por Cliente";
-            this.topVentasEnPreciosPorClienteToolStripMenuItem.Click += new System.EventHandler(this.topVentasEnPreciosPorClienteToolStripMenuItem_Click);
+            this.cantidadDeEnviosPorEmpresaDeTransporteToolStripMenuItem.Name = "cantidadDeEnviosPorEmpresaDeTransporteToolStripMenuItem";
+            this.cantidadDeEnviosPorEmpresaDeTransporteToolStripMenuItem.Size = new System.Drawing.Size(318, 22);
+            this.cantidadDeEnviosPorEmpresaDeTransporteToolStripMenuItem.Text = "Cantidad de Envios por Empresa de Transporte";
+            this.cantidadDeEnviosPorEmpresaDeTransporteToolStripMenuItem.Click += new System.EventHandler(this.cantidadDeEnviosPorEmpresaDeTransporteToolStripMenuItem_Click);
+            // 
+            // cantidadDeSemillasMasVendidasToolStripMenuItem
+            // 
+            this.cantidadDeSemillasMasVendidasToolStripMenuItem.Name = "cantidadDeSemillasMasVendidasToolStripMenuItem";
+            this.cantidadDeSemillasMasVendidasToolStripMenuItem.Size = new System.Drawing.Size(318, 22);
+            this.cantidadDeSemillasMasVendidasToolStripMenuItem.Text = "Cantidad de Semillas mas vendidas";
+            this.cantidadDeSemillasMasVendidasToolStripMenuItem.Click += new System.EventHandler(this.cantidadDeSemillasMasVendidasToolStripMenuItem_Click);
             // 
             // formPrincipal
             // 
@@ -317,6 +353,10 @@
         private System.Windows.Forms.ToolStripMenuItem estadísticasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem topVentasEnCantidadPorClienteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem topVentasEnPreciosPorClienteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem porcentajeDeVentasPorProvinciaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cantidadDeVentasPorEmpleadoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cantidadDeEnviosPorEmpresaDeTransporteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cantidadDeSemillasMasVendidasToolStripMenuItem;
     }
 }
 

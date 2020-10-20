@@ -27,5 +27,9 @@ namespace ProyectoAgronegocios.BusinessLayer
         {
             return daoEnv.buscarEnviosEmpresa(fd, fh);
         }
+
+        public DataTable recuperarVentasProv(DateTime fd, DateTime fh) => daoEnv.recuperarVentasProv(fd, fh);
+
+        public DataTable recuperarEnviosEmp(DateTime fd, DateTime fh) => daoEnv.recuperarEnviosEmp(fd, fh);
     }
 }

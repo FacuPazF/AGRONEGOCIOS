@@ -12,19 +12,19 @@ using ProyectoAgronegocios.BusinessLayer;
 
 namespace ProyectoAgronegocios.Estadisticas.Forms
 {
-    public partial class frmEstClientesVentasP : Form
+    public partial class frmEstPorcVentasProv : Form
     {
-        public frmEstClientesVentasP()
+        public frmEstPorcVentasProv()
         {
             InitializeComponent();
         }
 
-        ClienteService sCliente = new ClienteService();
+        EnvioService sEnvio = new EnvioService();
 
-        private void frmEstClientesVentasP_Load(object sender, EventArgs e)
+        private void EstPorcVentasProv_Load(object sender, EventArgs e)
         {
 
-       
+            this.rpvPorcVentasProv.RefreshReport();
         }
 
         private void btnGrafico_Click(object sender, EventArgs e)
@@ -38,28 +38,25 @@ namespace ProyectoAgronegocios.Estadisticas.Forms
 
             DateTime fechaDesde = dtpDesde.Value;
             DateTime fechaHasta = dtpHasta.Value;
-            double prom = sCliente.promedioVentasP(fechaDesde, fechaHasta);
-
-            rpvClientesVentasP.LocalReport.SetParameters(new ReportParameter[]
+            
+            rpvPorcVentasProv.LocalReport.SetParameters(new ReportParameter[]
                                                     {
                                                      new ReportParameter("FechaDesde", dtpDesde.Value.ToString("yyyy-MM-dd")),
                                                      new ReportParameter("FechaHasta", dtpHasta.Value.ToString("yyyy-MM-dd")),
-                                                     new ReportParameter("Promedio", Math.Round(prom, 2).ToString())
+                                                     
                                                     });
 
             DataTable tabla = new DataTable();
-            tabla = sCliente.recuperarCantidadVentasPrecio(fechaDesde, fechaHasta);
-            rpvClientesVentasP.LocalReport.DataSources.Clear();
-            rpvClientesVentasP.LocalReport.DataSources.Add(new ReportDataSource("EstClientesVentasP", tabla));
+            tabla = sEnvio.recuperarVentasProv(fechaDesde, fechaHasta);
+            rpvPorcVentasProv.LocalReport.DataSources.Clear();
+            rpvPorcVentasProv.LocalReport.DataSources.Add(new ReportDataSource("EstPorcVentasXEmpleado", tabla));
 
-            rpvClientesVentasP.RefreshReport();
+            rpvPorcVentasProv.RefreshReport();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-       
     }
 }

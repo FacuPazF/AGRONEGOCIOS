@@ -55,5 +55,11 @@ namespace ProyectoAgronegocios.BusinessLayer
         {
             return daoCliente.recuperarCantidadVentasPrecio(fd, fh);
         }
+
+        public double promedioVentasP(DateTime fd, DateTime fh) => daoCliente.promedioVentasP(fd, fh);
+        
+
+        public double promedioVentasC(DateTime fd, DateTime fh) => daoCliente.promedioVentasC(fd, fh);
+        
     }
 }

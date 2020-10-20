@@ -40,11 +40,13 @@ namespace ProyectoAgronegocios.Estadisticas.Forms
 
             DateTime fechaDesde = dtpDesde.Value;
             DateTime fechaHasta = dtpHasta.Value;
+            //double prom = sCliente.promedioVentasC(fechaDesde, fechaHasta);
 
             rpvClientesVentas.LocalReport.SetParameters(new ReportParameter[]
                                                     {
                                                      new ReportParameter("FechaDesde", dtpDesde.Value.ToString("yyyy-MM-dd")),
                                                      new ReportParameter("FechaHasta", dtpHasta.Value.ToString("yyyy-MM-dd"))
+                                                     //new ReportParameter("Promedio", Math.Round(prom, 2).ToString())
                                                     });
 
             DataTable tabla = new DataTable();
