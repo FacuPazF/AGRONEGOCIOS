@@ -114,7 +114,54 @@ namespace ProyectoAgronegocios.GUILayer
         }
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-
+            // --- Valida Nombre
+            if(txtNombre.Text == "")
+            {
+                MessageBox.Show("Nombre de Cliente faltante", "Nombre inexistente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtNombre.Focus();
+                return;
+            }
+            // --- Valida Apellido
+            if (txtApellido.Text == "")
+            {
+                MessageBox.Show("Apellido de Cliente faltante", "Apellido inexistente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtApellido.Focus();
+                return;
+            }
+            // --- Valida Cuil o Cuit
+            long cuil;
+            if (!(long.TryParse(txtCuil.Text, out cuil)) || txtCuil.Text == "" || txtCuil.Text.Length != 11)
+            {
+                MessageBox.Show("Ingrese Cuil o Cuit válido (Solo números y de 11 caracteres)", "Cuil o Cuit erróneo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtCuil.Focus();
+                return;
+            }
+            // --- Valida Razon Social
+            if (txtRazonSocial.Text == "")
+            {
+                MessageBox.Show("Ingrese Razón Social", "Razon Social Inexistente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtRazonSocial.Focus();
+                return;
+            }
+            if (txtEmail.Text == "")
+            {
+                MessageBox.Show("Ingrese Email", "Email inexistente", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtEmail.Focus();
+                return;
+            }
+            long telefono;
+            if (!(long.TryParse(txtTelefono.Text, out telefono)) || txtTelefono.Text == "")
+            {
+                MessageBox.Show("Ingrese un Número de Telefono Válido (Solo numeros)", "Telefono Erroneo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtEmail.Focus();
+                return;
+            }
+            if (cboBarrio.SelectedIndex == -1)
+            {
+                MessageBox.Show("Ingrese Ubicación", "Ubicación faltante", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cboProvincia.Focus();
+                return;
+            }
             oCliente.Nombre = txtNombre.Text;
             oCliente.Apellido = txtApellido.Text;
             oCliente.Cuil_cuit = txtCuil.Text;
@@ -125,7 +172,7 @@ namespace ProyectoAgronegocios.GUILayer
             oCliente.Id_Tipo = 1;
             oCliente.Borrado = 0;
 
-            if (this.nuevo )
+            if (this.nuevo)
             {
                 if(txtCuil.Text != "")
                 {

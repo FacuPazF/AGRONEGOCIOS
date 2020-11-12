@@ -407,7 +407,6 @@
             this.label9.Size = new System.Drawing.Size(111, 13);
             this.label9.TabIndex = 7;
             this.label9.Text = "Ingrese Razon Social ";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // frmTransporte
             // 

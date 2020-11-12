@@ -38,8 +38,65 @@ namespace ProyectoAgronegocios.GUILayer
         // ------------------------  Botones dentro del panel --------------------------
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            // ---- Valida campo Nombre
+            if (txtNombre.Text == "")
+            {
+                MessageBox.Show("Nombre no ingresado", "Falta nombre", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtNombre.Focus();
+                return;
+            }
+            // ---- Valida campo StockMin
+            double stockMin;
+            if (!(double.TryParse(txtStockMin.Text, out stockMin)) || stockMin <= 0)
+            {
+                MessageBox.Show("Ingrese un Stock Mínimo. Acepta solo números positivos", "Falla en Stock Mínimo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtStockMin.Focus();
+                return;
+            }
+            // ---- Valida campo Stock
+            double stock;
+            if (!(double.TryParse(txtStock.Text, out stock)) || stock <= 0)
+            {
+                MessageBox.Show("Ingrese una cantidad de Stock válida. No se aceptan letras ni números negativos", "Falla en Stock", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtStock.Focus();
+                return;
+            }
+            // ---- Valida campo Precio por Tonelada
+            double precioTonelada;
+            if (!(double.TryParse(txtPrecio_X_Tonelada.Text, out precioTonelada)) || precioTonelada <= 0)
+            {
+                MessageBox.Show("Ingrese un Precio por Tonelada válido. Acepta solo números positivos", "Falla en precio", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtPrecio_X_Tonelada.Focus();
+                return;
+            }
+            // ---- Valida campo Habilitado
+            if (!(txtHabilitado.Text.ToLower().Equals("si")) && !(txtHabilitado.Text.ToLower().Equals("no")))
+            {
+                MessageBox.Show("Ingrese Si o No - sin tildes", "Error en Campo Habilitado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtHabilitado.Focus();
+                return;
+            }
+            // ---- Valida campo Precio Sugerido
+            double precio;
+            if (!(double.TryParse(txtPrecioSugerido.Text, out precio)) || precio <= 0)
+            {
+                MessageBox.Show("Ingrese un precio sugerido valido", "Error de Precio Sugerido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            // ---- Valida Combo Tipo de Semilla
+            if (cboTipoSemilla.SelectedIndex == -1)
+            {
+                MessageBox.Show("Ingrese un Tipo de Semilla", "Error en Tipo de Semilla", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            // ---- Valida Combo Calidad
+            if (cboCalidad.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione Calidad", "Error en Campo Calidad", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             // Creo una clase Semilla
-            
+
             Semilla semilla = new Semilla();
             semilla.Nombre = txtNombre.Text;
             semilla.Stock_minimo = Convert.ToDouble(txtStockMin.Text);

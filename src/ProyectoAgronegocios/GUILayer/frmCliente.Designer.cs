@@ -48,6 +48,7 @@
             this.lblIngreseCuil = new System.Windows.Forms.Label();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.pnlCliente = new System.Windows.Forms.Panel();
+            this.lblNuevoCliente = new System.Windows.Forms.Label();
             this.btnFinalizar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
@@ -69,7 +70,6 @@
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.lblNuevoCliente = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dtgCliente)).BeginInit();
             this.pnlCliente.SuspendLayout();
             this.SuspendLayout();
@@ -79,10 +79,10 @@
             this.lblCliente.AutoSize = true;
             this.lblCliente.BackColor = System.Drawing.Color.Transparent;
             this.lblCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCliente.Location = new System.Drawing.Point(26, 29);
-            this.lblCliente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCliente.Location = new System.Drawing.Point(52, 56);
+            this.lblCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCliente.Name = "lblCliente";
-            this.lblCliente.Size = new System.Drawing.Size(53, 18);
+            this.lblCliente.Size = new System.Drawing.Size(107, 36);
             this.lblCliente.TabIndex = 0;
             this.lblCliente.Text = "Cliente";
             // 
@@ -91,10 +91,10 @@
             this.txtCliente.BackColor = System.Drawing.Color.White;
             this.txtCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCliente.ForeColor = System.Drawing.Color.Black;
-            this.txtCliente.Location = new System.Drawing.Point(94, 27);
-            this.txtCliente.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCliente.Location = new System.Drawing.Point(188, 52);
+            this.txtCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtCliente.Name = "txtCliente";
-            this.txtCliente.Size = new System.Drawing.Size(158, 24);
+            this.txtCliente.Size = new System.Drawing.Size(312, 41);
             this.txtCliente.TabIndex = 0;
             // 
             // dtgCliente
@@ -113,15 +113,15 @@
             this.email,
             this.telefono,
             this.barrio});
-            this.dtgCliente.Location = new System.Drawing.Point(18, 74);
-            this.dtgCliente.Margin = new System.Windows.Forms.Padding(2);
+            this.dtgCliente.Location = new System.Drawing.Point(36, 142);
+            this.dtgCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtgCliente.MultiSelect = false;
             this.dtgCliente.Name = "dtgCliente";
             this.dtgCliente.ReadOnly = true;
             this.dtgCliente.RowHeadersWidth = 82;
             this.dtgCliente.RowTemplate.Height = 33;
             this.dtgCliente.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgCliente.Size = new System.Drawing.Size(654, 423);
+            this.dtgCliente.Size = new System.Drawing.Size(1308, 813);
             this.dtgCliente.TabIndex = 3;
             // 
             // id
@@ -201,10 +201,10 @@
             this.btnNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevo.ForeColor = System.Drawing.Color.White;
-            this.btnNuevo.Location = new System.Drawing.Point(18, 541);
-            this.btnNuevo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNuevo.Location = new System.Drawing.Point(36, 1040);
+            this.btnNuevo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNuevo.Name = "btnNuevo";
-            this.btnNuevo.Size = new System.Drawing.Size(86, 49);
+            this.btnNuevo.Size = new System.Drawing.Size(172, 94);
             this.btnNuevo.TabIndex = 4;
             this.btnNuevo.Text = "Nuevo";
             this.btnNuevo.UseVisualStyleBackColor = false;
@@ -215,10 +215,10 @@
             this.btnModificar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnModificar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnModificar.ForeColor = System.Drawing.Color.White;
-            this.btnModificar.Location = new System.Drawing.Point(142, 541);
-            this.btnModificar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnModificar.Location = new System.Drawing.Point(284, 1040);
+            this.btnModificar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnModificar.Name = "btnModificar";
-            this.btnModificar.Size = new System.Drawing.Size(86, 49);
+            this.btnModificar.Size = new System.Drawing.Size(172, 94);
             this.btnModificar.TabIndex = 5;
             this.btnModificar.Text = "Modificar";
             this.btnModificar.UseVisualStyleBackColor = false;
@@ -229,10 +229,10 @@
             this.btnEliminar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Location = new System.Drawing.Point(268, 541);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEliminar.Location = new System.Drawing.Point(536, 1040);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(86, 49);
+            this.btnEliminar.Size = new System.Drawing.Size(172, 94);
             this.btnEliminar.TabIndex = 6;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
@@ -243,10 +243,10 @@
             this.btnCerrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnCerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.ForeColor = System.Drawing.Color.White;
-            this.btnCerrar.Location = new System.Drawing.Point(1005, 541);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCerrar.Location = new System.Drawing.Point(2010, 1040);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(86, 49);
+            this.btnCerrar.Size = new System.Drawing.Size(172, 94);
             this.btnCerrar.TabIndex = 8;
             this.btnCerrar.Text = "Cerrar";
             this.btnCerrar.UseVisualStyleBackColor = false;
@@ -257,10 +257,10 @@
             this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnConsultar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnConsultar.ForeColor = System.Drawing.Color.White;
-            this.btnConsultar.Location = new System.Drawing.Point(268, 27);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnConsultar.Location = new System.Drawing.Point(536, 52);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(90, 26);
+            this.btnConsultar.Size = new System.Drawing.Size(180, 50);
             this.btnConsultar.TabIndex = 1;
             this.btnConsultar.Text = "Consultar";
             this.btnConsultar.UseVisualStyleBackColor = false;
@@ -270,10 +270,10 @@
             // 
             this.lblIngreseCuil.AutoSize = true;
             this.lblIngreseCuil.BackColor = System.Drawing.Color.Transparent;
-            this.lblIngreseCuil.Location = new System.Drawing.Point(115, 55);
-            this.lblIngreseCuil.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblIngreseCuil.Location = new System.Drawing.Point(230, 106);
+            this.lblIngreseCuil.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIngreseCuil.Name = "lblIngreseCuil";
-            this.lblIngreseCuil.Size = new System.Drawing.Size(106, 13);
+            this.lblIngreseCuil.Size = new System.Drawing.Size(208, 25);
             this.lblIngreseCuil.TabIndex = 9;
             this.lblIngreseCuil.Text = "Ingrese CUIL o CUIT";
             // 
@@ -282,10 +282,10 @@
             this.btnActualizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.Color.White;
-            this.btnActualizar.Location = new System.Drawing.Point(582, 501);
-            this.btnActualizar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnActualizar.Location = new System.Drawing.Point(1164, 963);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(90, 33);
+            this.btnActualizar.Size = new System.Drawing.Size(180, 63);
             this.btnActualizar.TabIndex = 2;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = false;
@@ -320,21 +320,32 @@
             this.pnlCliente.Controls.Add(this.lblNombre);
             this.pnlCliente.Enabled = false;
             this.pnlCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.pnlCliente.Location = new System.Drawing.Point(686, 74);
-            this.pnlCliente.Margin = new System.Windows.Forms.Padding(2);
+            this.pnlCliente.Location = new System.Drawing.Point(1372, 142);
+            this.pnlCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pnlCliente.Name = "pnlCliente";
-            this.pnlCliente.Size = new System.Drawing.Size(405, 423);
+            this.pnlCliente.Size = new System.Drawing.Size(810, 813);
             this.pnlCliente.TabIndex = 7;
+            // 
+            // lblNuevoCliente
+            // 
+            this.lblNuevoCliente.AutoSize = true;
+            this.lblNuevoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNuevoCliente.Location = new System.Drawing.Point(360, 10);
+            this.lblNuevoCliente.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNuevoCliente.Name = "lblNuevoCliente";
+            this.lblNuevoCliente.Size = new System.Drawing.Size(139, 44);
+            this.lblNuevoCliente.TabIndex = 0;
+            this.lblNuevoCliente.Text = "Cliente";
             // 
             // btnFinalizar
             // 
             this.btnFinalizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnFinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFinalizar.ForeColor = System.Drawing.Color.White;
-            this.btnFinalizar.Location = new System.Drawing.Point(268, 350);
-            this.btnFinalizar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnFinalizar.Location = new System.Drawing.Point(536, 673);
+            this.btnFinalizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(112, 45);
+            this.btnFinalizar.Size = new System.Drawing.Size(224, 87);
             this.btnFinalizar.TabIndex = 11;
             this.btnFinalizar.Text = "Finalizar";
             this.btnFinalizar.UseVisualStyleBackColor = false;
@@ -345,10 +356,10 @@
             this.btnLimpiar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiar.ForeColor = System.Drawing.Color.White;
-            this.btnLimpiar.Location = new System.Drawing.Point(154, 350);
-            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLimpiar.Location = new System.Drawing.Point(308, 673);
+            this.btnLimpiar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(96, 49);
+            this.btnLimpiar.Size = new System.Drawing.Size(192, 94);
             this.btnLimpiar.TabIndex = 10;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = false;
@@ -359,10 +370,10 @@
             this.btnAceptar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnAceptar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAceptar.ForeColor = System.Drawing.Color.White;
-            this.btnAceptar.Location = new System.Drawing.Point(38, 350);
-            this.btnAceptar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAceptar.Location = new System.Drawing.Point(76, 673);
+            this.btnAceptar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAceptar.Name = "btnAceptar";
-            this.btnAceptar.Size = new System.Drawing.Size(92, 49);
+            this.btnAceptar.Size = new System.Drawing.Size(184, 94);
             this.btnAceptar.TabIndex = 9;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
@@ -373,10 +384,10 @@
             this.cboBarrio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboBarrio.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboBarrio.FormattingEnabled = true;
-            this.cboBarrio.Location = new System.Drawing.Point(212, 305);
-            this.cboBarrio.Margin = new System.Windows.Forms.Padding(2);
+            this.cboBarrio.Location = new System.Drawing.Point(424, 587);
+            this.cboBarrio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboBarrio.Name = "cboBarrio";
-            this.cboBarrio.Size = new System.Drawing.Size(122, 26);
+            this.cboBarrio.Size = new System.Drawing.Size(240, 41);
             this.cboBarrio.TabIndex = 8;
             // 
             // cboCiudad
@@ -384,10 +395,10 @@
             this.cboCiudad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCiudad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboCiudad.FormattingEnabled = true;
-            this.cboCiudad.Location = new System.Drawing.Point(212, 275);
-            this.cboCiudad.Margin = new System.Windows.Forms.Padding(2);
+            this.cboCiudad.Location = new System.Drawing.Point(424, 529);
+            this.cboCiudad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboCiudad.Name = "cboCiudad";
-            this.cboCiudad.Size = new System.Drawing.Size(122, 26);
+            this.cboCiudad.Size = new System.Drawing.Size(240, 41);
             this.cboCiudad.TabIndex = 7;
             // 
             // cboProvincia
@@ -395,10 +406,10 @@
             this.cboProvincia.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboProvincia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboProvincia.FormattingEnabled = true;
-            this.cboProvincia.Location = new System.Drawing.Point(212, 244);
-            this.cboProvincia.Margin = new System.Windows.Forms.Padding(2);
+            this.cboProvincia.Location = new System.Drawing.Point(424, 469);
+            this.cboProvincia.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboProvincia.Name = "cboProvincia";
-            this.cboProvincia.Size = new System.Drawing.Size(122, 26);
+            this.cboProvincia.Size = new System.Drawing.Size(240, 41);
             this.cboProvincia.TabIndex = 6;
             // 
             // lblBarrio
@@ -407,10 +418,10 @@
             this.lblBarrio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblBarrio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBarrio.ForeColor = System.Drawing.Color.White;
-            this.lblBarrio.Location = new System.Drawing.Point(132, 307);
-            this.lblBarrio.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblBarrio.Location = new System.Drawing.Point(264, 590);
+            this.lblBarrio.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblBarrio.Name = "lblBarrio";
-            this.lblBarrio.Size = new System.Drawing.Size(51, 20);
+            this.lblBarrio.Size = new System.Drawing.Size(103, 37);
             this.lblBarrio.TabIndex = 20;
             this.lblBarrio.Text = "Barrio";
             // 
@@ -420,10 +431,10 @@
             this.lblCiudad.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblCiudad.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCiudad.ForeColor = System.Drawing.Color.White;
-            this.lblCiudad.Location = new System.Drawing.Point(124, 278);
-            this.lblCiudad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCiudad.Location = new System.Drawing.Point(248, 535);
+            this.lblCiudad.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCiudad.Name = "lblCiudad";
-            this.lblCiudad.Size = new System.Drawing.Size(59, 20);
+            this.lblCiudad.Size = new System.Drawing.Size(119, 37);
             this.lblCiudad.TabIndex = 19;
             this.lblCiudad.Text = "Ciudad";
             // 
@@ -433,10 +444,10 @@
             this.lblProvincia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblProvincia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProvincia.ForeColor = System.Drawing.Color.White;
-            this.lblProvincia.Location = new System.Drawing.Point(111, 248);
-            this.lblProvincia.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblProvincia.Location = new System.Drawing.Point(222, 477);
+            this.lblProvincia.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblProvincia.Name = "lblProvincia";
-            this.lblProvincia.Size = new System.Drawing.Size(72, 20);
+            this.lblProvincia.Size = new System.Drawing.Size(148, 37);
             this.lblProvincia.TabIndex = 18;
             this.lblProvincia.Text = "Provincia";
             // 
@@ -446,10 +457,10 @@
             this.lblTelefono.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTelefono.ForeColor = System.Drawing.Color.White;
-            this.lblTelefono.Location = new System.Drawing.Point(112, 218);
-            this.lblTelefono.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblTelefono.Location = new System.Drawing.Point(224, 419);
+            this.lblTelefono.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(71, 20);
+            this.lblTelefono.Size = new System.Drawing.Size(141, 37);
             this.lblTelefono.TabIndex = 17;
             this.lblTelefono.Text = "Telefono";
             // 
@@ -459,10 +470,10 @@
             this.lblEmail.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEmail.ForeColor = System.Drawing.Color.White;
-            this.lblEmail.Location = new System.Drawing.Point(135, 190);
-            this.lblEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEmail.Location = new System.Drawing.Point(270, 365);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(48, 20);
+            this.lblEmail.Size = new System.Drawing.Size(97, 37);
             this.lblEmail.TabIndex = 16;
             this.lblEmail.Text = "Email";
             // 
@@ -472,10 +483,10 @@
             this.lblRazonSocial.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblRazonSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRazonSocial.ForeColor = System.Drawing.Color.White;
-            this.lblRazonSocial.Location = new System.Drawing.Point(84, 159);
-            this.lblRazonSocial.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblRazonSocial.Location = new System.Drawing.Point(168, 306);
+            this.lblRazonSocial.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRazonSocial.Name = "lblRazonSocial";
-            this.lblRazonSocial.Size = new System.Drawing.Size(99, 20);
+            this.lblRazonSocial.Size = new System.Drawing.Size(196, 37);
             this.lblRazonSocial.TabIndex = 15;
             this.lblRazonSocial.Text = "RazonSocial";
             // 
@@ -485,10 +496,10 @@
             this.lblCuil.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblCuil.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCuil.ForeColor = System.Drawing.Color.White;
-            this.lblCuil.Location = new System.Drawing.Point(148, 129);
-            this.lblCuil.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblCuil.Location = new System.Drawing.Point(296, 248);
+            this.lblCuil.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblCuil.Name = "lblCuil";
-            this.lblCuil.Size = new System.Drawing.Size(35, 20);
+            this.lblCuil.Size = new System.Drawing.Size(72, 37);
             this.lblCuil.TabIndex = 14;
             this.lblCuil.Text = "Cuil";
             // 
@@ -498,65 +509,66 @@
             this.lblApellido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblApellido.ForeColor = System.Drawing.Color.White;
-            this.lblApellido.Location = new System.Drawing.Point(118, 100);
-            this.lblApellido.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblApellido.Location = new System.Drawing.Point(236, 192);
+            this.lblApellido.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblApellido.Name = "lblApellido";
-            this.lblApellido.Size = new System.Drawing.Size(65, 20);
+            this.lblApellido.Size = new System.Drawing.Size(131, 37);
             this.lblApellido.TabIndex = 13;
             this.lblApellido.Text = "Apellido";
             // 
             // txtTelefono
             // 
             this.txtTelefono.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.Location = new System.Drawing.Point(212, 217);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTelefono.Location = new System.Drawing.Point(424, 417);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(122, 24);
+            this.txtTelefono.Size = new System.Drawing.Size(240, 41);
             this.txtTelefono.TabIndex = 5;
             // 
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEmail.Location = new System.Drawing.Point(212, 188);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEmail.Location = new System.Drawing.Point(424, 362);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(122, 24);
+            this.txtEmail.Size = new System.Drawing.Size(240, 41);
             this.txtEmail.TabIndex = 4;
             // 
             // txtRazonSocial
             // 
             this.txtRazonSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtRazonSocial.Location = new System.Drawing.Point(212, 155);
-            this.txtRazonSocial.Margin = new System.Windows.Forms.Padding(2);
+            this.txtRazonSocial.Location = new System.Drawing.Point(424, 298);
+            this.txtRazonSocial.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtRazonSocial.Name = "txtRazonSocial";
-            this.txtRazonSocial.Size = new System.Drawing.Size(122, 24);
+            this.txtRazonSocial.Size = new System.Drawing.Size(240, 41);
             this.txtRazonSocial.TabIndex = 3;
             // 
             // txtCuil
             // 
             this.txtCuil.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCuil.Location = new System.Drawing.Point(212, 125);
-            this.txtCuil.Margin = new System.Windows.Forms.Padding(2);
+            this.txtCuil.Location = new System.Drawing.Point(424, 240);
+            this.txtCuil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCuil.MaxLength = 11;
             this.txtCuil.Name = "txtCuil";
-            this.txtCuil.Size = new System.Drawing.Size(122, 24);
+            this.txtCuil.Size = new System.Drawing.Size(240, 41);
             this.txtCuil.TabIndex = 2;
             // 
             // txtApellido
             // 
             this.txtApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtApellido.Location = new System.Drawing.Point(212, 97);
-            this.txtApellido.Margin = new System.Windows.Forms.Padding(2);
+            this.txtApellido.Location = new System.Drawing.Point(424, 187);
+            this.txtApellido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(122, 24);
+            this.txtApellido.Size = new System.Drawing.Size(240, 41);
             this.txtApellido.TabIndex = 1;
             // 
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(212, 68);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNombre.Location = new System.Drawing.Point(424, 131);
+            this.txtNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(122, 24);
+            this.txtNombre.Size = new System.Drawing.Size(240, 41);
             this.txtNombre.TabIndex = 0;
             // 
             // lblNombre
@@ -565,32 +577,21 @@
             this.lblNombre.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNombre.ForeColor = System.Drawing.Color.White;
-            this.lblNombre.Location = new System.Drawing.Point(118, 70);
-            this.lblNombre.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblNombre.Location = new System.Drawing.Point(236, 135);
+            this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(65, 20);
+            this.lblNombre.Size = new System.Drawing.Size(132, 37);
             this.lblNombre.TabIndex = 12;
             this.lblNombre.Text = "Nombre";
             // 
-            // lblNuevoCliente
-            // 
-            this.lblNuevoCliente.AutoSize = true;
-            this.lblNuevoCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNuevoCliente.Location = new System.Drawing.Point(180, 5);
-            this.lblNuevoCliente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblNuevoCliente.Name = "lblNuevoCliente";
-            this.lblNuevoCliente.Size = new System.Drawing.Size(68, 24);
-            this.lblNuevoCliente.TabIndex = 0;
-            this.lblNuevoCliente.Text = "Cliente";
-            // 
             // frmCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackgroundImage = global::ProyectoAgronegocios.Properties.Resources.semilla1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1131, 615);
+            this.ClientSize = new System.Drawing.Size(2262, 1183);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.lblIngreseCuil);
             this.Controls.Add(this.btnConsultar);
@@ -602,7 +603,7 @@
             this.Controls.Add(this.dtgCliente);
             this.Controls.Add(this.txtCliente);
             this.Controls.Add(this.lblCliente);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmCliente";
             this.Text = "Cliente";
             this.Load += new System.EventHandler(this.frmCliente_Load);

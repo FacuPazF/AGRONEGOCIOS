@@ -50,13 +50,6 @@ namespace ProyectoAgronegocios.GUILayer
             }
         }
 
-
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnActualizarGrilla_Click(object sender, EventArgs e)
         {
             this.cargarGrilla(dtgTransporte, sTransporte.consultarTransporteSinParametros());

@@ -73,7 +73,14 @@ namespace ProyectoAgronegocios.DataAccessLayer
         // ----------------------------  Alta
         public void crearNuevaSemilla(Semilla semilla, TiposXsemillas tipos_x_semillas)
         {
-            strSQL = "INSERT INTO Semilla (nombre, stock_Minimo, stock, precio_Tonelada, descripcion, habilitado, borrado)" +
+            DataManager dm = new DataManager();
+            try
+            {
+                dm.Open();
+                dm.BeginTransaction();
+
+
+                string cSQL = "INSERT INTO Semilla (nombre, stock_Minimo, stock, precio_Tonelada, descripcion, habilitado, borrado)" +
                      "VALUES( '"
                      + semilla.Nombre + "', "
                      + semilla.Stock_minimo + ", "
@@ -82,21 +89,32 @@ namespace ProyectoAgronegocios.DataAccessLayer
                      + "'" + semilla.Descripcion + "', "
                      + "'" + semilla.Habilitado + "', "
                      + semilla.Borrado + ") ";
-            
-            DataManager.GetInstance().EjecutarSQL(strSQL);
+                dm.EjecutarSQL(cSQL);
 
-            tipos_x_semillas.Id_semilla = Convert.ToInt32(DataManager.GetInstance().ConsultaSQL("SELECT MAX(id_Semilla) FROM Semilla").Rows[0][0]);
+                tipos_x_semillas.Id_semilla = Convert.ToInt32(dm.ConsultaSQLScalar("SELECT @@IDENTITY AS 'PK_Semilla'"));
 
-
-            strSQL = "INSERT INTO TiposXsemillas (id_Semilla, id_Tipo_Semilla, id_Calidad, precio_sugerido)" +
+                cSQL = "INSERT INTO TiposXsemillas (id_Semilla, id_Tipo_Semilla, id_Calidad, precio_sugerido)" +
                  "VALUES( "
                  + tipos_x_semillas.Id_semilla + ", "
                  + tipos_x_semillas.Id_tipo_semilla + ", "
                  + tipos_x_semillas.Id_calidad + ", "
                  + tipos_x_semillas.Precio_sugerido.ToString().Replace(",", ".") + ")";
+                dm.EjecutarSQL(cSQL);
 
-            DataManager.GetInstance().EjecutarSQL(strSQL);
-            
+                
+                
+                dm.Commit();
+            }
+
+            catch (Exception ex)
+            {
+                dm.Rollback();
+                throw ex;
+            }
+            finally
+            {
+                dm.Close();
+            }                        
         }
 
         // ----------------------------  Modificar
